@@ -76,7 +76,7 @@
 
     <!-- Audio for "Enter" Button -->
     <audio id="audioPlayer">
-        <source src="assets/ohYeah.mp3" type="audio/mp3">
+        <source src="assets/data/ohYeah.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
@@ -134,11 +134,6 @@
 
         muteButton.addEventListener('click', function() {
             audio.pause();
-
-            window.onload = () => {
-    const audio = document.getElementById('myAudio');
-    audio.play();
-};
         });
     </script>
 </body>
