@@ -8,6 +8,7 @@
         body {
             margin: 0;
             overflow: hidden; /* Keeps the page from scrolling */
+            font-family: Arial, sans-serif;
         }
 
         .moving-image {
@@ -24,7 +25,7 @@
             margin-top: 50px; /* Space from the top */
         }
 
-        /* Style for buttons to keep them visible */
+        /* Style for buttons */
         button {
             position: relative;
             z-index: 10;
@@ -34,35 +35,55 @@
             color: white;
             border: none;
             cursor: pointer;
+            font-size: 16px;
         }
 
         button:hover {
             background-color: #0056b3;
         }
+
+        /* White screen cover */
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
+    <!-- White screen cover initially visible -->
+    <div id="cover" class="cover">
+        <button id="enterButton">Enter</button>
+    </div>
+
+    <!-- Content of the page, initially hidden by cover -->
     <h1 id="header">BIG TIME WEB CENTRAL</h1>
 
     <!-- Buttons -->
     <button id="colorButton">Turn Text Red</button>
     <button id="navigateButton">Change Page</button>
-    <button id="crabButton">Crab</button> <!-- New Crab Button -->
 
     <!-- Moving Image -->
     <img src="assets/stunnerC.png" alt="Description of the image" class="moving-image" id="movingImage">
 
-    <!-- Audio for Crab Button -->
+    <!-- Audio for "Enter" Button -->
     <audio id="audioPlayer">
         <source src="assets/ohYeah.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
     <script>
-        // Get references to the buttons and header
+        // Get references to the buttons and elements
         const colorButton = document.getElementById('colorButton');
         const navigateButton = document.getElementById('navigateButton');
-        const crabButton = document.getElementById('crabButton'); // New button
+        const enterButton = document.getElementById('enterButton'); // Enter button
+        const cover = document.getElementById('cover'); // Cover screen
         const header = document.getElementById('header');
         const image = document.getElementById('movingImage');
         const audio = document.getElementById('audioPlayer');
@@ -112,9 +133,13 @@
             window.location.href = 'page.html';
         });
 
-        // Crab Button to start audio
-        crabButton.addEventListener('click', function() {
+        // Button to start audio and remove cover
+        enterButton.addEventListener('click', function() {
+            // Start the audio
             audio.play();
+
+            // Remove the white cover and Enter button
+            cover.style.display = 'none';
         });
     </script>
 </body>
