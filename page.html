@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shenanigins</title>
+</head>
+<body>
+    <h1 id="header">THE SECOND PAGECUH</h1>
+    
+    <!-- Button to trigger color change -->
+    <button id="colorButton">Change Header Color</button>
+
+    <script>
+        // Get references to the button and header
+        const button = document.getElementById('colorButton');
+        const header = document.getElementById('header');
+
+        // Add event listener to button
+        button.addEventListener('click', function() {
+            // Change the header color to red
+            header.style.color = 'blue';
+        });
+    </script>
+</body>
+</html>

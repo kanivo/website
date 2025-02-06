@@ -7,19 +7,29 @@
 </head>
 <body>
     <h1 id="header">BIG TIME WEB CENTRAL</h1>
-    
-    <!-- Button to trigger color change -->
-    <button id="colorButton">Change Header Color</button>
+
+    <!-- Button to change header color -->
+    <button id="colorButton">Turn Text Red</button>
+
+    <!-- Button to navigate to another page -->
+    <button id="navigateButton">Go to Page</button>
 
     <script>
-        // Get references to the button and header
-        const button = document.getElementById('colorButton');
+        // Get references to the buttons and header
+        const colorButton = document.getElementById('colorButton');
+        const navigateButton = document.getElementById('navigateButton');
         const header = document.getElementById('header');
 
-        // Add event listener to button
-        button.addEventListener('click', function() {
+        // Add event listener to color change button
+        colorButton.addEventListener('click', function() {
             // Change the header color to red
             header.style.color = 'red';
+        });
+
+        // Add event listener to navigate button
+        navigateButton.addEventListener('click', function() {
+            // Redirect to page.html
+            window.location.href = 'page.html';
         });
     </script>
 </body>
