@@ -47,12 +47,13 @@
     <!-- Buttons -->
     <button id="colorButton">Turn Text Red</button>
     <button id="navigateButton">Change Page</button>
+    <button id="crabButton">Crab</button> <!-- New Crab Button -->
 
     <!-- Moving Image -->
     <img src="assets/stunnerC.png" alt="Description of the image" class="moving-image" id="movingImage">
 
-    <!-- Audio for autoplay -->
-    <audio id="audioPlayer" autoplay muted>
+    <!-- Audio for Crab Button -->
+    <audio id="audioPlayer">
         <source src="assets/ohYeah.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
@@ -61,6 +62,7 @@
         // Get references to the buttons and header
         const colorButton = document.getElementById('colorButton');
         const navigateButton = document.getElementById('navigateButton');
+        const crabButton = document.getElementById('crabButton'); // New button
         const header = document.getElementById('header');
         const image = document.getElementById('movingImage');
         const audio = document.getElementById('audioPlayer');
@@ -110,11 +112,10 @@
             window.location.href = 'page.html';
         });
 
-        // After the page loads, unmute and start the audio
-        window.onload = () => {
-            audio.muted = false;
+        // Crab Button to start audio
+        crabButton.addEventListener('click', function() {
             audio.play();
-        };
+        });
     </script>
 </body>
 </html>
