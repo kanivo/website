@@ -6,6 +6,21 @@
     <title>Shenanigins</title>
 </head>
 <body>
-    <h1>BIG TIME WEB CENTRAL</h1>
+    <h1 id="header">BIG TIME WEB CENTRAL</h1>
+    
+    <!-- Button to trigger color change -->
+    <button id="colorButton">Change Header Color</button>
+
+    <script>
+        // Get references to the button and header
+        const button = document.getElementById('colorButton');
+        const header = document.getElementById('header');
+
+        // Add event listener to button
+        button.addEventListener('click', function() {
+            // Change the header color to red
+            header.style.color = 'red';
+        });
+    </script>
 </body>
 </html>
