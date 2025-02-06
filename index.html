@@ -51,8 +51,10 @@
     <!-- Moving Image -->
     <img src="assets/stunnerC.png" alt="Description of the image" class="moving-image" id="movingImage">
 
-    <audio autoplay controls>
+    <!-- Audio for autoplay -->
+    <audio id="audioPlayer" autoplay muted>
         <source src="assets/ohYeah.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
     </audio>
 
     <script>
@@ -61,6 +63,7 @@
         const navigateButton = document.getElementById('navigateButton');
         const header = document.getElementById('header');
         const image = document.getElementById('movingImage');
+        const audio = document.getElementById('audioPlayer');
 
         // Initial positions and speeds for the image
         let posX = 0;
@@ -106,6 +109,12 @@
         navigateButton.addEventListener('click', function() {
             window.location.href = 'page.html';
         });
+
+        // After the page loads, unmute and start the audio
+        window.onload = () => {
+            audio.muted = false;
+            audio.play();
+        };
     </script>
 </body>
 </html>
