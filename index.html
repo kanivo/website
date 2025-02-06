@@ -7,58 +7,101 @@
     <style>
         body {
             margin: 0;
-            overflow: hidden; /* Prevents scrolling */
-            background-color: black;
+            overflow: hidden; /* Keeps the page from scrolling */
         }
 
         .moving-image {
             position: absolute;
-            width: 100px; /* Adjust size of the image */
+            width: 100px; /* Adjust the size of the image */
             height: auto;
+        }
+
+        h1 {
+            position: relative;
+            z-index: 10; /* Ensure the header stays above the moving image */
+            color: white;
+            text-align: center;
+            margin-top: 50px; /* Space from the top */
+        }
+
+        /* Style for buttons to keep them visible */
+        button {
+            position: relative;
+            z-index: 10;
+            margin: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <h1 id="header">BIG TIME WEB CENTRAL</h1>
 
+    <!-- Buttons -->
+    <button id="colorButton">Turn Text Red</button>
+    <button id="navigateButton">Change Page</button>
+
+    <!-- Moving Image -->
     <img src="assets/stunnerC.png" alt="Description of the image" class="moving-image" id="movingImage">
 
     <script>
+        // Get references to the buttons and header
+        const colorButton = document.getElementById('colorButton');
+        const navigateButton = document.getElementById('navigateButton');
+        const header = document.getElementById('header');
         const image = document.getElementById('movingImage');
-        let posX = 0; // Initial position of the image
-        let posY = 100; // Initial vertical position
-        let speedX = 2; // Speed of movement in the horizontal direction
-        let speedY = 2; // Speed of movement in the vertical direction
+
+        // Initial positions and speeds for the image
+        let posX = 0;
+        let posY = 100;
+        let speedX = 2;
+        let speedY = 2;
         const imageWidth = image.width;
         const imageHeight = image.height;
 
+        // Function to animate the image
         function moveImage() {
             const windowWidth = window.innerWidth;
             const windowHeight = window.innerHeight;
 
-            // Update the position of the image
+            // Update position
             posX += speedX;
             posY += speedY;
 
-            // If the image hits the right or left edge, reverse direction
+            // Reverse direction when hitting the window edges
             if (posX + imageWidth >= windowWidth || posX <= 0) {
                 speedX = -speedX;
             }
-
-            // If the image hits the top or bottom edge, reverse direction
             if (posY + imageHeight >= windowHeight || posY <= 0) {
                 speedY = -speedY;
             }
 
-            // Apply new position to the image
+            // Apply updated position
             image.style.left = posX + 'px';
             image.style.top = posY + 'px';
 
-            requestAnimationFrame(moveImage); // Keep animating
+            requestAnimationFrame(moveImage); // Keep the animation going
         }
 
-        // Start the animation
+        // Start the image animation
         moveImage();
+
+        // Button to change header color
+        colorButton.addEventListener('click', function() {
+            header.style.color = 'red';
+        });
+
+        // Button to navigate to another page
+        navigateButton.addEventListener('click', function() {
+            window.location.href = 'page.html';
+        });
     </script>
 </body>
 </html>
