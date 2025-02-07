@@ -47,7 +47,7 @@
     </audio>
 
     <script>
-        fetch('data.json')
+        fetch('assets/data.json')
             .then(response => response.json())
             .then(songs => {
                 const songListElement = document.getElementById('song-list');
