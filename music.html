@@ -103,7 +103,7 @@
                 songs.forEach((song, index) => {
                     const listItem = document.createElement('li');
                     listItem.classList.add('song-item');
-                    listItem.textContent = `${song.title} (${song.artist})`;
+                    listItem.textContent = `${index + 1} ${song.title} (${song.artist})`;
 
                     listItem.addEventListener('click', () => {
                         playSong(index);
