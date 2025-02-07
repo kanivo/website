@@ -22,7 +22,7 @@
     {
         "file": "assets/data/family ties .mp3",
         "title": "family ties (with Kendrick Lamar)",
-        "artist": "Baby Keem/Kendrick Lamar"
+        "artist": "Baby Keem"
     },
     {
         "file": "assets/data/Fighting My Demons.mp3",
@@ -77,12 +77,12 @@
     {
         "file": "assets/data/M3tamorphosis .mp3",
         "title": "M3tamorphosis (feat. Kid Cudi)",
-        "artist": "Playboi Carti/Kid Cudi"
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/MDMA .mp3",
         "title": "MDMA (feat. Destroy Lonely)",
-        "artist": "Ken Carson/Destroy Lonely"
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Meh.mp3",
@@ -92,7 +92,7 @@
     {
         "file": "assets/data/money & sex.mp3",
         "title": "money & sex",
-        "artist": "Destroy Lonely/Ken Carson"
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/NEVEREVER.mp3",
@@ -107,7 +107,7 @@
     {
         "file": "assets/data/Nightcrawler .mp3",
         "title": "Nightcrawler (feat. Swae Lee & Chief Keef)",
-        "artist": "Travis Scott/Swae Lee/Chief Keef"
+        "artist": "Travis Scott"
     },
     {
         "file": "assets/data/No Idea.mp3",
@@ -162,12 +162,12 @@
     {
         "file": "assets/data/See You Again .mp3",
         "title": "See You Again (feat. Kali Uchis)",
-        "artist": "Tyler, The Creator/Kali Uchis"
+        "artist": "Tyler, The Creator"
     },
     {
         "file": "assets/data/Shoota .mp3",
         "title": "Shoota (feat. Lil Uzi Vert)",
-        "artist": "Playboi Carti/Lil Uzi Vert"
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/Succubus.mp3",
@@ -182,12 +182,12 @@
     {
         "file": "assets/data/Teen X .mp3",
         "title": "Teen X (feat. Future)",
-        "artist": "Playboi Carti/Future"
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/Timeless .mp3",
         "title": "Timeless (feat. Playboi Carti)",
-        "artist": "The Weeknd/Playboi Carti"
+        "artist": "The Weeknd"
     },
     {
         "file": "assets/data/Vamp Anthem.mp3",
@@ -197,7 +197,7 @@
     {
         "file": "assets/data/VETERAN .mp3",
         "title": "VETERAN (feat. Ken Carson)",
-        "artist": "Destroy Lonely/Ken Carson"
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/Ya Ight.mp3",
@@ -212,6 +212,6 @@
     {
         "file": "assets/data/ZEZE.mp3",
         "title": "ZEZE (feat. Travis Scott & Offset)",
-        "artist": "Kodak Black/Offset/Travis Scott"
+        "artist": "Kodak Black"
     }
 ]
