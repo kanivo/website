@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded Parkour Game</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #1e1e1e;
-        }
-        iframe {
-            width: 80%;
-            height: 80%;
-            border: none;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-        }
-    </style>
+    <title>nothing</title>
 </head>
 <body>
-    <iframe src="https://kanivo.github.io/Parkour-Game/" allowfullscreen></iframe>
+    <h1 id="header">THE SECOND PAGECUH</h1>
+    
+    <!-- Button to trigger color change -->
+    <button id="colorButton">Change Header Color</button>
+    <button id="backButton">go back</button>
+
+    <script>
+        // Get references to the button and header
+        const button = document.getElementById('colorButton');
+        const button1 = document.getElementById('backButton');
+        const header = document.getElementById('header');
+
+        // Add event listener to button
+        button.addEventListener('click', function() {
+            // Change the header color to red
+            header.style.color = 'blue';
+        });
+
+        button1.addEventListener('click', function() {
+            window.location.href = 'index.html';
+
+        });
+            
+    </script>
 </body>
 </html>
