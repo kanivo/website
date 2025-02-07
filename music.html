@@ -32,17 +32,12 @@
         audio {
             margin-top: 20px;
         }
-        button {
-            margin-top: 20px;
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
 
     <h1>sqworm</h1>
+
     <p>(this shit is mad buggy and butt ugly)</p>
 
     <ul class="song-list" id="song-list">
@@ -54,74 +49,28 @@
         Your browser does not support the audio element.
     </audio>
 
-    <button id="shuffle-btn">Play Songs Randomly</button>
-
     <script>
-        let songs = [];
-        let currentSongIndex = 0;
-        let isRandom = false;
-
-        // Fetch the songs from the JSON file
         fetch('assets/data.json')
             .then(response => response.json())
-            .then(data => {
-                songs = data;
+            .then(songs => {
                 const songListElement = document.getElementById('song-list');
                 const audioPlayer = document.getElementById('audio-player');
                 const audioSource = document.getElementById('audio-source');
 
-                // Function to play a song
-                function playSong(index) {
-                    const song = songs[index];
-                    let songSrc = song.file.replace(/ /g, '%20').replace(/[^a-zA-Z0-9%]/g, '');
-                    audioSource.src = songSrc;
-                    audioPlayer.load();
-                    audioPlayer.play();
-                }
-
-                // Function to play the next song
-                function nextSong() {
-                    if (isRandom) {
-                        // Play a random song
-                        currentSongIndex = Math.floor(Math.random() * songs.length);
-                    } else {
-                        // Play the next song in order
-                        currentSongIndex = (currentSongIndex + 1) % songs.length;
-                    }
-                    playSong(currentSongIndex);
-                }
-
                 // Loop through each song and create a list item
-                songs.forEach((song, index) => {
+                songs.forEach(song => {
                     const listItem = document.createElement('li');
                     listItem.classList.add('song-item');
                     listItem.textContent = song.title;
 
                     // Set the click event for each song item
                     listItem.addEventListener('click', () => {
-                        currentSongIndex = index;
-                        playSong(currentSongIndex);
+                        audioSource.src = song.file;
+                        audioPlayer.load();
+                        audioPlayer.play();
                     });
 
                     songListElement.appendChild(listItem);
-                });
-
-                // Event listener for when a song ends
-                audioPlayer.addEventListener('ended', nextSong);
-
-                // Initial song play
-                playSong(currentSongIndex);
-
-                // Toggle shuffle mode on button click
-                const shuffleButton = document.getElementById('shuffle-btn');
-                shuffleButton.addEventListener('click', () => {
-                    isRandom = !isRandom;
-                    shuffleButton.textContent = isRandom ? 'Play Songs in Order' : 'Play Songs Randomly';
-                    if (!isRandom) {
-                        // Reset to play in order from the current song
-                        currentSongIndex = (currentSongIndex + 1) % songs.length;
-                    }
-                    nextSong();
                 });
             })
             .catch(error => {
