@@ -19,7 +19,7 @@
 
         h1 {
             position: relative;
-            z-index: 10; 
+            z-index: 10;
             color: rgb(0, 0, 0);
             text-align: center;
             margin-top: 50px;
@@ -28,7 +28,7 @@
         button {
             position: relative;
             z-index: 10;
-            margin: 20px;
+            margin: 10px;
             padding: 10px;
             background-color: #000000;
             color: white;
@@ -53,6 +53,11 @@
             align-items: center;
             z-index: 1000;
         }
+
+        #songButtons {
+            margin: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -67,11 +72,13 @@
     <button id="spotifyButton">squirm</button>
     <button onclick="window.open('https://kanivo.github.io/Parkour-Game/', '_blank')">Game</button>
 
+    <!-- Container for dynamically generated song buttons -->
+    <div id="songButtons"></div>
 
     <img src="assets/stunnerC.png" alt="Description of the image" class="moving-image" id="movingImage">
 
     <audio id="audioPlayer">
-        <source src="assets/data/Ya Ight.mp3" type="audio/mp3">
+        <source src="" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
@@ -79,11 +86,12 @@
         const navigateButton = document.getElementById('navigateButton');
         const enterButton = document.getElementById('enterButton');
         const muteButton = document.getElementById('muteButton');
-        const spotifyButton = document.getElementById('spotifyButton')
+        const spotifyButton = document.getElementById('spotifyButton');
         const cover = document.getElementById('cover');
         const header = document.getElementById('header');
         const image = document.getElementById('movingImage');
         const audio = document.getElementById('audioPlayer');
+        const songButtonsContainer = document.getElementById('songButtons');
 
         let posX = 0;
         let posY = 100;
@@ -109,7 +117,7 @@
             image.style.left = posX + 'px';
             image.style.top = posY + 'px';
 
-            requestAnimationFrame(moveImage); // Keep the animation going
+            requestAnimationFrame(moveImage);
         }
         moveImage();
 
@@ -118,18 +126,41 @@
         });
 
         enterButton.addEventListener('click', function() {
-            audio.play();
             cover.style.display = 'none';
         });
 
         muteButton.addEventListener('click', function() {
-            audio.pause();
+            if (!audio.paused) {
+                audio.pause();
+                muteButton.textContent = "Unmute";
+            } else {
+                audio.play();
+                muteButton.textContent = "Mute";
+            }
         });
 
         spotifyButton.addEventListener('click', function() {
-            window.location.href = 'music.html'
+            window.location.href = 'music.html';
         });
-        
+
+        // Fetch song data from data.json and create buttons
+        fetch('assets/data.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(song => {
+                    const button = document.createElement('button');
+                    button.textContent = `${song.title} (${song.artist})`;
+                    
+                    // Play the selected song on button click
+                    button.addEventListener('click', function() {
+                        audio.src = song.file;
+                        audio.play();
+                    });
+
+                    songButtonsContainer.appendChild(button);
+                });
+            })
+            .catch(error => console.error('Error loading song data:', error));
     </script>
 </body>
 </html>
