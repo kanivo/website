@@ -21,7 +21,7 @@
     },
     {
         "file": "assets/data/family ties .mp3",
-        "title": "family ties (with Kendrick Lamar)",
+        "title": "family ties",
         "artist": "Baby Keem"
     },
     {
@@ -76,12 +76,12 @@
     },
     {
         "file": "assets/data/M3tamorphosis .mp3",
-        "title": "M3tamorphosis (feat. Kid Cudi)",
+        "title": "M3tamorphosis",
         "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/MDMA .mp3",
-        "title": "MDMA (feat. Destroy Lonely)",
+        "title": "MDMA",
         "artist": "Ken Carson"
     },
     {
@@ -106,7 +106,7 @@
     },
     {
         "file": "assets/data/Nightcrawler .mp3",
-        "title": "Nightcrawler (feat. Swae Lee & Chief Keef)",
+        "title": "Nightcrawler",
         "artist": "Travis Scott"
     },
     {
@@ -161,12 +161,12 @@
     },
     {
         "file": "assets/data/See You Again .mp3",
-        "title": "See You Again (feat. Kali Uchis)",
+        "title": "See You Again",
         "artist": "Tyler, The Creator"
     },
     {
         "file": "assets/data/Shoota .mp3",
-        "title": "Shoota (feat. Lil Uzi Vert)",
+        "title": "Shoota",
         "artist": "Playboi Carti"
     },
     {
@@ -181,12 +181,12 @@
     },
     {
         "file": "assets/data/Teen X .mp3",
-        "title": "Teen X (feat. Future)",
+        "title": "Teen X",
         "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/Timeless .mp3",
-        "title": "Timeless (feat. Playboi Carti)",
+        "title": "Timeless",
         "artist": "The Weeknd"
     },
     {
@@ -196,7 +196,7 @@
     },
     {
         "file": "assets/data/VETERAN .mp3",
-        "title": "VETERAN (feat. Ken Carson)",
+        "title": "VETERAN",
         "artist": "Destroy Lonely"
     },
     {
@@ -211,7 +211,7 @@
     },
     {
         "file": "assets/data/ZEZE.mp3",
-        "title": "ZEZE (feat. Travis Scott & Offset)",
+        "title": "ZEZE",
         "artist": "Kodak Black"
     }
 ]
