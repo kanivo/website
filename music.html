@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .song-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .song-item {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+            width: 300px;
+            text-align: center;
+        }
+        .song-item:hover {
+            background-color: #eaeaea;
+        }
+        audio {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Music Player</h1>
+    <ul class="song-list" id="song-list">
+        <!-- Song items will be inserted here -->
+    </ul>
+
+    <audio id="audio-player" controls>
+        <source id="audio-source" src="" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        fetch('assets\data.json')
+            .then(response => response.json())
+            .then(songs => {
+                const songListElement = document.getElementById('song-list');
+                const audioPlayer = document.getElementById('audio-player');
+                const audioSource = document.getElementById('audio-source');
+
+                // Loop through each song and create a list item
+                songs.forEach(song => {
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('song-item');
+                    listItem.textContent = song.title;
+
+                    // Set the click event for each song item
+                    listItem.addEventListener('click', () => {
+                        audioSource.src = song.file;
+                        audioPlayer.load();
+                        audioPlayer.play();
+                    });
+
+                    songListElement.appendChild(listItem);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading songs.json:', error);
+            });
+    </script>
+
+</body>
+</html>

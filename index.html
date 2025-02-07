@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shenanigins</title>
+    <title>waddup partner</title>
     <style>
         body {
             margin: 0;
@@ -64,14 +64,14 @@
 
     <button id="navigateButton">Change Page</button>
     <button id="muteButton">Mute</button>
-    <button id="gameButton">Game</button>
-    <button onclick="window.open('https://kanivo.github.io/Parkour-Game/', '_blank')">Open Parkour Game</button>
+    <button id="spotifyButton">squirm</button>
+    <button onclick="window.open('https://kanivo.github.io/Parkour-Game/', '_blank')">Game</button>
 
 
     <img src="assets/stunnerC.png" alt="Description of the image" class="moving-image" id="movingImage">
 
     <audio id="audioPlayer">
-        <source src="assets/data/ohYeah.mp3" type="audio/mp3">
+        <source src="assets/data/Ya Ight.mp3.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
@@ -79,7 +79,7 @@
         const navigateButton = document.getElementById('navigateButton');
         const enterButton = document.getElementById('enterButton');
         const muteButton = document.getElementById('muteButton');
-        const gameButton = document.getElementById('gameButton')
+        const spotifyButton = document.getElementById('spotifyButton')
         const cover = document.getElementById('cover');
         const header = document.getElementById('header');
         const image = document.getElementById('movingImage');
@@ -124,6 +124,10 @@
 
         muteButton.addEventListener('click', function() {
             audio.pause();
+        });
+
+        spotifyButton.addEventListener('click', function() {
+            window.location.href = 'music.html'
         });
         
     </script>
