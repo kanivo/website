@@ -62,9 +62,11 @@
 
     <h1 id="header">BIG TIME WEB CENTRAL</h1>
 
-    <button id="colorButton">Turn Text Red</button>
     <button id="navigateButton">Change Page</button>
     <button id="muteButton">Mute</button>
+    <button id="gameButton">Game</button>
+    <button onclick="window.open('https://kanivo.github.io/Parkour-Game/', '_blank')">Open Parkour Game</button>
+
 
     <img src="assets/stunnerC.png" alt="Description of the image" class="moving-image" id="movingImage">
 
@@ -74,10 +76,10 @@
     </audio>
 
     <script>
-        const colorButton = document.getElementById('colorButton');
         const navigateButton = document.getElementById('navigateButton');
         const enterButton = document.getElementById('enterButton');
         const muteButton = document.getElementById('muteButton');
+        const gameButton = document.getElementById('gameButton')
         const cover = document.getElementById('cover');
         const header = document.getElementById('header');
         const image = document.getElementById('movingImage');
@@ -110,9 +112,6 @@
             requestAnimationFrame(moveImage); // Keep the animation going
         }
         moveImage();
-        colorButton.addEventListener('click', function() {
-            header.style.color = 'red';
-        });
 
         navigateButton.addEventListener('click', function() {
             window.location.href = 'page.html';
@@ -126,6 +125,7 @@
         muteButton.addEventListener('click', function() {
             audio.pause();
         });
+        
     </script>
 </body>
 </html>
