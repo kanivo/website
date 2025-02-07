@@ -10,10 +10,12 @@
     
     <!-- Button to trigger color change -->
     <button id="colorButton">Change Header Color</button>
+    <button id="backButton">go back</button>
 
     <script>
         // Get references to the button and header
         const button = document.getElementById('colorButton');
+        const button1 = document.getElementById('backButton');
         const header = document.getElementById('header');
 
         // Add event listener to button
@@ -21,6 +23,12 @@
             // Change the header color to red
             header.style.color = 'blue';
         });
+
+        button1.addEventListener('click', function() {
+            window.location.href = 'index.html';
+
+        });
+            
     </script>
 </body>
 </html>
