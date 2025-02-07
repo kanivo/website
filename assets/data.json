@@ -1,174 +1,217 @@
 [
     {
+        "file": "assets/data/3MYGNG.mp3",
+        "title": "<3MYGNG",
+        "artist": "Destroy Lonely"
+    },
+    {
         "file": "assets/data/BANDIT.mp3",
-        "title": "BANDIT"
+        "title": "BANDIT",
+        "artist": "Don Toliver"
     },
     {
         "file": "assets/data/Bane.mp3",
-        "title": "Bane"
+        "title": "Bane",
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/Blueberry Faygo.mp3",
-        "title": "Blueberry Faygo"
+        "title": "Blueberry Faygo",
+        "artist": "Lil Mosey"
     },
     {
         "file": "assets/data/family ties .mp3",
-        "title": "family ties "
+        "title": "family ties (with Kendrick Lamar)",
+        "artist": "Baby Keem/Kendrick Lamar"
     },
     {
         "file": "assets/data/Fighting My Demons.mp3",
-        "title": "Fighting My Demons"
+        "title": "Fighting My Demons",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Floor 555.mp3",
-        "title": "Floor 555"
+        "title": "Floor 555",
+        "artist": "XXXTENTACION"
     },
     {
         "file": "assets/data/Going Schitz.mp3",
-        "title": "Going Schitz"
+        "title": "Going Schitz",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/how u feel_.mp3",
-        "title": "how u feel_"
+        "title": "how u feel?",
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/if looks could kill.mp3",
-        "title": "if looks could kill"
+        "title": "if looks could kill",
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/ILoveUIHateU.mp3",
-        "title": "ILoveUIHateU"
+        "title": "ILoveUIHateU",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/In The Air.mp3",
-        "title": "In The Air"
+        "title": "In The Air",
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/Jennifer\u2019s Body.mp3",
-        "title": "Jennifer\u2019s Body"
+        "title": "Jennifer\u2019s Body",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Lights.mp3",
-        "title": "Lights"
+        "title": "Lights",
+        "artist": "Ellie Goulding"
     },
     {
         "file": "assets/data/M.... She Wrote.mp3",
-        "title": "M.... She Wrote"
+        "title": "M.... She Wrote",
+        "artist": "Tay-K"
     },
     {
         "file": "assets/data/M3tamorphosis .mp3",
-        "title": "M3tamorphosis "
+        "title": "M3tamorphosis (feat. Kid Cudi)",
+        "artist": "Playboi Carti/Kid Cudi"
     },
     {
         "file": "assets/data/MDMA .mp3",
-        "title": "MDMA "
+        "title": "MDMA (feat. Destroy Lonely)",
+        "artist": "Ken Carson/Destroy Lonely"
     },
     {
         "file": "assets/data/Meh.mp3",
-        "title": "Meh"
+        "title": "Meh",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/money & sex.mp3",
-        "title": "money & sex"
+        "title": "money & sex",
+        "artist": "Destroy Lonely/Ken Carson"
     },
     {
         "file": "assets/data/NEVEREVER.mp3",
-        "title": "NEVEREVER"
+        "title": "NEVEREVER",
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/New Tank.mp3",
-        "title": "New Tank"
+        "title": "New Tank",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/Nightcrawler .mp3",
-        "title": "Nightcrawler "
+        "title": "Nightcrawler (feat. Swae Lee & Chief Keef)",
+        "artist": "Travis Scott/Swae Lee/Chief Keef"
     },
     {
         "file": "assets/data/No Idea.mp3",
-        "title": "No Idea"
+        "title": "No Idea",
+        "artist": "Don Toliver"
     },
     {
         "file": "assets/data/NOSTYLIST.mp3",
-        "title": "NOSTYLIST"
+        "title": "NOSTYLIST",
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/On That Time.mp3",
-        "title": "On That Time"
+        "title": "On That Time",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/ONE CALL.mp3",
-        "title": "ONE CALL"
+        "title": "ONE CALL",
+        "artist": "Rich Amiri"
     },
     {
         "file": "assets/data/ORANGE SODA.mp3",
-        "title": "ORANGE SODA"
+        "title": "ORANGE SODA",
+        "artist": "Baby Keem"
     },
     {
         "file": "assets/data/overseas.mp3",
-        "title": "overseas"
+        "title": "overseas",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Punk Monk.mp3",
-        "title": "Punk Monk"
+        "title": "Punk Monk",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/R.I.P..mp3",
-        "title": "R.I.P."
+        "title": "R.I.P.",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/Rockstar Made.mp3",
-        "title": "Rockstar Made"
+        "title": "Rockstar Made",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/Rolling in the Deep.mp3",
-        "title": "Rolling in the Deep"
+        "title": "Rolling in the Deep",
+        "artist": "Adele"
     },
     {
         "file": "assets/data/See You Again .mp3",
-        "title": "See You Again "
+        "title": "See You Again (feat. Kali Uchis)",
+        "artist": "Tyler, The Creator/Kali Uchis"
     },
     {
         "file": "assets/data/Shoota .mp3",
-        "title": "Shoota "
+        "title": "Shoota (feat. Lil Uzi Vert)",
+        "artist": "Playboi Carti/Lil Uzi Vert"
     },
     {
         "file": "assets/data/Succubus.mp3",
-        "title": "Succubus"
+        "title": "Succubus",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Talk talk.mp3",
-        "title": "Talk talk"
+        "title": "Talk talk",
+        "artist": "Charli xcx"
     },
     {
         "file": "assets/data/Teen X .mp3",
-        "title": "Teen X "
+        "title": "Teen X (feat. Future)",
+        "artist": "Playboi Carti/Future"
     },
     {
         "file": "assets/data/Timeless .mp3",
-        "title": "Timeless "
+        "title": "Timeless (feat. Playboi Carti)",
+        "artist": "The Weeknd/Playboi Carti"
     },
     {
         "file": "assets/data/Vamp Anthem.mp3",
-        "title": "Vamp Anthem"
+        "title": "Vamp Anthem",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/VETERAN .mp3",
-        "title": "VETERAN "
+        "title": "VETERAN (feat. Ken Carson)",
+        "artist": "Destroy Lonely/Ken Carson"
     },
     {
         "file": "assets/data/Ya Ight.mp3",
-        "title": "Ya Ight"
+        "title": "Ya Ight",
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/Yale.mp3",
-        "title": "Yale"
+        "title": "Yale",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/ZEZE.mp3",
-        "title": "ZEZE"
-    },
-    {
-        "file": "assets/data/3MYGNG.mp3",
-        "title": "3MYGNG"
+        "title": "ZEZE (feat. Travis Scott & Offset)",
+        "artist": "Kodak Black/Offset/Travis Scott"
     }
 ]
