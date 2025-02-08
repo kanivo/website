@@ -20,6 +20,11 @@
         "artist": "Lil Mosey"
     },
     {
+        "file": "assets/data/Cult Classic.mp3",
+        "title": "Cult Classic",
+        "artist": "switxh"
+    },
+    {
         "file": "assets/data/family ties .mp3",
         "title": "family ties",
         "artist": "Baby Keem"
@@ -68,6 +73,11 @@
         "file": "assets/data/Lights.mp3",
         "title": "Lights",
         "artist": "Ellie Goulding"
+    },
+    {
+        "file": "assets/data/Lovefool.mp3",
+        "title": "Lovefool",
+        "artist": "The Cardigans"
     },
     {
         "file": "assets/data/M.... She Wrote.mp3",
@@ -198,6 +208,11 @@
         "file": "assets/data/VETERAN .mp3",
         "title": "VETERAN",
         "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/wokeuplikethis.mp3",
+        "title": "wokeuplikethis*",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/Ya Ight.mp3",

@@ -17,23 +17,23 @@
             list-style-type: none;
             padding: 0;
         }
+        .song-item-container {
+            display: flex;
+            align-items: center;
+            margin: 5px;
+        }
+        .song-number {
+            color: #ffffff;
+            margin-right: 10px;
+            font-size: 16px;
+        }
         .song-item {
             background-color: #ffffff;
             border: 1px solid #ddd;
-            margin: 5px;
             padding: 10px;
             cursor: pointer;
             width: 300px;
-            display: flex;
-            justify-content: space-between;
-            text-align: left;
-        }
-        .song-number {
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        .song-info {
-            flex-grow: 1;
+            text-align: center;
         }
         .song-item:hover {
             background-color: #eaeaea;
@@ -51,9 +51,9 @@
             font-size: 16px;
         }
         #backButton {
-            position: absolute;
-            top: 20px;
-            left: 20px;
+            position: absolute; 
+            top: 20px;         
+            left: 20px;        
             padding: 10px;
             background-color: white;
             color: black;
@@ -83,7 +83,7 @@
     <script>
         let songs = [];
         let currentSongIndex = 0;
-        let isShuffle = false;
+        let isShuffle = false; // Shuffle mode flag
 
         fetch('assets/data.json')
             .then(response => response.json())
@@ -96,7 +96,7 @@
 
                 function playSong(index) {
                     if (index >= songs.length) {
-                        index = 0;
+                        index = 0; // Loop back to first song
                     }
                     currentSongIndex = index;
                     const song = songs[currentSongIndex];
@@ -110,25 +110,24 @@
                 }
 
                 songs.forEach((song, index) => {
+                    const container = document.createElement('div');
+                    container.classList.add('song-item-container');
+
+                    const number = document.createElement('span');
+                    number.classList.add('song-number');
+                    number.textContent = `${index + 1}.`;
+
                     const listItem = document.createElement('li');
                     listItem.classList.add('song-item');
-
-                    const numberElement = document.createElement('span');
-                    numberElement.classList.add('song-number');
-                    numberElement.textContent = `${index + 1}.`;
-
-                    const songInfoElement = document.createElement('span');
-                    songInfoElement.classList.add('song-info');
-                    songInfoElement.textContent = `${song.title} (${song.artist})`;
-
-                    listItem.appendChild(numberElement);
-                    listItem.appendChild(songInfoElement);
+                    listItem.textContent = `${song.title} (${song.artist})`;
 
                     listItem.addEventListener('click', () => {
                         playSong(index);
                     });
 
-                    songListElement.appendChild(listItem);
+                    container.appendChild(number);
+                    container.appendChild(listItem);
+                    songListElement.appendChild(container);
                 });
 
                 audioPlayer.addEventListener('ended', () => {
