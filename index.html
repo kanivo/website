@@ -158,41 +158,38 @@
 
         document.getElementById("audioPlayer").load();
 
-        function sendMessage() {
-    const message = document.getElementById('messageInput').value;
+    function sendMessage() {
+        const message = document.getElementById('messageInput').value;
 
-    if (!message.trim()) {
-        document.getElementById('statusMessage').innerText = "Please enter a message!";
-        return;
-    }
-
-    console.log("Sending message:", message); // Log the message being sent
-
-    fetch('https://script.google.com/macros/s/AKfycbwZUmC2Ld6Oms5jjIE1K8T8dBC-UTfcI30ygDF8WJaKuARN_4K8AT6a5O-ChtN9Slgm/exec', {
-        method: 'POST',
-        body: JSON.stringify({ message: message }),
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        mode: 'cors' // Ensure this is set to 'cors' for CORS requests
-    })
-    .then(response => {
-        if (response.ok) {
-            document.getElementById('statusMessage').innerText = "Message sent successfully!";
-            document.getElementById('messageInput').value = ""; 
-        } else {
-            document.getElementById('statusMessage').innerText = "Failed to send message.";
-            return response.text();
+        if (!message.trim()) {
+            document.getElementById('statusMessage').innerText = "Please enter a message!";
+            return;
         }
-    })
-    .then(text => {
-        console.log("Response:", text); // Log the response
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        document.getElementById('statusMessage').innerText = "An error occurred.";
-    });
-}
+
+        console.log("Sending message:", message); // Log the message being sent
+
+        fetch('http://localhost:3000/submit-message', {  // Backend URL
+            method: 'POST',
+            body: JSON.stringify({ message: message }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById('statusMessage').innerText = "Message sent successfully!";
+                document.getElementById('messageInput').value = ""; 
+            } else {
+                document.getElementById('statusMessage').innerText = "Failed to send message.";
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('statusMessage').innerText = "An error occurred.";
+        });
+    }
+</script>
 
 
 
