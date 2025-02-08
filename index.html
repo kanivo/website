@@ -46,8 +46,6 @@
 <body>
     <h1 id="header">BIG TIME WEB CENTRAL</h1>
 
-    <button id="navigateButton">Change Page</button>
-    <button id="muteButton">Mute</button>
     <button id="spotifyButton">squirm</button>
     <button onclick="window.open('https://kanivo.github.io/Parkour-Game/', '_blank')">Game</button>
 
@@ -60,11 +58,7 @@
     </audio>
 
     <script>
-        const navigateButton = document.getElementById('navigateButton');
-        const enterButton = document.getElementById('enterButton');
-        const muteButton = document.getElementById('muteButton');
         const spotifyButton = document.getElementById('spotifyButton');
-        const header = document.getElementById('header');
         const image = document.getElementById('movingImage');
         const audio = document.getElementById('audioPlayer');
 
@@ -95,20 +89,6 @@
             requestAnimationFrame(moveImage);
         }
         moveImage();
-
-        navigateButton.addEventListener('click', function() {
-            window.location.href = 'page.html';
-        });
-
-        muteButton.addEventListener('click', function() {
-            if (!audio.paused) {
-                audio.pause();
-                muteButton.textContent = "Unmute";
-            } else {
-                audio.play();
-                muteButton.textContent = "Mute";
-            }
-        });
 
         spotifyButton.addEventListener('click', function() {
             window.location.href = 'music.html';

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
+    <p>fuck spotify premium</p>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -86,7 +87,7 @@
     <script>
         let songs = [];
         let currentSongIndex = 0;
-        let isShuffle = false; // Shuffle mode flag
+        let isShuffle = false;
 
         fetch('assets/data.json')
             .then(response => response.json())
@@ -99,7 +100,7 @@
 
                 function playSong(index) {
                     if (index >= songs.length) {
-                        index = 0; // Loop back to first song
+                        index = 0;
                     }
                     currentSongIndex = index;
                     const song = songs[currentSongIndex];
