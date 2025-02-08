@@ -17,22 +17,22 @@
             list-style-type: none;
             padding: 0;
         }
-        .song-item-container {
+        .song-item {
             display: flex;
             align-items: center;
-            margin: 5px;
-        }
-        .song-number {
-            color: #ffffff;
-            margin-right: 10px;
-            font-size: 16px;
-        }
-        .song-item {
             background-color: #ffffff;
             border: 1px solid #ddd;
+            margin: 5px;
             padding: 10px;
             cursor: pointer;
             width: 300px;
+        }
+        .song-number {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .song-title {
+            flex-grow: 1;
             text-align: center;
         }
         .song-item:hover {
@@ -110,24 +110,25 @@
                 }
 
                 songs.forEach((song, index) => {
-                    const container = document.createElement('div');
-                    container.classList.add('song-item-container');
-
-                    const number = document.createElement('span');
-                    number.classList.add('song-number');
-                    number.textContent = `${index + 1}.`;
-
                     const listItem = document.createElement('li');
                     listItem.classList.add('song-item');
-                    listItem.textContent = `${song.title} (${song.artist})`;
+
+                    const songNumber = document.createElement('span');
+                    songNumber.classList.add('song-number');
+                    songNumber.textContent = `${index + 1}.`;
+
+                    const songTitle = document.createElement('span');
+                    songTitle.classList.add('song-title');
+                    songTitle.textContent = `${song.title} (${song.artist})`;
+
+                    listItem.appendChild(songNumber);
+                    listItem.appendChild(songTitle);
 
                     listItem.addEventListener('click', () => {
                         playSong(index);
                     });
 
-                    container.appendChild(number);
-                    container.appendChild(listItem);
-                    songListElement.appendChild(container);
+                    songListElement.appendChild(listItem);
                 });
 
                 audioPlayer.addEventListener('ended', () => {
