@@ -54,10 +54,11 @@
 <body>
     <h1 id="header">BIG TIME WEB CENTRAL</h1>
 
-    <button id="spotifyButton">squirm</button>
+    <button id="spotifyButton" onclick="window.location.href='music.html';">squirm</button>
 
     <button onclick="window.open('https://kanivo.github.io/Parkour-Game/', '_blank')">Game</button>
 
+    <button id="interactiveButton" onclick="window.location.href='interactive.html';">inti</button>
 
     <img src="assets/stunnerC.png" alt="Description of the image" class="moving-image" id="movingImage">
 
@@ -67,7 +68,6 @@
     </audio>
 
     <script>
-        const spotifyButton = document.getElementById('spotifyButton');
         const image = document.getElementById('movingImage');
         const audio = document.getElementById('audioPlayer');
 
@@ -101,9 +101,6 @@
 
         document.getElementById("audioPlayer").load();
 
-        spotifyButton.addEventListener('click', function() {
-            window.location.href = 'music.html';
-        });
     </script>
 </body>
 </html>

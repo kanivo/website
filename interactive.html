@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Button Style Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .interactive-button {
+            position: absolute;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Style the sliders and inputs */
+        .settings {
+            margin-top: 20px;
+        }
+
+        .setting-item {
+            margin: 10px 0;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        .slider {
+            width: 200px;
+        }
+
+        #xPosSlider, #yPosSlider {
+            width: 100%;
+        }
+
+        #visualization {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive Button Style Menu</h1>
+
+    <div class="button-container">
+        <button id="interactiveButton" class="interactive-button">Click Me!</button>
+    </div>
+
+    <div class="settings">
+        <h2>Button Style Settings</h2>
+
+        <!-- Background Color -->
+        <div class="setting-item">
+            <label for="bgColorPicker">Background Color:</label>
+            <input type="color" id="bgColorPicker" value="#4CAF50">
+        </div>
+
+        <!-- Text Color -->
+        <div class="setting-item">
+            <label for="textColorPicker">Text Color:</label>
+            <input type="color" id="textColorPicker" value="#ffffff">
+        </div>
+
+        <!-- Button Size -->
+        <div class="setting-item">
+            <label for="btnSizeSlider">Button Size:</label>
+            <input type="range" id="btnSizeSlider" class="slider" min="50" max="300" value="150">
+            <span id="btnSizeLabel">150px</span>
+        </div>
+
+        <!-- Button Padding -->
+        <div class="setting-item">
+            <label for="btnPaddingSlider">Padding:</label>
+            <input type="range" id="btnPaddingSlider" class="slider" min="5" max="50" value="15">
+            <span id="btnPaddingLabel">15px</span>
+        </div>
+
+        <!-- Border Radius -->
+        <div class="setting-item">
+            <label for="borderRadiusSlider">Border Radius:</label>
+            <input type="range" id="borderRadiusSlider" class="slider" min="0" max="50" value="5">
+            <span id="borderRadiusLabel">5px</span>
+        </div>
+
+        <!-- Button Position -->
+        <div class="setting-item">
+            <label for="xPosSlider">X Position:</label>
+            <input type="range" id="xPosSlider" class="slider" min="0" max="100%" value="50%">
+        </div>
+
+        <div class="setting-item">
+            <label for="yPosSlider">Y Position:</label>
+            <input type="range" id="yPosSlider" class="slider" min="0" max="100%" value="50%">
+        </div>
+    </div>
+
+    <script>
+        const interactiveButton = document.getElementById('interactiveButton');
+        const bgColorPicker = document.getElementById('bgColorPicker');
+        const textColorPicker = document.getElementById('textColorPicker');
+        const btnSizeSlider = document.getElementById('btnSizeSlider');
+        const btnPaddingSlider = document.getElementById('btnPaddingSlider');
+        const borderRadiusSlider = document.getElementById('borderRadiusSlider');
+        const xPosSlider = document.getElementById('xPosSlider');
+        const yPosSlider = document.getElementById('yPosSlider');
+        const btnSizeLabel = document.getElementById('btnSizeLabel');
+        const btnPaddingLabel = document.getElementById('btnPaddingLabel');
+        const borderRadiusLabel = document.getElementById('borderRadiusLabel');
+
+        // Function to update button styles based on the settings
+        function updateButtonStyles() {
+            // Update button background and text color
+            interactiveButton.style.backgroundColor = bgColorPicker.value;
+            interactiveButton.style.color = textColorPicker.value;
+
+            // Update button size and padding
+            const size = btnSizeSlider.value;
+            interactiveButton.style.width = size + 'px';
+            interactiveButton.style.height = size / 2 + 'px';
+            btnSizeLabel.textContent = size + 'px';
+
+            const padding = btnPaddingSlider.value;
+            interactiveButton.style.padding = padding + 'px';
+            btnPaddingLabel.textContent = padding + 'px';
+
+            // Update border radius
+            const borderRadius = borderRadiusSlider.value;
+            interactiveButton.style.borderRadius = borderRadius + 'px';
+            borderRadiusLabel.textContent = borderRadius + 'px';
+
+            // Update button position
+            interactiveButton.style.left = xPosSlider.value + '%';
+            interactiveButton.style.top = yPosSlider.value + '%';
+        }
+
+        // Event listeners for changes
+        bgColorPicker.addEventListener('input', updateButtonStyles);
+        textColorPicker.addEventListener('input', updateButtonStyles);
+        btnSizeSlider.addEventListener('input', updateButtonStyles);
+        btnPaddingSlider.addEventListener('input', updateButtonStyles);
+        borderRadiusSlider.addEventListener('input', updateButtonStyles);
+        xPosSlider.addEventListener('input', updateButtonStyles);
+        yPosSlider.addEventListener('input', updateButtonStyles);
+
+        // Initial call to apply default styles
+        updateButtonStyles();
+    </script>
+
+</body>
+</html>
