@@ -166,9 +166,9 @@
       return;
   }
 
-  console.log("Sending message:", message); // Log the message being sent
+  console.log("Sending message:", message);
 
-  fetch('https://script.google.com/macros/s/AKfycbwInUIUPJCx6h2OzJyZyicvUMaOgK1NbgswdeX_2ZJquBZEonfOYAqKUgsDsbq3kvOj_Q/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbxurnxmO0FMqsZbrQZq9SUioeWGhzAKgZUKKKpdIVS-4WAu4oW9w4xW1_hT6fOB-Zw2iA/exec', {
       method: 'POST',
       body: JSON.stringify({ message: message }),
       headers: {
@@ -177,21 +177,24 @@
   })
   .then(response => {
       if (response.ok) {
-          document.getElementById('statusMessage').innerText = "Message sent successfully!";
-          document.getElementById('messageInput').value = ""; 
+          return response.text();
       } else {
           document.getElementById('statusMessage').innerText = "Failed to send message.";
-          return response.text();
+          console.error("Failed request:", response);
+          throw new Error('Failed to send message');
       }
   })
   .then(text => {
-      console.log("Response:", text); // Log the response
+      console.log("Response:", text);
+      document.getElementById('statusMessage').innerText = "Message sent successfully!";
+      document.getElementById('messageInput').value = "";
   })
   .catch(error => {
       console.error('Error:', error);
       document.getElementById('statusMessage').innerText = "An error occurred.";
   });
 }
+
 
     </script>
 </body>
