@@ -168,7 +168,7 @@
 
         console.log("Sending message:", message); // Log the message being sent
 
-        fetch('http://localhost:3000/submit-message', {  // Backend URL
+        fetch('https://website-backend-st4f.onrender.com', {  // Backend URL
             method: 'POST',
             body: JSON.stringify({ message: message }),
             headers: {
