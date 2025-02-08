@@ -16,24 +16,27 @@
         .song-list {
             list-style-type: none;
             padding: 0;
+            width: 320px;
         }
-        .song-item {
+        .song-item-wrapper {
             display: flex;
             align-items: center;
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            margin: 5px;
-            padding: 10px;
-            cursor: pointer;
-            width: 300px;
+            margin: 5px 0;
         }
         .song-number {
+            color: white;
             margin-right: 10px;
-            font-weight: bold;
+            width: 20px;
+            text-align: right;
         }
-        .song-title {
-            flex-grow: 1;
+        .song-item {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
             text-align: center;
+            flex-grow: 1;
         }
         .song-item:hover {
             background-color: #eaeaea;
@@ -110,25 +113,24 @@
                 }
 
                 songs.forEach((song, index) => {
-                    const listItem = document.createElement('li');
-                    listItem.classList.add('song-item');
+                    const listItemWrapper = document.createElement('div');
+                    listItemWrapper.classList.add('song-item-wrapper');
 
                     const songNumber = document.createElement('span');
                     songNumber.classList.add('song-number');
                     songNumber.textContent = `${index + 1}.`;
 
-                    const songTitle = document.createElement('span');
-                    songTitle.classList.add('song-title');
-                    songTitle.textContent = `${song.title} (${song.artist})`;
-
-                    listItem.appendChild(songNumber);
-                    listItem.appendChild(songTitle);
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('song-item');
+                    listItem.textContent = `${song.title} (${song.artist})`;
 
                     listItem.addEventListener('click', () => {
                         playSong(index);
                     });
 
-                    songListElement.appendChild(listItem);
+                    listItemWrapper.appendChild(songNumber);
+                    listItemWrapper.appendChild(listItem);
+                    songListElement.appendChild(listItemWrapper);
                 });
 
                 audioPlayer.addEventListener('ended', () => {
