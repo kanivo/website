@@ -59,6 +59,11 @@
     <button onclick="window.open('https://kanivo.github.io/Parkour-Game/', '_blank')">Game</button>
     <button id="addImageButton">Add More Images</button>
 
+    <h2>say something</h2>
+    <input type="text" id="messageInput" placeholder="Type something..." style="padding: 10px; width: 300px;">
+    <button onclick="sendMessage()">Submit</button>
+    <p id="statusMessage"></p>
+
     <audio controls id="audioPlayer">
         <source src="assets/data/In The Air.mp3" type="audio/mp3">
         Your browser does not support the audio element.
@@ -126,13 +131,11 @@
                 imgObj.posX += imgObj.speedX * deltaTime;
                 imgObj.posY += imgObj.speedY * deltaTime;
 
-                // Check horizontal boundaries
                 if (imgObj.posX + imageWidth >= windowWidth || imgObj.posX <= 0) {
                     imgObj.speedX = -imgObj.speedX;
                     imgObj.posX = Math.max(0, Math.min(imgObj.posX, windowWidth - imageWidth));
                 }
 
-                // Check vertical boundaries
                 if (imgObj.posY + imageHeight >= windowHeight || imgObj.posY <= 0) {
                     imgObj.speedY = -imgObj.speedY;
                     imgObj.posY = Math.max(0, Math.min(imgObj.posY, windowHeight - imageHeight));
@@ -147,7 +150,6 @@
 
         requestAnimationFrame(moveImages);
 
-        // Add more images on button click
         document.getElementById('addImageButton').addEventListener('click', () => {
             const randomX = Math.random() * (window.innerWidth - 200);
             const randomY = Math.random() * (window.innerHeight - 200);
@@ -155,6 +157,35 @@
         });
 
         document.getElementById("audioPlayer").load();
+
+        function sendMessage() {
+    const message = document.getElementById('messageInput').value;
+
+    if (!message.trim()) {
+        document.getElementById('statusMessage').innerText = "Please enter a message!";
+        return;
+    }
+
+    fetch('https://script.google.com/macros/s/AKfycbxurnxmO0FMqsZbrQZq9SUioeWGhzAKgZUKKKpdIVS-4WAu4oW9w4xW1_hT6fOB-Zw2iA/exec', {
+        method: 'POST',
+        body: JSON.stringify({ message: message }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            document.getElementById('statusMessage').innerText = "Message sent successfully!";
+            document.getElementById('messageInput').value = ""; 
+        } else {
+            document.getElementById('statusMessage').innerText = "Failed to send message.";
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('statusMessage').innerText = "An error occurred.";
+    });
+}
     </script>
 </body>
 </html>
