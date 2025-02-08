@@ -39,7 +39,7 @@
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #888888;
         }
 
         #audioPlayer {
@@ -157,6 +157,7 @@
         });
 
         document.getElementById("audioPlayer").load();
+        audio.play();
 
         function sendMessage() {
     const message = document.getElementById('messageInput').value;
@@ -168,7 +169,7 @@
 
     console.log("Sending message:", message); // Log the message being sent
 
-    fetch('https://script.google.com/macros/s/AKfycbwCVtaM9IaHqzy2MF7kAecH0EG1XHA6nfWTuJWB13EIs0KAEfAwduwjQ9bMSFVMHIRvPQ/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbwFQpwU0gXaZviBnsFcJjMad3CkbDe-DbSS3jG1hPCw8yoJEhVLmuYsGPJiV-jlpnOu7A/exec', {
         method: 'POST',
         body: JSON.stringify({ message: message }),
         headers: {
