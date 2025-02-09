@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test a hoe</title>
+    <title>Cursor Interaction Effects</title>
     <style>
         body {
             margin: 0;
@@ -43,16 +43,120 @@
         const light = document.getElementById('lightEffect');
         const cycleButton = document.getElementById('cycleButton');
         const effects = [
-            { style: 'background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(0,0,0,0) 60%);' },
-            { style: 'background: linear-gradient(135deg, rgba(255,255,255,0.5), rgba(0,0,0,0));' },
-            { style: 'background: rgba(255, 255, 255, 0.3); width: 150px; height: 150px;' },
-            { style: 'background: rgba(0, 255, 255, 0.5); width: 250px; height: 250px;' },
-            { style: 'background: rgba(255, 0, 255, 0.7); width: 300px; height: 300px;' },
-            { style: 'background: radial-gradient(circle, rgba(255,0,0,0.5), rgba(255,0,0,0) 60%);' },
-            { style: 'background: radial-gradient(circle, rgba(0,255,0,0.5), rgba(0,255,0,0) 60%);' },
-            { style: 'background: radial-gradient(circle, rgba(0,0,255,0.5), rgba(0,0,255,0) 60%);' },
-            { style: 'background: rgba(255,255,0,0.6); width: 180px; height: 180px;' },
-            { style: 'background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(0,0,0,0) 60%), rgba(255,255,255,0.5);' }
+            // 1. Color morphing light
+            { 
+                style: 'background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(0,0,0,0) 60%);',
+                onMove: (e) => {
+                    const r = Math.abs(Math.sin(e.clientX / window.innerWidth * Math.PI * 2) * 255);
+                    const g = Math.abs(Math.sin(e.clientY / window.innerHeight * Math.PI * 2) * 255);
+                    const b = Math.abs(Math.sin((e.clientX + e.clientY) / (window.innerWidth + window.innerHeight) * Math.PI * 2) * 255);
+                    light.style.background = `rgb(${r}, ${g}, ${b}, 0.7)`;
+                }
+            },
+            // 2. Pulsing ripple
+            {
+                style: 'background: rgba(255, 255, 255, 0.5); width: 150px; height: 150px;',
+                onMove: () => {
+                    const scale = 1 + Math.sin(Date.now() / 500) * 0.2;
+                    light.style.transform = `scale(${scale})`;
+                }
+            },
+            // 3. Multiple concentric circles
+            {
+                style: 'background: none;',
+                onMove: () => {
+                    light.innerHTML = '';
+                    for (let i = 1; i <= 3; i++) {
+                        let ring = document.createElement('div');
+                        ring.style.position = 'absolute';
+                        ring.style.width = `${100 + 30 * i}px`;
+                        ring.style.height = `${100 + 30 * i}px`;
+                        ring.style.border = '2px solid rgba(255,255,255,0.5)';
+                        ring.style.borderRadius = '50%';
+                        ring.style.left = `calc(${light.offsetLeft}px - ${15 * i}px)`;
+                        ring.style.top = `calc(${light.offsetTop}px - ${15 * i}px)`;
+                        ring.style.animation = `pulse 1s infinite ease-out ${i * 0.1}s`;
+                        light.appendChild(ring);
+                    }
+                }
+            },
+            // 4. Glitch effect
+            {
+                style: 'background: rgba(255, 0, 0, 0.7); width: 250px; height: 250px;',
+                onMove: () => {
+                    light.style.transform = `translate(${Math.sin(Date.now() / 200) * 5}px, ${Math.cos(Date.now() / 200) * 5}px)`;
+                }
+            },
+            // 5. Trailing light
+            {
+                style: 'background: rgba(0,255,255,0.7); width: 200px; height: 200px;',
+                onMove: () => {
+                    light.style.transition = 'none';
+                    light.style.opacity = '1';
+                    setTimeout(() => {
+                        light.style.opacity = '0';
+                    }, 100);
+                }
+            },
+            // 6. Shadow effect
+            {
+                style: 'background: rgba(255,255,255,0.5); width: 150px; height: 150px;',
+                onMove: () => {
+                    light.style.boxShadow = `${Math.random() * 20 - 10}px ${Math.random() * 20 - 10}px 10px rgba(0, 0, 0, 0.6)`;
+                }
+            },
+            // 7. Wavy distortion
+            {
+                style: 'background: rgba(255,255,255,0.5); width: 200px; height: 200px;',
+                onMove: (e) => {
+                    const distortion = Math.sin(e.clientX / 50) * 10;
+                    light.style.transform = `translateX(${distortion}px)`;
+                }
+            },
+            // 8. Glow burst
+            {
+                style: 'background: rgba(255, 0, 255, 0.5); width: 250px; height: 250px;',
+                onMove: () => {
+                    light.style.boxShadow = '0 0 15px 15px rgba(255, 255, 255, 0.8)';
+                }
+            },
+            // 9. Fractal expanding circles
+            {
+                style: 'background: none;',
+                onMove: () => {
+                    let numCircles = 4;
+                    for (let i = 1; i <= numCircles; i++) {
+                        let ring = document.createElement('div');
+                        ring.style.position = 'absolute';
+                        ring.style.width = `${100 + 30 * i}px`;
+                        ring.style.height = `${100 + 30 * i}px`;
+                        ring.style.border = '2px solid rgba(255,255,255,0.5)';
+                        ring.style.borderRadius = '50%';
+                        ring.style.left = `${light.offsetLeft - (30 * i)}px`;
+                        ring.style.top = `${light.offsetTop - (30 * i)}px`;
+                        light.appendChild(ring);
+                    }
+                }
+            },
+            // 10. Multi-colored kaleidoscope
+            {
+                style: 'background: none;',
+                onMove: () => {
+                    const colors = ['#ff5733', '#33ff57', '#3357ff', '#ff33f6'];
+                    light.innerHTML = '';
+                    colors.forEach((color, index) => {
+                        let ring = document.createElement('div');
+                        ring.style.position = 'absolute';
+                        ring.style.width = `${100 + index * 40}px`;
+                        ring.style.height = `${100 + index * 40}px`;
+                        ring.style.border = `2px solid ${color}`;
+                        ring.style.borderRadius = '50%';
+                        ring.style.left = `${light.offsetLeft - (20 * index)}px`;
+                        ring.style.top = `${light.offsetTop - (20 * index)}px`;
+                        light.appendChild(ring);
+                    });
+                }
+            },
         ];
 
         let currentEffect = 0;
@@ -63,6 +167,7 @@
         });
 
         document.addEventListener("mousemove", (event) => {
+            effects[currentEffect].onMove(event);
             const mouseX = event.clientX - light.offsetWidth / 2;
             const mouseY = event.clientY - light.offsetHeight / 2;
             light.style.left = `${mouseX}px`;
