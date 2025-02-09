@@ -22,7 +22,7 @@
     {
         "file": "assets/data/Cult Classic.mp3",
         "title": "Cult Classic",
-        "artist": "switxh"
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/family ties .mp3",
@@ -92,6 +92,11 @@
     {
         "file": "assets/data/MDMA .mp3",
         "title": "MDMA",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Me N My Kup.mp3",
+        "title": "Me N My Kup",
         "artist": "Ken Carson"
     },
     {
