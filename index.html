@@ -161,12 +161,20 @@
         document.getElementById("audioPlayer").load();
 
     function sendMessage() {
-    const message = document.getElementById('messageInput').value;
+    const messageInput = document.getElementById('messageInput');
+    const statusMessage = document.getElementById('statusMessage');
+    const submitButton = document.querySelector('button[onclick="sendMessage()"]');
 
-    if (!message.trim()) {
-        document.getElementById('statusMessage').innerText = "Please enter a message!";
+    const message = messageInput.value.trim();
+
+    if (!message) {
+        statusMessage.innerText = "Please enter a message!";
         return;
     }
+
+    // Disable the submit button to prevent multiple submissions
+    submitButton.disabled = true;
+    submitButton.innerText = "Sending...";
 
     fetch('https://website-backend-st4f.onrender.com/submit-message', {  
         method: 'POST',
@@ -175,22 +183,26 @@
             'Content-Type': 'application/json',
         },
     })
-    .then(response => {
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
         if (data.success) {
-            document.getElementById('statusMessage').innerText = "Message sent successfully!";
-            document.getElementById('messageInput').value = ""; 
+            statusMessage.innerText = "Message sent successfully!";
+            messageInput.value = ""; 
         } else {
-            document.getElementById('statusMessage').innerText = "Failed to send message.";
+            statusMessage.innerText = "Failed to send message.";
         }
     })
     .catch(error => {
         console.error('Error:', error);
-        document.getElementById('statusMessage').innerText = "An error occurred.";
+        statusMessage.innerText = "An error occurred.";
+    })
+    .finally(() => {
+        // Re-enable the submit button after the request completes
+        submitButton.disabled = false;
+        submitButton.innerText = "Submit";
     });
 }
+
 </script>
 
 
