@@ -10,30 +10,61 @@
             height: 100vh;
             background: black;
             overflow: hidden;
-            cursor: none; /* Hide cursor for effect */
+            cursor: none;
         }
 
         .light {
             position: absolute;
             width: 200px;
             height: 200px;
-            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(0,0,0,0) 60%);
             border-radius: 50%;
             pointer-events: none;
-            mix-blend-mode: screen; /* Makes the light blend nicely */
+            mix-blend-mode: screen;
+            transition: all 0.2s ease-out;
+        }
+
+        .button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="light" id="lightEffect"></div>
+    <button class="button" id="cycleButton">Cycle Effects</button>
 
     <script>
         const light = document.getElementById('lightEffect');
+        const cycleButton = document.getElementById('cycleButton');
+        const effects = [
+            { style: 'background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(0,0,0,0) 60%);' },
+            { style: 'background: linear-gradient(135deg, rgba(255,255,255,0.5), rgba(0,0,0,0));' },
+            { style: 'background: rgba(255, 255, 255, 0.3); width: 150px; height: 150px;' },
+            { style: 'background: rgba(0, 255, 255, 0.5); width: 250px; height: 250px;' },
+            { style: 'background: rgba(255, 0, 255, 0.7); width: 300px; height: 300px;' },
+            { style: 'background: radial-gradient(circle, rgba(255,0,0,0.5), rgba(255,0,0,0) 60%);' },
+            { style: 'background: radial-gradient(circle, rgba(0,255,0,0.5), rgba(0,255,0,0) 60%);' },
+            { style: 'background: radial-gradient(circle, rgba(0,0,255,0.5), rgba(0,0,255,0) 60%);' },
+            { style: 'background: rgba(255,255,0,0.6); width: 180px; height: 180px;' },
+            { style: 'background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(0,0,0,0) 60%), rgba(255,255,255,0.5);' }
+        ];
+
+        let currentEffect = 0;
+
+        cycleButton.addEventListener('click', () => {
+            currentEffect = (currentEffect + 1) % effects.length;
+            light.style = effects[currentEffect].style;
+        });
 
         document.addEventListener("mousemove", (event) => {
             const mouseX = event.clientX - light.offsetWidth / 2;
             const mouseY = event.clientY - light.offsetHeight / 2;
-
             light.style.left = `${mouseX}px`;
             light.style.top = `${mouseY}px`;
         });
