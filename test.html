@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test a hoe</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: black;
+            overflow: hidden;
+            cursor: none; /* Hide cursor for effect */
+        }
+
+        .light {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(0,0,0,0) 60%);
+            border-radius: 50%;
+            pointer-events: none;
+            mix-blend-mode: screen; /* Makes the light blend nicely */
+        }
+    </style>
+</head>
+<body>
+    <div class="light" id="lightEffect"></div>
+
+    <script>
+        const light = document.getElementById('lightEffect');
+
+        document.addEventListener("mousemove", (event) => {
+            const mouseX = event.clientX - light.offsetWidth / 2;
+            const mouseY = event.clientY - light.offsetHeight / 2;
+
+            light.style.left = `${mouseX}px`;
+            light.style.top = `${mouseY}px`;
+        });
+    </script>
+</body>
+</html>
