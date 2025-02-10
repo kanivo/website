@@ -37,6 +37,21 @@
 
         button {
             position: absolute;
+            z-index: 10;
+            width: 125px;
+            height: 50px;
+            display: inline-block;
+            margin: 0px;
+            padding: 0px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-button {
+            position: absolute;
             bottom: 20px; /* Adjust the distance from the bottom */
             left: 230px; /* This will position it to the right of the input box */
             padding: 10px 20px;
@@ -133,7 +148,7 @@
 
     <h2 style="position: absolute;">say something (might take like 20s)</h2>
     <input type="text" id="messageInput" placeholder="Type something..." style="position: absolute; padding: 10px; width: 200px; height: 35px;">
-    <button onclick="sendMessage()">Submit</button>
+    <button class="submit-button" onclick="sendMessage()">Submit</button>
     <p id="statusMessage"></p>
 
     <audio controls id="audioPlayer">
