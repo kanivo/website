@@ -95,7 +95,7 @@
       transition-property: color, scale;
     }
   
-    button {
+    .card button {
         position: relative;
         z-index: 10;
         margin: 0; /* Remove any default margin */
