@@ -249,40 +249,8 @@
         submitButton.innerText = "Submit";
     });
 }
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOM Content Loaded"); // Check if this logs when the page loads.
-    const cardButtons = document.querySelectorAll('.card button');
 
-    cardButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            console.log("Button clicked: ", event.target); // Check which button is clicked
 
-            const action = event.target.getAttribute('data-action');
-            switch (action) {
-                case 'squirm':
-                    window.location.href = 'music.html';
-                    break;
-                case 'game':
-                    window.open('https://kanivo.github.io/Parkour-Game/', '_blank');
-                    break;
-                case 'add-images':
-                    const randomX = Math.random() * (window.innerWidth - 200);
-                    const randomY = Math.random() * (window.innerHeight - 200);
-                    createImage(randomX, randomY);
-                    break;
-                case 'remove-images':
-                    const images = document.querySelectorAll('img');
-                    images.forEach(img => img.remove());
-                    break;
-                case 'test':
-                    window.location.href = 'test.html';
-                    break;
-                default:
-                    console.log('No action defined for:', action);
-            }
-        });
-    });
-});
 
 
 </script>
