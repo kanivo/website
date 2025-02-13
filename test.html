@@ -1,145 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Tabs</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-            width: 400px;
-            text-align: center;
-        }
-
-        /* Tab Navigation */
-        .tabs {
-            display: flex;
-            justify-content: space-between;
-            background: #eee;
-            border-radius: 8px;
-            padding: 5px;
-            margin-bottom: 20px;
-        }
-
-        .tab-button {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: 600;
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .tab-button.active {
-            background: #007bff;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
-        }
-
-        .tab-button:hover {
-            background: #ddd;
-        }
-
-        /* Tab Content */
-        .tab-content {
-            display: none;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-        }
-
-        .tab-content.active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Buttons in Main Tab */
-        .buttons-container button {
-            padding: 12px 16px;
-            margin: 8px;
-            border: none;
-            border-radius: 6px;
-            background: #007bff;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .buttons-container button:hover {
-            background: #0056b3;
-        }
-
-        /* Bio Section */
-        .bio-text {
-            font-size: 18px;
-            color: #333;
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <title>Responsive CSS Tabs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/ovt6ynt.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      background: linear-gradient(#141e30, #243b55);
+    }
+    .title {
+      text-align: center;
+      padding: 50px 0 25px;
+      font-size: 44px;
+      font-weight: 600;
+      color: #fff;
+      font-family: "Playfair Display SC", serif;
+    }
+    .container {
+      width: 90%;
+      max-width: 600px;
+      margin: auto;
+      background: #16181a;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #3b3d3f;
+    }
+    .tabs label {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      background: #26292c;
+      color: #e7e9f5;
+      transition: all 0.3s;
+    }
+    .tabs input {
+      display: none;
+    }
+    .tabs input:checked + label {
+      background: deepskyblue;
+      color: white;
+    }
+    .content {
+      padding: 15px;
+      color: #f0f2fc;
+      display: none;
+    }
+    #tab-1:checked ~ .content-1,
+    #tab-2:checked ~ .content-2,
+    #tab-3:checked ~ .content-3,
+    #tab-4:checked ~ .content-4 {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-
-    <div class="container">
-        <div class="tabs">
-            <button class="tab-button active" onclick="showTab('buttons')">Main Buttons</button>
-            <button class="tab-button" onclick="showTab('bio')">Bio</button>
-        </div>
-
-        <div id="buttons" class="tab-content active">
-            <div class="buttons-container">
-                <button>Button 1</button>
-                <button>Button 2</button>
-                <button>Button 3</button>
-                <button>Button 4</button>
-            </div>
-        </div>
-
-        <div id="bio" class="tab-content">
-            <p class="bio-text">Hey there! This is my bio section where I talk about myself, my interests, and what I do.</p>
-        </div>
+  <div class="title">CSS Tabs</div>
+  <div class="container">
+    <div class="tabs">
+      <input id="tab-1" type="radio" name="tab" checked>
+      <label for="tab-1">Product</label>
+      <input id="tab-2" type="radio" name="tab">
+      <label for="tab-2">Options</label>
+      <input id="tab-3" type="radio" name="tab">
+      <label for="tab-3">Shipping</label>
+      <input id="tab-4" type="radio" name="tab">
+      <label for="tab-4">Published</label>
     </div>
-
-    <script>
-        function showTab(tabName) {
-            let contents = document.querySelectorAll('.tab-content');
-            let buttons = document.querySelectorAll('.tab-button');
-
-            contents.forEach(content => {
-                content.classList.remove('active');
-            });
-
-            buttons.forEach(button => {
-                button.classList.remove('active');
-            });
-
-            document.getElementById(tabName).classList.add('active');
-            event.target.classList.add('active');
-        }
-    </script>
-
+    <div class="content content-1">
+      <h2>Sweep + Slide Dog Toy</h2>
+      <p>The Sweep + Slide is an indoor dog toy with a sleek base designed to glide across any floor.</p>
+    </div>
+    <div class="content content-2">
+      <h2>Tab 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="content content-3">
+      <h2>Tab 3</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="content content-4">
+      <h2>Tab 4</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
 </body>
 </html>
