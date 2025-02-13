@@ -8,7 +8,9 @@ const imageList = [
     'assets/kittyDriving.png',
     'assets/banana.png',
     'assets/ghostStunna.jpg',
-    'assets/bigStunner.png'
+    'assets/bigStunner.png',
+    'assets/waterStunna.png',
+    'assets/tubStunna.png'
 ];
 
 function createImage(initialX = 0, initialY = 100, randomImage = true) {
