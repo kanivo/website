@@ -1,99 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Responsive CSS Tabs</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.typekit.net/ovt6ynt.css">
-  <link rel="stylesheet" href="assets/style.css">
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-      font-family: "Roboto", sans-serif;
-      background: linear-gradient(#141e30, #243b55);
-    }
-    .title {
-      text-align: center;
-      padding: 50px 0 25px;
-      font-size: 44px;
-      font-weight: 600;
-      color: #fff;
-      font-family: "Playfair Display SC", serif;
-    }
-    .container {
-      width: 90%;
-      max-width: 600px;
-      margin: auto;
-      background: #16181a;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-    .tabs {
-      display: flex;
-      border-bottom: 2px solid #3b3d3f;
-    }
-    .tabs label {
-      flex: 1;
-      padding: 10px;
-      text-align: center;
-      cursor: pointer;
-      background: #26292c;
-      color: #e7e9f5;
-      transition: all 0.3s;
-    }
-    .tabs input {
-      display: none;
-    }
-    .tabs input:checked + label {
-      background: deepskyblue;
-      color: white;
-    }
-    .content {
-      padding: 15px;
-      color: #f0f2fc;
-      display: none;
-    }
-    #tab-1:checked ~ .content-1,
-    #tab-2:checked ~ .content-2,
-    #tab-3:checked ~ .content-3,
-    #tab-4:checked ~ .content-4 {
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>waddup partner</title>
+
+    <link rel="stylesheet" href="assets/fancyButton.css">
+    <link rel="stylesheet" href="tab.css">
+    <style>
+            body {
+            background-color: #09090b;
+            margin: 0;
+            padding: 0;
+        } 
+
+        .moving-image {
+            position: absolute;
+            width: 200px;
+            height: auto;
+        }
+
+        h1 {
+            position: relative;
+            z-index: 10;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            /* margin-top: 50px; */
+        }
+
+        h2 {
+            position: absolute;
+            bottom: 60px; /* Adjust the distance from the bottom */
+            left: 20px;   /* Adjust the distance from the left */
+            color: #fff;
+            font-size: 18px;
+        }
+
+        button {
+            z-index: 10;
+            position: absolute;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            margin: 0px;
+            padding: 0px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;  
+        }
+
+        .submit-button {
+            position: absolute;
+            bottom: 20px; /* Adjust the distance from the bottom */
+            left: 230px; /* This will position it to the right of the input box */
+            padding: 10px 20px;
+            width: 125px;
+            height: 50px;
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+            color: black;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .card button {
+            background-color: transparent;
+            color: inherit;
+            padding: 0; /* or adjust based on your needs */
+            border: none;
+            cursor: pointer;
+            font-size: inherit; /* Ensure font size matches the rest of the card */
+            width: 100%;
+            height: 100%;
+        }
+
+        button:hover {
+            background-color: #888888;
+        }
+
+        .card button:hover {
+            background-color: transparent;
+        }
+
+        #audioPlayer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 500px;
+        }
+
+        #messageInput {
+            position: absolute;
+            bottom: 20px; /* Adjust the distance from the bottom */
+            left: 20px;   /* Adjust the distance from the left */
+            padding: 10px;
+            width: 200px;
+            height: 35px;
+            background-color: #333;
+            color: white;
+            border: 1px solid #666;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-  <div class="title">CSS Tabs</div>
-  <div class="container">
-    <div class="tabs">
-      <input id="tab-1" type="radio" name="tab" checked>
-      <label for="tab-1">Product</label>
-      <input id="tab-2" type="radio" name="tab">
-      <label for="tab-2">Options</label>
-      <input id="tab-3" type="radio" name="tab">
-      <label for="tab-3">Shipping</label>
-      <input id="tab-4" type="radio" name="tab">
-      <label for="tab-4">Published</label>
+    <h1 id="header">BIG TIME WEB CENTRAL</h1>
+
+    <div id="app"></div>
+    
+    <div class="fancy-button-wrapper">
+        <main>
+            <div class="card">
+              <pixel-canvas></pixel-canvas>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" />
+              </svg>          
+              <button data-action="squirm"></button>
+            </div>
+          
+            <div class="card" style="--active-color: #5ac9f2">
+              <pixel-canvas data-gap="10" data-speed="25" data-colors="#1e3a8a, #2563eb, #0c4a6e"></pixel-canvas>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
+                <path d="M2 6m0 2a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2z"></path>
+                <path d="M6 12h4m-2 -2v4"></path>
+                <path d="M15 11l0 .01"></path>
+                <path d="M18 13l0 .01"></path>
+              </svg>
+              <button data-action="game"></button>
+            </div>
+          
+            <div class="card" style="--active-color: #fef08a">
+              <pixel-canvas data-gap="3" data-speed="20" data-colors="#fef08a, #fde047, #eab308"></pixel-canvas>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+              </svg>          
+              <button data-action="add-images" class=".card button"></button>
+            </div>
+          
+            <div class="card" style="--active-color: #f04438">
+              <pixel-canvas data-gap="6" data-speed="80" data-colors="#fecdd3, #fda4af, #e11d48" data-no-focus></pixel-canvas>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+              </svg>          
+              <button data-action="remove-images"></button>
+            </div>
+          </main>
     </div>
-    <div class="content content-1">
-      <h2>Sweep + Slide Dog Toy</h2>
-      <p>The Sweep + Slide is an indoor dog toy with a sleek base designed to glide across any floor.</p>
-    </div>
-    <div class="content content-2">
-      <h2>Tab 2</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="content content-3">
-      <h2>Tab 3</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="content content-4">
-      <h2>Tab 4</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-  </div>
+    
+
+    <h2 style="position: absolute;">send me a message</h2>
+    <input type="text" id="messageInput" placeholder="Type something..." style="position: absolute; padding: 10px; width: 200px; height: 35px;">
+    <button class="submit-button" onclick="sendMessage()">Submit</button>
+    <p id="statusMessage"></p>
+
+    <audio controls id="audioPlayer">
+        <source src="assets/data/In The Air.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <script src="index.js"></script>
+<script src="assets/fancyButtons.js"></script>
+<script src="tab.js"></script>
 </body>
 </html>

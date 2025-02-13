@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+:root {
+  --left-side: 0%;
+  --right-side: 0%;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+}
+
+html, body {
+  margin: 0; padding: 0;
+  width: 100%; height: 100%;
+
+  background-color: #ebebeb;
+  font-family: 'Roboto', sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabs {
+  width: auto; height: 40px;
+
+  display: flex;
+}
+
+.tab {
+	padding: 0 15px;
+  width: auto; height: 36px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: rgba(#000, .3);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  text-transform: uppercase;
+  
+  cursor: pointer;
+	user-select: none;
+  
+  transition: .35s ease;
+
+
+  .tab--active {
+    color: rgba(0, 0, 0, 1);
+    transition: .35s ease;
+  }  
+  
+  &:hover {
+    color: rgba(#333, 1) !important;
+    transition: .35s ease;
+  } 
+}
+
+.line {
+  width: 100%; height: 3px;
+  
+  position: absolute;
+  left: 0; bottom: 0;
+  
+  background: linear-gradient(
+    to right,
+    #b721ff,
+    #21d4fd
+  );
+
+  clip-path: polygon(
+		var(--left-side) 0,
+		var(--right-side) 0,
+		var(--right-side) 100%,
+		var(--left-side) 100%
+	);
+
+  transition: .35s ease;
+}
