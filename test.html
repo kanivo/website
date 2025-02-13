@@ -6,9 +6,8 @@
     <title>waddup partner</title>
 
     <link rel="stylesheet" href="assets/fancyButton.css">
-    <link rel="stylesheet" href="tab.css">
     <style>
-            body {
+        body {
             background-color: #09090b;
             margin: 0;
             padding: 0;
@@ -25,13 +24,12 @@
             z-index: 10;
             color: rgb(255, 255, 255);
             text-align: center;
-            /* margin-top: 50px; */
         }
 
         h2 {
             position: absolute;
-            bottom: 60px; /* Adjust the distance from the bottom */
-            left: 20px;   /* Adjust the distance from the left */
+            bottom: 60px; 
+            left: 20px;   
             color: #fff;
             font-size: 18px;
         }
@@ -54,8 +52,8 @@
 
         .submit-button {
             position: absolute;
-            bottom: 20px; /* Adjust the distance from the bottom */
-            left: 230px; /* This will position it to the right of the input box */
+            bottom: 20px;
+            left: 230px;
             padding: 10px 20px;
             width: 125px;
             height: 50px;
@@ -70,10 +68,10 @@
         .card button {
             background-color: transparent;
             color: inherit;
-            padding: 0; /* or adjust based on your needs */
+            padding: 0; 
             border: none;
             cursor: pointer;
-            font-size: inherit; /* Ensure font size matches the rest of the card */
+            font-size: inherit;
             width: 100%;
             height: 100%;
         }
@@ -97,8 +95,8 @@
 
         #messageInput {
             position: absolute;
-            bottom: 20px; /* Adjust the distance from the bottom */
-            left: 20px;   /* Adjust the distance from the left */
+            bottom: 20px; 
+            left: 20px;   
             padding: 10px;
             width: 200px;
             height: 35px;
@@ -107,13 +105,80 @@
             border: 1px solid #666;
             border-radius: 5px;
         }
+
+        @import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+        :root {
+            --left-side: 0%;
+            --right-side: 0%;
+        }
+
+        *, *:before, *:after {
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        html, body {
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
+            background-color: #ebebeb;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tabs {
+            width: auto; height: 40px;
+            display: flex;
+        }
+
+        .tab {
+            padding: 0 15px;
+            width: auto; height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(#000, .3);
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 18px;
+            text-transform: uppercase;
+            cursor: pointer;
+            user-select: none;
+            transition: .35s ease;
+        }
+
+        .tab--active {
+            color: rgba(#000, 1);
+            transition: .35s ease;
+        }
+
+        .tab:hover {
+            color: rgba(#333, 1) !important;
+            transition: .35s ease;
+        }
+
+        .line {
+            width: 100%; height: 3px;
+            position: absolute;
+            left: 0; bottom: 0;
+            background: linear-gradient(to right, #b721ff, #21d4fd);
+            clip-path: polygon(
+                var(--left-side) 0,
+                var(--right-side) 0,
+                var(--right-side) 100%,
+                var(--left-side) 100%
+            );
+            transition: .35s ease;
+        }
     </style>
 </head>
 <body>
     <h1 id="header">BIG TIME WEB CENTRAL</h1>
 
     <div id="app"></div>
-    
+
     <div class="fancy-button-wrapper">
         <main>
             <div class="card">
@@ -153,7 +218,6 @@
           </main>
     </div>
     
-
     <h2 style="position: absolute;">send me a message</h2>
     <input type="text" id="messageInput" placeholder="Type something..." style="position: absolute; padding: 10px; width: 200px; height: 35px;">
     <button class="submit-button" onclick="sendMessage()">Submit</button>
@@ -163,8 +227,113 @@
         <source src="assets/data/In The Air.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
-    <script src="index.js"></script>
-<script src="assets/fancyButtons.js"></script>
-<script src="tab.js"></script>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script>
+        class Tabs extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {};
+            }
+
+            componentDidMount() {
+                const { activeTab } = this.props;
+                this.moveSlider(activeTab, true);
+            }
+
+            componentWillReceiveProps(nextProps) {
+                if (nextProps.activeTab !== this.props.activeTab) {
+                    this.moveSlider(nextProps.activeTab);
+                }
+            }
+
+            componentWillUnmount() {
+                if (this.transitionTimer) {
+                    clearTimeout(this.transitionTimer);
+                }
+            }
+
+            moveSlider(index, init) {
+                const { activeTab } = this.props;
+                const tabs = this.refs.tabs;
+                const currentTab = tabs.children[index];
+                const tabsWidth = tabs.getBoundingClientRect().width;
+                const currentTabWidth = currentTab.getBoundingClientRect().width;
+                const currentTabOffset = currentTab.getBoundingClientRect().left - tabs.getBoundingClientRect().left;
+                const currentTabPadding = parseInt(window.getComputedStyle(currentTab).paddingLeft);
+                
+                const leftSide = currentTabOffset + currentTabPadding;
+                const rightSide = leftSide + currentTabWidth;
+
+                if (init) {
+                    this.setState({ leftSide, rightSide });
+                } else {
+                    this.setState({
+                        leftSide: `${leftSide}px`,
+                        rightSide: `${rightSide}px`
+                    });
+                }
+            }
+
+            render() {
+                const { tabs, activeTab } = this.props;
+                const { leftSide, rightSide } = this.state;
+
+                return (
+                    <div>
+                        <div className="tabs" ref="tabs">
+                            {tabs.map((tab, index) => (
+                                <div
+                                    key={index}
+                                    className={`tab ${activeTab === index ? 'tab--active' : ''}`}
+                                    onClick={() => this.props.onTabClick(index)}
+                                >
+                                    {tab}
+                                </div>
+                            ))}
+                        </div>
+                        <div className="line" style={{ '--left-side': leftSide, '--right-side': rightSide }} />
+                    </div>
+                );
+            }
+        }
+
+        function App() {
+            const [activeTab, setActiveTab] = React.useState(0);
+
+            const handleTabClick = (index) => {
+                setActiveTab(index);
+            };
+
+            return (
+                <div>
+                    <Tabs
+                        activeTab={activeTab}
+                        onTabClick={handleTabClick}
+                        tabs={['Tab 1', 'Tab 2', 'Tab 3']}
+                    />
+                    <div className="content">
+                        <h1>Content for {`Tab ${activeTab + 1}`}</h1>
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('app'));
+
+        // Sending message functionality
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const statusMessage = document.getElementById('statusMessage');
+
+            if (messageInput.value) {
+                statusMessage.innerText = `Message sent: "${messageInput.value}"`;
+                messageInput.value = ''; // Clear the input field
+            } else {
+                statusMessage.innerText = 'Please type a message.';
+            }
+        }
+    </script>
 </body>
 </html>
