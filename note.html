@@ -8,32 +8,43 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             height: 100vh;
-            background-color: black;
+            background-color: #121212;
             color: white;
         }
         #tabs {
             display: flex;
+            gap: 5px;
             margin-bottom: 10px;
         }
         .tab {
-            padding: 10px;
-            background-color: #444;
-            cursor: pointer;
-            margin-right: 5px;
+            padding: 8px 12px;
+            background-color: #333;
+            border-radius: 5px;
             border: none;
             color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         .tab.active {
-            background-color: #666;
+            background-color: #555;
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
         }
         #editor {
-            width: 95%;
+            width: 90%;
             height: 60vh;
             border: 1px solid #555;
             background-color: #1b1b1b;
@@ -42,17 +53,20 @@
             outline: none;
             white-space: pre-wrap;
             overflow-y: auto;
+            border-radius: 5px;
         }
         .buttons {
             margin-top: 10px;
+            display: flex;
+            gap: 10px;
         }
         button {
-            margin: 5px;
             padding: 10px;
             background-color: #444;
             color: white;
             border: none;
             cursor: pointer;
+            border-radius: 5px;
         }
         button:hover {
             background-color: #666;
@@ -77,11 +91,11 @@
         function renderTabs() {
             tabsContainer.innerHTML = "";
             Object.keys(tabs).forEach(tab => {
-                const button = document.createElement("button");
-                button.textContent = tab;
-                button.className = "tab" + (tab === activeTab ? " active" : "");
-                button.onclick = () => switchTab(tab);
-                tabsContainer.appendChild(button);
+                const tabElement = document.createElement("div");
+                tabElement.className = "tab" + (tab === activeTab ? " active" : "");
+                tabElement.innerHTML = `${tab} <button class='close-btn' onclick='deleteTab("${tab}")'>×</button>`;
+                tabElement.onclick = () => switchTab(tab);
+                tabsContainer.appendChild(tabElement);
             });
             editor.innerHTML = tabs[activeTab] || "";
         }
@@ -98,6 +112,17 @@
             const newTabName = "Tab " + (Object.keys(tabs).length + 1);
             tabs[newTabName] = "";
             switchTab(newTabName);
+        }
+
+        function deleteTab(tab) {
+            if (Object.keys(tabs).length === 1) {
+                alert("You must have at least one tab.");
+                return;
+            }
+            delete tabs[tab];
+            activeTab = Object.keys(tabs)[0];
+            renderTabs();
+            localStorage.setItem("tabs", JSON.stringify(tabs));
         }
 
         editor.addEventListener("input", () => {
