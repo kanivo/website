@@ -3,77 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Text Editor</title>
+    <title>Notes App</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
         }
-        .toolbar {
-            margin-top: 20px;
-            margin-bottom: 10px;
+
+        /* Fullscreen Note Container */
+        .note-container {
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        .toolbar button {
+
+        /* Header */
+        .header {
+            background-color: #2b5797;
+            color: white;
             padding: 10px;
-            margin: 0 5px;
-            cursor: pointer;
+            text-align: center;
+            font-size: 18px;
         }
-        textarea {
-            width: 80%;
-            height: 400px;
+
+        /* Textarea for Note Content */
+        .note-content {
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
             font-size: 16px;
-            padding: 10px;
-            border: 1px solid #ccc;
+            border: none;
             resize: none;
             outline: none;
+            background-color: #fafafa;
+            box-sizing: border-box;
+        }
+
+        .note-content:focus {
+            background-color: white;
+        }
+
+        /* Footer with Save and Load Buttons */
+        .footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer button {
+            background-color: #2b5797;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .footer button:hover {
+            background-color: #1c3d75;
+        }
+
+        .footer button:active {
+            background-color: #1a335b;
         }
     </style>
 </head>
 <body>
+    <div class="note-container">
+        <div class="header" id="noteTitle">Untitled Note</div>
+        <textarea class="note-content" id="noteContent" placeholder="Start typing your note..."></textarea>
+        <div class="footer">
+            <button id="saveBtn">Save</button>
+            <button id="loadBtn">Load</button>
+        </div>
+    </div>
 
-<h1>Simple Text Editor</h1>
+    <script>
+        // Elements
+        const noteTitle = document.getElementById('noteTitle');
+        const noteContent = document.getElementById('noteContent');
+        const saveBtn = document.getElementById('saveBtn');
+        const loadBtn = document.getElementById('loadBtn');
 
-<div class="toolbar">
-    <button onclick="document.execCommand('bold')">Bold</button>
-    <button onclick="document.execCommand('italic')">Italic</button>
-    <button onclick="document.execCommand('underline')">Underline</button>
-    <button onclick="document.execCommand('strikethrough')">Strike</button>
-    <button onclick="document.execCommand('justifyLeft')">Left</button>
-    <button onclick="document.execCommand('justifyCenter')">Center</button>
-    <button onclick="document.execCommand('justifyRight')">Right</button>
-    <button onclick="saveDocument()">Save</button>
-    <button onclick="loadDocument()">Load</button>
-</div>
+        // Save note functionality
+        saveBtn.addEventListener('click', () => {
+            const noteName = prompt("Enter note title:");
+            if (noteName) {
+                localStorage.setItem(noteName, noteContent.value);
+                noteTitle.textContent = noteName; // Update the header with the note title
+                alert("Note saved!");
+            }
+        });
 
-<textarea id="editor" placeholder="Start typing..."></textarea>
-
-<script>
-    // Function to save the content to localStorage
-    function saveDocument() {
-        const content = document.getElementById('editor').value;
-        localStorage.setItem('docContent', content);
-        alert('Document saved!');
-    }
-
-    // Function to load the content from localStorage
-    function loadDocument() {
-        const savedContent = localStorage.getItem('docContent');
-        if (savedContent) {
-            document.getElementById('editor').value = savedContent;
-        } else {
-            alert('No saved document found!');
-        }
-    }
-
-    // Allow editing the text area with rich text commands
-    document.getElementById('editor').addEventListener('input', function () {
-        // Enable additional features like auto-save if needed
-    });
-</script>
-
+        // Load note functionality
+        loadBtn.addEventListener('click', () => {
+            const noteName = prompt("Enter the name of the note you want to load:");
+            if (noteName) {
+                const savedNote = localStorage.getItem(noteName);
+                if (savedNote) {
+                    noteContent.value = savedNote;
+                    noteTitle.textContent = noteName; // Update the header with the note title
+                } else {
+                    alert("Note not found.");
+                }
+            }
+        });
+    </script>
 </body>
 </html>
