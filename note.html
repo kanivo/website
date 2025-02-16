@@ -3,9 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Idea Storage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+        }
+        #editor {
+            width: 95%;
+            height: 70vh;
+            border: 1px solid #555;
+            background-color: #1b1b1b;
+            color: white;
+            padding: 10px;
+            outline: none;
+            white-space: pre-wrap;
+            overflow-y: auto;
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #666;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="editor" contenteditable="true"></div>
+    <div class="buttons">
+        <button onclick="exportContent()">Export</button>
+        <button onclick="importContent()">Import</button>
+        <input type="file" id="fileInput" style="display: none;" accept=".txt" onchange="handleFile(event)">
+    </div>
+    <script>
+        const editor = document.getElementById("editor");
+        
+        // Load saved content from localStorage
+        const savedContent = localStorage.getItem("savedContent");
+        editor.innerHTML = savedContent ? savedContent : "Start typing your ideas here...";
+        
+        // Save content to localStorage on input
+        editor.addEventListener("input", () => {
+            localStorage.setItem("savedContent", editor.innerHTML);
+        });
+
+        // Export content as a text file
+        function exportContent() {
+            const blob = new Blob([editor.innerHTML], { type: "text/plain" });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "ideas.txt";
+            a.click();
+        }
+
+        // Import content from a text file
+        function importContent() {
+            document.getElementById("fileInput").click();
+        }
+
+        function handleFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                editor.innerHTML = e.target.result;
+                localStorage.setItem("savedContent", editor.innerHTML);
+            };
+            reader.readAsText(file);
+        }
+    </script>
 </body>
 </html>
