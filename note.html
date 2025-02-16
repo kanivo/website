@@ -17,9 +17,24 @@
             background-color: black;
             color: white;
         }
+        #tabs {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .tab {
+            padding: 10px;
+            background-color: #444;
+            cursor: pointer;
+            margin-right: 5px;
+            border: none;
+            color: white;
+        }
+        .tab.active {
+            background-color: #666;
+        }
         #editor {
             width: 95%;
-            height: 70vh;
+            height: 60vh;
             border: 1px solid #555;
             background-color: #1b1b1b;
             color: white;
@@ -45,34 +60,59 @@
     </style>
 </head>
 <body>
-    <div id="editor" contenteditable="true"></div>
+    <div id="tabs"></div>
     <div class="buttons">
+        <button onclick="addTab()">New Tab</button>
         <button onclick="exportContent()">Export</button>
         <button onclick="importContent()">Import</button>
-        <input type="file" id="fileInput" style="display: none;" accept=".txt" onchange="handleFile(event)">
+        <input type="file" id="fileInput" style="display: none;" accept=".json" onchange="handleFile(event)">
     </div>
+    <div id="editor" contenteditable="true"></div>
     <script>
+        let tabs = JSON.parse(localStorage.getItem("tabs")) || {"Tab 1": ""};
+        let activeTab = Object.keys(tabs)[0];
         const editor = document.getElementById("editor");
+        const tabsContainer = document.getElementById("tabs");
         
-        // Load saved content from localStorage
-        const savedContent = localStorage.getItem("savedContent");
-        editor.innerHTML = savedContent ? savedContent : "Start typing your ideas here...";
-        
-        // Save content to localStorage on input
+        function renderTabs() {
+            tabsContainer.innerHTML = "";
+            Object.keys(tabs).forEach(tab => {
+                const button = document.createElement("button");
+                button.textContent = tab;
+                button.className = "tab" + (tab === activeTab ? " active" : "");
+                button.onclick = () => switchTab(tab);
+                tabsContainer.appendChild(button);
+            });
+            editor.innerHTML = tabs[activeTab] || "";
+        }
+
+        function switchTab(tab) {
+            tabs[activeTab] = editor.innerHTML;
+            activeTab = tab;
+            editor.innerHTML = tabs[activeTab] || "";
+            renderTabs();
+            localStorage.setItem("tabs", JSON.stringify(tabs));
+        }
+
+        function addTab() {
+            const newTabName = "Tab " + (Object.keys(tabs).length + 1);
+            tabs[newTabName] = "";
+            switchTab(newTabName);
+        }
+
         editor.addEventListener("input", () => {
-            localStorage.setItem("savedContent", editor.innerHTML);
+            tabs[activeTab] = editor.innerHTML;
+            localStorage.setItem("tabs", JSON.stringify(tabs));
         });
 
-        // Export content as a text file
         function exportContent() {
-            const blob = new Blob([editor.innerHTML], { type: "text/plain" });
+            const blob = new Blob([JSON.stringify(tabs)], { type: "application/json" });
             const a = document.createElement("a");
             a.href = URL.createObjectURL(blob);
-            a.download = "ideas.txt";
+            a.download = "ideas.json";
             a.click();
         }
 
-        // Import content from a text file
         function importContent() {
             document.getElementById("fileInput").click();
         }
@@ -83,11 +123,15 @@
 
             const reader = new FileReader();
             reader.onload = function(e) {
-                editor.innerHTML = e.target.result;
-                localStorage.setItem("savedContent", editor.innerHTML);
+                tabs = JSON.parse(e.target.result);
+                activeTab = Object.keys(tabs)[0];
+                renderTabs();
+                localStorage.setItem("tabs", JSON.stringify(tabs));
             };
             reader.readAsText(file);
         }
+
+        renderTabs();
     </script>
 </body>
 </html>
