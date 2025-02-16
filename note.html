@@ -30,6 +30,7 @@
             cursor: pointer;
             margin-right: 5px;
             border: none;
+            border-radius: 5px;
         }
         .tab.active {
             background-color: #666;
@@ -93,33 +94,37 @@
 
         // Switch between tabs
         function openTab(tab) {
-            // Save current tab content
+            // Save the current tab content
             localStorage.setItem(currentTab, editor.innerHTML);
 
             // Switch the active tab
             document.querySelector(`.tab.active`).classList.remove('active');
             document.querySelector(`.tab[onclick="openTab('${tab}')"]`).classList.add('active');
 
-            // Load new tab content
+            // Load the content of the new tab
             currentTab = tab;
             loadContent(currentTab);
         }
 
         // Add a new tab
         function addNewTab() {
-            const tabName = prompt("Enter a name for your new tab:");
-            if (!tabName) return;
-
+            const tabName = prompt("Enter a name for your new tab:") || "Untitled";
             const tabId = `tab${Date.now()}`;
-            localStorage.setItem(tabId, "");  // Store empty content for the new tab
 
+            // Store empty content for the new tab
+            localStorage.setItem(tabId, "");
+
+            // Create the new tab element
             const newTab = document.createElement('button');
             newTab.classList.add('tab');
             newTab.textContent = tabName;
             newTab.onclick = () => openTab(tabId);
-            
+
+            // Add the new tab to the tab container
             tabsContainer.appendChild(newTab);
-            openTab(tabId); // Automatically switch to the new tab
+
+            // Switch to the new tab
+            openTab(tabId);
         }
 
         // Export content as a text file
