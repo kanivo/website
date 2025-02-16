@@ -3,49 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idea Storage</title>
+    <title>Note Tabs</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             height: 100vh;
-            background-color: #121212;
+            background-color: black;
             color: white;
         }
-        #tabs {
+        .tabs {
             display: flex;
-            gap: 5px;
-            margin-bottom: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
         }
         .tab {
-            padding: 8px 12px;
-            background-color: #333;
-            border-radius: 5px;
-            border: none;
+            padding: 10px;
+            background-color: #444;
             color: white;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            margin-right: 5px;
+            border: none;
         }
         .tab.active {
-            background-color: #555;
-        }
-        .close-btn {
-            background: none;
-            border: none;
-            color: red;
-            font-weight: bold;
-            cursor: pointer;
+            background-color: #666;
         }
         #editor {
-            width: 90%;
-            height: 60vh;
+            width: 95%;
+            height: 70vh;
             border: 1px solid #555;
             background-color: #1b1b1b;
             color: white;
@@ -53,20 +44,17 @@
             outline: none;
             white-space: pre-wrap;
             overflow-y: auto;
-            border-radius: 5px;
         }
         .buttons {
             margin-top: 10px;
-            display: flex;
-            gap: 10px;
         }
         button {
+            margin: 5px;
             padding: 10px;
             background-color: #444;
             color: white;
             border: none;
             cursor: pointer;
-            border-radius: 5px;
         }
         button:hover {
             background-color: #666;
@@ -74,70 +62,76 @@
     </style>
 </head>
 <body>
-    <div id="tabs"></div>
-    <div class="buttons">
-        <button onclick="addTab()">New Tab</button>
-        <button onclick="exportContent()">Export</button>
-        <button onclick="importContent()">Import</button>
-        <input type="file" id="fileInput" style="display: none;" accept=".json" onchange="handleFile(event)">
+    <div class="tabs">
+        <button class="tab active" onclick="openTab('tab1')">Untitled</button>
     </div>
     <div id="editor" contenteditable="true"></div>
+    <div class="buttons">
+        <button onclick="exportContent()">Export</button>
+        <button onclick="importContent()">Import</button>
+        <input type="file" id="fileInput" style="display: none;" accept=".txt" onchange="handleFile(event)">
+        <button onclick="addNewTab()">Add Tab</button>
+    </div>
+    
     <script>
-        let tabs = JSON.parse(localStorage.getItem("tabs")) || {"Tab 1": ""};
-        let activeTab = Object.keys(tabs)[0];
+        let currentTab = 'tab1';
         const editor = document.getElementById("editor");
-        const tabsContainer = document.getElementById("tabs");
-        
-        function renderTabs() {
-            tabsContainer.innerHTML = "";
-            Object.keys(tabs).forEach(tab => {
-                const tabElement = document.createElement("div");
-                tabElement.className = "tab" + (tab === activeTab ? " active" : "");
-                tabElement.innerHTML = `${tab} <button class='close-btn' onclick='deleteTab("${tab}")'>×</button>`;
-                tabElement.onclick = () => switchTab(tab);
-                tabsContainer.appendChild(tabElement);
-            });
-            editor.innerHTML = tabs[activeTab] || "";
-        }
+        const tabsContainer = document.querySelector('.tabs');
 
-        function switchTab(tab) {
-            tabs[activeTab] = editor.innerHTML;
-            activeTab = tab;
-            editor.innerHTML = tabs[activeTab] || "";
-            renderTabs();
-            localStorage.setItem("tabs", JSON.stringify(tabs));
-        }
+        // Load saved content from localStorage
+        const loadContent = (tab) => {
+            const savedContent = localStorage.getItem(tab);
+            editor.innerHTML = savedContent ? savedContent : "Start typing your ideas here...";
+        };
 
-        function addTab() {
-            const newTabName = "Tab " + (Object.keys(tabs).length + 1);
-            tabs[newTabName] = "";
-            switchTab(newTabName);
-        }
+        loadContent(currentTab);
 
-        function deleteTab(tab) {
-            if (Object.keys(tabs).length === 1) {
-                alert("You must have at least one tab.");
-                return;
-            }
-            delete tabs[tab];
-            activeTab = Object.keys(tabs)[0];
-            renderTabs();
-            localStorage.setItem("tabs", JSON.stringify(tabs));
-        }
-
+        // Save content to localStorage on input
         editor.addEventListener("input", () => {
-            tabs[activeTab] = editor.innerHTML;
-            localStorage.setItem("tabs", JSON.stringify(tabs));
+            localStorage.setItem(currentTab, editor.innerHTML);
         });
 
+        // Switch between tabs
+        function openTab(tab) {
+            // Save current tab content
+            localStorage.setItem(currentTab, editor.innerHTML);
+
+            // Switch the active tab
+            document.querySelector(`.tab.active`).classList.remove('active');
+            document.querySelector(`.tab[onclick="openTab('${tab}')"]`).classList.add('active');
+
+            // Load new tab content
+            currentTab = tab;
+            loadContent(currentTab);
+        }
+
+        // Add a new tab
+        function addNewTab() {
+            const tabName = prompt("Enter a name for your new tab:");
+            if (!tabName) return;
+
+            const tabId = `tab${Date.now()}`;
+            localStorage.setItem(tabId, "");  // Store empty content for the new tab
+
+            const newTab = document.createElement('button');
+            newTab.classList.add('tab');
+            newTab.textContent = tabName;
+            newTab.onclick = () => openTab(tabId);
+            
+            tabsContainer.appendChild(newTab);
+            openTab(tabId); // Automatically switch to the new tab
+        }
+
+        // Export content as a text file
         function exportContent() {
-            const blob = new Blob([JSON.stringify(tabs)], { type: "application/json" });
+            const blob = new Blob([editor.innerHTML], { type: "text/plain" });
             const a = document.createElement("a");
             a.href = URL.createObjectURL(blob);
-            a.download = "ideas.json";
+            a.download = `${currentTab}_ideas.txt`;
             a.click();
         }
 
+        // Import content from a text file
         function importContent() {
             document.getElementById("fileInput").click();
         }
@@ -148,15 +142,11 @@
 
             const reader = new FileReader();
             reader.onload = function(e) {
-                tabs = JSON.parse(e.target.result);
-                activeTab = Object.keys(tabs)[0];
-                renderTabs();
-                localStorage.setItem("tabs", JSON.stringify(tabs));
+                editor.innerHTML = e.target.result;
+                localStorage.setItem(currentTab, editor.innerHTML);
             };
             reader.readAsText(file);
         }
-
-        renderTabs();
     </script>
 </body>
 </html>
