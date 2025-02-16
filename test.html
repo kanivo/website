@@ -8,24 +8,40 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
             background-color: black;
+            color: white;
         }
         #editor {
-            width: 90%;
-            height: 90%;
-            border: 1px solid #1b1b1b;
+            width: 95%;
+            height: 90vh;
+            border: 1px solid #555;
+            background-color: #1b1b1b;
             color: white;
             padding: 10px;
             outline: none;
             white-space: pre-wrap;
+            overflow-y: auto;
         }
     </style>
 </head>
 <body>
-    <div id="editor" contenteditable="true">Start typing your ideas here...</div>
+    <div id="editor" contenteditable="true"></div>
+    <script>
+        const editor = document.getElementById("editor");
+        
+        // Load saved content from localStorage
+        const savedContent = localStorage.getItem("savedContent");
+        editor.innerHTML = savedContent ? savedContent : "Start typing your ideas here...";
+        
+        // Save content to localStorage on input
+        editor.addEventListener("input", () => {
+            localStorage.setItem("savedContent", editor.innerHTML);
+        });
+    </script>
 </body>
 </html>
