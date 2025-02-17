@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .calendar {
+            width: 300px;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+        }
+        th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 id="month-year"></h2>
+    <table class="calendar">
+        <thead>
+            <tr>
+                <th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thu</th> <th>Fri</th> <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody id="calendar-body">
+            <!-- Dates will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        function generateCalendar(year, month) {
+            let calendarBody = document.getElementById("calendar-body");
+            let monthYear = document.getElementById("month-year");
+
+            // Clear the previous calendar
+            calendarBody.innerHTML = "";
+
+            // Set the current month and year
+            let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            monthYear.innerText = monthNames[month] + " " + year;
+
+            // Get first day of the month and total days
+            let firstDay = new Date(year, month, 1).getDay();
+            let daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            let row = document.createElement("tr");
+
+            // Add empty cells for the first row
+            for (let i = 0; i < firstDay; i++) {
+                let cell = document.createElement("td");
+                row.appendChild(cell);
+            }
+
+            // Fill in the days of the month
+            for (let day = 1; day <= daysInMonth; day++) {
+                if ((firstDay + day - 1) % 7 === 0) {
+                    calendarBody.appendChild(row);
+                    row = document.createElement("tr");
+                }
+
+                let cell = document.createElement("td");
+                cell.innerText = day;
+                row.appendChild(cell);
+            }
+
+            // Append last row
+            calendarBody.appendChild(row);
+        }
+
+        // Get current month and year
+        let today = new Date();
+        generateCalendar(today.getFullYear(), today.getMonth());
+    </script>
+
+</body>
+</html>
