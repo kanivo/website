@@ -49,6 +49,13 @@
         </tbody>
     </table>
 
+    <div id="day-menu">
+        <h3>Day Details - <span id="day-number"></span></h3>
+        <textarea id="day-notes" placeholder="Add notes for this day..."></textarea><br><br>
+        <button onclick="closeDayMenu()">Close</button>
+        <button onclick="saveNotes()">Save Notes</button>
+    </div>
+
     <script>
         function generateCalendar(year, month) {
             let calendarBody = document.getElementById("calendar-body");
@@ -95,9 +102,33 @@
             calendarBody.appendChild(row);
         }
 
+        function openDayMenu(day) {
+
+        }
+
         // Get current month and year
         let today = new Date();
-        generateCalendar(today.getFullYear(), today.getMonth());
+        generateCalendar(today.getFullYear(), 11);
+
+         // Open the day menu (modal)
+         function openDayMenu(day) {
+            document.getElementById("day-number").innerText = day;
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("day-menu").style.display = "block";
+        }
+
+        // Close the day menu (modal)
+        function closeDayMenu() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("day-menu").style.display = "none";
+        }
+
+        // Save notes (you can add more functionality to save this data)
+        function saveNotes() {
+            let notes = document.getElementById("day-notes").value;
+            alert("Notes saved for this day: " + notes); // This can be replaced with saving to a database or local storage
+            closeDayMenu();
+        }
     </script>
 
 </body>
