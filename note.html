@@ -49,6 +49,7 @@
     <div class="buttons">
         <button onclick="exportContent()">Export</button>
         <button onclick="importContent()">Import</button>
+        <button id="toggleButton" onclick="toggleTextStyle()">Toggle Header/Larger Text</button>
         <input type="file" id="fileInput" style="display: none;" accept=".txt" onchange="handleFile(event)">
     </div>
     <script>
@@ -57,7 +58,7 @@
         // Load saved content from localStorage
         const savedContent = localStorage.getItem("savedContent");
         editor.innerHTML = savedContent ? savedContent : "Start typing your ideas here...";
-        
+
         // Save content to localStorage on input
         editor.addEventListener("input", () => {
             localStorage.setItem("savedContent", editor.innerHTML);
@@ -87,6 +88,26 @@
                 localStorage.setItem("savedContent", editor.innerHTML);
             };
             reader.readAsText(file);
+        }
+
+        // Toggle between default text and larger text / header
+        let isHeader = false;
+        function toggleTextStyle() {
+            const selectedText = window.getSelection();
+            if (selectedText.rangeCount > 0) {
+                const range = selectedText.getRangeAt(0);
+                const span = document.createElement("span");
+                if (isHeader) {
+                    span.style.fontSize = "1em";  // Default size
+                    span.style.fontWeight = "normal";  // Default weight
+                    isHeader = false;
+                } else {
+                    span.style.fontSize = "2em";  // Larger text size
+                    span.style.fontWeight = "bold";  // Header-like bold style
+                    isHeader = true;
+                }
+                range.surroundContents(span);
+            }
         }
     </script>
 </body>
