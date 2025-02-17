@@ -24,6 +24,12 @@
         th {
             background-color: lightgray;
         }
+        .calendar-button {
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
@@ -73,6 +79,7 @@
 
                 let cell = document.createElement("td");
                 let button = document.createElement("button");
+                button.classList.add("calendar-button"); // ADDS DYNAMICALLY MADE BUTTONS TO A CLASS
                 button.innerText = day;
                 button.onclick = function() {
                     openDayMenu(day);
