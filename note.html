@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>note</title>
+    <title>Notes & To-Do List</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,22 +17,12 @@
             background-color: black;
             color: white;
         }
-        #editor {
-            width: 95%;
-            height: 70vh;
-            border: 1px solid #555;
-            background-color: #1b1b1b;
-            color: white;
-            padding: 10px;
-            outline: none;
-            white-space: pre-wrap;
-            overflow-y: auto;
-        }
-        .buttons {
-            margin-top: 10px;
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
         }
         button {
-            margin: 5px;
             padding: 10px;
             background-color: #444;
             color: white;
@@ -42,38 +32,80 @@
         button:hover {
             background-color: #666;
         }
+        .content {
+            display: none;
+            width: 95%;
+        }
+        .active {
+            display: block;
+        }
+        #editor {
+            width: 100%;
+            height: 50vh;
+            border: 1px solid #555;
+            background-color: #1b1b1b;
+            color: white;
+            padding: 10px;
+            outline: none;
+            white-space: pre-wrap;
+            overflow-y: auto;
+        }
+        .todo-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 5px 0;
+            background-color: #222;
+            padding: 5px;
+        }
     </style>
 </head>
 <body>
-    <div id="editor" contenteditable="true"></div>
-    <div class="buttons">
-        <button onclick="exportContent()">Export</button>
-        <button onclick="importContent()">Import</button>
-        <button id="toggleButton" onclick="toggleTextStyle()">Toggle Header/Larger Text</button>
-        <input type="file" id="fileInput" style="display: none;" accept=".txt" onchange="handleFile(event)">
+    <div class="tabs">
+        <button onclick="switchTab('notes')">Notes</button>
+        <button onclick="switchTab('todo')">To-Do List</button>
     </div>
+    
+    <div id="notes" class="content active">
+        <div id="editor" contenteditable="true"></div>
+        <div>
+            <button onclick="exportContent()">Export</button>
+            <button onclick="importContent()">Import</button>
+            <input type="file" id="fileInput" style="display: none;" accept=".txt" onchange="handleFile(event)">
+        </div>
+    </div>
+    
+    <div id="todo" class="content">
+        <div>
+            <input type="text" id="newTask" placeholder="New Task">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+        <div>
+            <button onclick="exportTasks()">Export</button>
+            <button onclick="importTasks()">Import</button>
+            <input type="file" id="taskFileInput" style="display: none;" accept=".json" onchange="handleTaskFile(event)">
+        </div>
+    </div>
+    
     <script>
+        function switchTab(tab) {
+            document.querySelectorAll('.content').forEach(div => div.classList.remove('active'));
+            document.getElementById(tab).classList.add('active');
+        }
+
         const editor = document.getElementById("editor");
-        
-        // Load saved content from localStorage
-        const savedContent = localStorage.getItem("savedContent");
-        editor.innerHTML = savedContent ? savedContent : "Start typing your ideas here...";
+        editor.innerHTML = localStorage.getItem("savedContent") || "Start typing your ideas here...";
+        editor.addEventListener("input", () => localStorage.setItem("savedContent", editor.innerHTML));
 
-        // Save content to localStorage on input
-        editor.addEventListener("input", () => {
-            localStorage.setItem("savedContent", editor.innerHTML);
-        });
-
-        // Export content as a text file
         function exportContent() {
             const blob = new Blob([editor.innerHTML], { type: "text/plain" });
             const a = document.createElement("a");
             a.href = URL.createObjectURL(blob);
-            a.download = "ideas.txt";
+            a.download = "notes.txt";
             a.click();
         }
 
-        // Import content from a text file
         function importContent() {
             document.getElementById("fileInput").click();
         }
@@ -81,34 +113,77 @@
         function handleFile(event) {
             const file = event.target.files[0];
             if (!file) return;
-
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = (e) => {
                 editor.innerHTML = e.target.result;
                 localStorage.setItem("savedContent", editor.innerHTML);
             };
             reader.readAsText(file);
         }
 
-        // Toggle between default text and larger text / header
-        let isHeader = false;
-        function toggleTextStyle() {
-            const selectedText = window.getSelection();
-            if (selectedText.rangeCount > 0) {
-                const range = selectedText.getRangeAt(0);
-                const span = document.createElement("span");
-                if (isHeader) {
-                    span.style.fontSize = "1em";  // Default size
-                    span.style.fontWeight = "normal";  // Default weight
-                    isHeader = false;
-                } else {
-                    span.style.fontSize = "2em";  // Larger text size
-                    span.style.fontWeight = "bold";  // Header-like bold style
-                    isHeader = true;
-                }
-                range.surroundContents(span);
-            }
+        function addTask() {
+            const taskText = document.getElementById("newTask").value;
+            if (!taskText) return;
+            const taskList = document.getElementById("taskList");
+            const li = document.createElement("li");
+            li.classList.add("todo-item");
+            li.innerHTML = `<input type='checkbox' onchange='saveTasks()'> ${taskText} <button onclick='removeTask(this)'>Delete</button>`;
+            taskList.appendChild(li);
+            saveTasks();
+            document.getElementById("newTask").value = "";
         }
+
+        function removeTask(button) {
+            button.parentElement.remove();
+            saveTasks();
+        }
+
+        function saveTasks() {
+            const tasks = [];
+            document.querySelectorAll("#taskList li").forEach(li => {
+                const checkbox = li.querySelector("input");
+                tasks.push({ text: li.textContent.replace("Delete", "").trim(), done: checkbox.checked });
+            });
+            localStorage.setItem("todoList", JSON.stringify(tasks));
+        }
+
+        function loadTasks() {
+            const savedTasks = JSON.parse(localStorage.getItem("todoList")) || [];
+            const taskList = document.getElementById("taskList");
+            taskList.innerHTML = "";
+            savedTasks.forEach(task => {
+                const li = document.createElement("li");
+                li.classList.add("todo-item");
+                li.innerHTML = `<input type='checkbox' ${task.done ? "checked" : ""} onchange='saveTasks()'> ${task.text} <button onclick='removeTask(this)'>Delete</button>`;
+                taskList.appendChild(li);
+            });
+        }
+
+        function exportTasks() {
+            const tasks = localStorage.getItem("todoList");
+            const blob = new Blob([tasks], { type: "application/json" });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "todo_list.json";
+            a.click();
+        }
+
+        function importTasks() {
+            document.getElementById("taskFileInput").click();
+        }
+
+        function handleTaskFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                localStorage.setItem("todoList", e.target.result);
+                loadTasks();
+            };
+            reader.readAsText(file);
+        }
+
+        loadTasks();
     </script>
 </body>
 </html>
