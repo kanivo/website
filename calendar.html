@@ -115,15 +115,14 @@
          // Open the day menu (modal)
          function openDayMenu(day) {
             document.getElementById("calendar-container").style.display = "none";
-            document.getElementById("day-number").innerText = day;
-            document.getElementById("overlay").style.display = "block";
+            // document.getElementById("day-number").innerText = day;
             document.getElementById("day-menu").style.display = "block";
         }
 
         // Close the day menu (modal)
         function closeDayMenu() {
-            document.getElementById("overlay").style.display = "none";
             document.getElementById("day-menu").style.display = "none";
+            document.getElementById("calendar-container").style.display = "block";
         }
 
         // Save notes (you can add more functionality to save this data)
