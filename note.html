@@ -39,9 +39,9 @@
         .active {
             display: block;
         }
-        #editor {
+        #editor, .todo-item {
             width: 100%;
-            height: 50vh;
+            min-height: 50px;
             border: 1px solid #555;
             background-color: #1b1b1b;
             color: white;
@@ -55,8 +55,16 @@
             align-items: center;
             justify-content: space-between;
             margin: 5px 0;
-            background-color: #222;
-            padding: 5px;
+            cursor: text;
+        }
+        .todo-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .todo-item button {
+            background: none;
+            border: none;
+            color: red;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -68,22 +76,19 @@
     
     <div id="notes" class="content active">
         <div id="editor" contenteditable="true"></div>
-        <div>
-            <button onclick="exportContent()">Export</button>
-            <button onclick="importContent()">Import</button>
+        <div class="buttons">
+            <button onclick="exportContent()">Export Notes</button>
+            <button onclick="importContent()">Import Notes</button>
             <input type="file" id="fileInput" style="display: none;" accept=".txt" onchange="handleFile(event)">
         </div>
     </div>
     
     <div id="todo" class="content">
-        <div>
-            <input type="text" id="newTask" placeholder="New Task">
-            <button onclick="addTask()">Add</button>
-        </div>
         <ul id="taskList"></ul>
-        <div>
-            <button onclick="exportTasks()">Export</button>
-            <button onclick="importTasks()">Import</button>
+        <div class="todo-item" contenteditable="true" onclick="addTask(this)">Click to add a task...</div>
+        <div class="buttons">
+            <button onclick="exportTasks()">Export To-Do</button>
+            <button onclick="importTasks()">Import To-Do</button>
             <input type="file" id="taskFileInput" style="display: none;" accept=".json" onchange="handleTaskFile(event)">
         </div>
     </div>
@@ -97,6 +102,50 @@
         const editor = document.getElementById("editor");
         editor.innerHTML = localStorage.getItem("savedContent") || "Start typing your ideas here...";
         editor.addEventListener("input", () => localStorage.setItem("savedContent", editor.innerHTML));
+
+        function addTask(element) {
+            if (element.innerText.trim() === "Click to add a task...") element.innerText = "";
+            element.addEventListener("blur", () => {
+                if (element.innerText.trim() === "") {
+                    element.innerText = "Click to add a task...";
+                } else {
+                    const taskList = document.getElementById("taskList");
+                    const li = document.createElement("li");
+                    li.classList.add("todo-item");
+                    li.innerHTML = `<input type='checkbox' onchange='saveTasks()'> <span contenteditable='true' oninput='saveTasks()'>${element.innerText}</span> <button onclick='removeTask(this)'>×</button>`;
+                    taskList.appendChild(li);
+                    saveTasks();
+                    element.innerText = "Click to add a task...";
+                }
+            });
+        }
+
+        function removeTask(button) {
+            button.parentElement.remove();
+            saveTasks();
+        }
+
+        function saveTasks() {
+            const tasks = [];
+            document.querySelectorAll("#taskList li").forEach(li => {
+                const checkbox = li.querySelector("input");
+                const text = li.querySelector("span").innerText;
+                tasks.push({ text, done: checkbox.checked });
+            });
+            localStorage.setItem("todoList", JSON.stringify(tasks));
+        }
+
+        function loadTasks() {
+            const savedTasks = JSON.parse(localStorage.getItem("todoList")) || [];
+            const taskList = document.getElementById("taskList");
+            taskList.innerHTML = "";
+            savedTasks.forEach(task => {
+                const li = document.createElement("li");
+                li.classList.add("todo-item");
+                li.innerHTML = `<input type='checkbox' ${task.done ? "checked" : ""} onchange='saveTasks()'> <span contenteditable='true' oninput='saveTasks()'>${task.text}</span> <button onclick='removeTask(this)'>×</button>`;
+                taskList.appendChild(li);
+            });
+        }
 
         function exportContent() {
             const blob = new Blob([editor.innerHTML], { type: "text/plain" });
@@ -113,55 +162,18 @@
         function handleFile(event) {
             const file = event.target.files[0];
             if (!file) return;
+
             const reader = new FileReader();
-            reader.onload = (e) => {
+            reader.onload = function(e) {
                 editor.innerHTML = e.target.result;
                 localStorage.setItem("savedContent", editor.innerHTML);
             };
             reader.readAsText(file);
         }
 
-        function addTask() {
-            const taskText = document.getElementById("newTask").value;
-            if (!taskText) return;
-            const taskList = document.getElementById("taskList");
-            const li = document.createElement("li");
-            li.classList.add("todo-item");
-            li.innerHTML = `<input type='checkbox' onchange='saveTasks()'> ${taskText} <button onclick='removeTask(this)'>Delete</button>`;
-            taskList.appendChild(li);
-            saveTasks();
-            document.getElementById("newTask").value = "";
-        }
-
-        function removeTask(button) {
-            button.parentElement.remove();
-            saveTasks();
-        }
-
-        function saveTasks() {
-            const tasks = [];
-            document.querySelectorAll("#taskList li").forEach(li => {
-                const checkbox = li.querySelector("input");
-                tasks.push({ text: li.textContent.replace("Delete", "").trim(), done: checkbox.checked });
-            });
-            localStorage.setItem("todoList", JSON.stringify(tasks));
-        }
-
-        function loadTasks() {
-            const savedTasks = JSON.parse(localStorage.getItem("todoList")) || [];
-            const taskList = document.getElementById("taskList");
-            taskList.innerHTML = "";
-            savedTasks.forEach(task => {
-                const li = document.createElement("li");
-                li.classList.add("todo-item");
-                li.innerHTML = `<input type='checkbox' ${task.done ? "checked" : ""} onchange='saveTasks()'> ${task.text} <button onclick='removeTask(this)'>Delete</button>`;
-                taskList.appendChild(li);
-            });
-        }
-
         function exportTasks() {
-            const tasks = localStorage.getItem("todoList");
-            const blob = new Blob([tasks], { type: "application/json" });
+            const tasks = JSON.parse(localStorage.getItem("todoList")) || [];
+            const blob = new Blob([JSON.stringify(tasks, null, 2)], { type: "application/json" });
             const a = document.createElement("a");
             a.href = URL.createObjectURL(blob);
             a.download = "todo_list.json";
@@ -175,8 +187,9 @@
         function handleTaskFile(event) {
             const file = event.target.files[0];
             if (!file) return;
+
             const reader = new FileReader();
-            reader.onload = (e) => {
+            reader.onload = function(e) {
                 localStorage.setItem("todoList", e.target.result);
                 loadTasks();
             };
