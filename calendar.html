@@ -36,20 +36,22 @@
     </style>
 </head>
 <body>
+    <div id="calendar-container">
+        <h2 id="month-year"></h2>
+        <table class="calendar">
+            <thead>
+                <tr>
+                    <th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thu</th> <th>Fri</th> <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="calendar-body">
+                <!-- Dates will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    
 
-    <h2 id="month-year"></h2>
-    <table class="calendar">
-        <thead>
-            <tr>
-                <th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thu</th> <th>Fri</th> <th>Sat</th>
-            </tr>
-        </thead>
-        <tbody id="calendar-body">
-            <!-- Dates will be inserted here by JavaScript -->
-        </tbody>
-    </table>
-
-    <div id="day-menu" style.display = "none">
+    <div id="day-menu" style="display: none;">
         <h3>Day Details - <span id="day-number"></span></h3>
         <textarea id="day-notes" placeholder="Add notes for this day..."></textarea><br><br>
         <button onclick="closeDayMenu()">Close</button>
@@ -112,6 +114,7 @@
 
          // Open the day menu (modal)
          function openDayMenu(day) {
+            document.getElementById("calendar-container").style.display = "none";
             document.getElementById("day-number").innerText = day;
             document.getElementById("overlay").style.display = "block";
             document.getElementById("day-menu").style.display = "block";
