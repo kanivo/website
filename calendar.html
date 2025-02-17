@@ -103,13 +103,7 @@
             // Append last row
             calendarBody.appendChild(row);
         }
-
-        // Get current month and year
-        let today = new Date();
-        generateCalendar(today.getFullYear(), 11);
-
-         // Open the day menu (modal)
-         function openDayMenu(day) {
+        function openDayMenu(day) {
             document.getElementById("calendar-container").style.display = "none";
             // document.getElementById("day-number").innerText = day;
             document.getElementById("day-menu").style.display = "block";
@@ -127,6 +121,9 @@
             alert("Notes saved for this day: " + notes); // This can be replaced with saving to a database or local storage
             closeDayMenu();
         }
+        
+        let today = new Date();
+        generateCalendar(today.getFullYear(), 11);
     </script>
 
 </body>
