@@ -43,7 +43,7 @@
         }
         #editor {
             width: 100%;
-            height: 60vh;
+            height: 80vh; /* Increased height */
             border: 1px solid #555;
             background-color: #1b1b1b;
             color: white;
@@ -76,6 +76,16 @@
             color: red;
             cursor: pointer;
         }
+        .todo-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .add-task-btn {
+            border: 1px solid white;
+            padding: 10px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -96,7 +106,10 @@
     <div id="todo" class="content">
         <div class="todo-container">
             <ul id="taskList"></ul>
-            <button onclick="createTask()">Add Task</button>
+            <div class="todo-buttons">
+                <button class="add-task-btn" onclick="createTask()">Add Task</button>
+                <button onclick="clearTasks()">Delete All</button>
+            </div>
         </div>
         <div class="buttons">
             <button onclick="exportTasks()">Export To-Do</button>
@@ -196,6 +209,13 @@
                 li.appendChild(deleteBtn);
                 taskList.appendChild(li);
             });
+        }
+
+        function clearTasks() {
+            if (confirm("Are you sure you want to delete all tasks?")) {
+                localStorage.removeItem("todoList");
+                document.getElementById("taskList").innerHTML = "";
+            }
         }
 
         function exportContent() {
