@@ -11,7 +11,7 @@
         }
         .header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
         }
         .calendar {
             width: 700px;
@@ -71,10 +71,8 @@
             let calendarBody = document.getElementById("calendar-body");
             let monthYear = document.getElementById("month-year");
 
-            // Clear the previous calendar
             calendarBody.innerHTML = "";
 
-            // Set the current month and year
             let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             monthYear.innerText = monthNames[month] + " " + year;
 
