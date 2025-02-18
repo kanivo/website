@@ -135,6 +135,14 @@
 
         function changeMonth(direction) {
             currentMonth += direction;
+            if (currentMonth > 11) {
+                currentMonth -= 12
+                currentYear += 1
+            }
+            if (currentMonth < 0) {
+                currentMonth += 12
+                currentYear -= 1
+            }
             generateCalendar(currentYear, currentMonth)
         }
         
