@@ -2,7 +2,6 @@ body {
     background-color: #09090b;
     margin: 0;
     padding: 0;
-    display: block;
 } 
 
 .moving-image {
@@ -96,4 +95,7 @@ button:hover {
     color: white;
     border: 1px solid #666;
     border-radius: 5px;
+}
+#empty {
+    height: 200px;
 }
