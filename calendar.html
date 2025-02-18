@@ -38,7 +38,7 @@
         background-color: #45a049;
         }
         #month-year {
-            width: 40px;
+            width: 250px;
         }
     </style>
 </head>
@@ -86,12 +86,11 @@
             let row = document.createElement("tr");
 
             // Add empty cells for the first row
-            if (firstDay != 0) {
-                for (let i = 0; i < firstDay; i++) {
-                    let cell = document.createElement("td");
-                    row.appendChild(cell);
-                }
+            for (let i = 0; i < firstDay; i++) {
+                let cell = document.createElement("td");
+                row.appendChild(cell);
             }
+            
             // Fill in the days of the month
             for (let day = 1; day <= daysInMonth; day++) {
                 if ((firstDay + day - 1) % 7 === 0) {
