@@ -19,7 +19,7 @@
   }
   
   body {
-    display: block;
+    display: grid;
     color: var(--fg);
     background: var(--bg);
     padding: var(--space);
