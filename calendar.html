@@ -9,6 +9,10 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
         .calendar {
             width: 700px;
             height: 626px;
@@ -37,7 +41,11 @@
 </head>
 <body>
     <div id="calendar-container">
-        <h2 id="month-year"></h2>
+        </div class ="header">
+            <button id="prev-month" onclick="changeMonth(-1)">&#8249;</button>
+            <h2 id="month-year"></h2>
+            <button id="next-month" onclick="changeMonth(1)">&#8250;</button>
+        </div>
         <table class="calendar">
             <thead>
                 <tr>
@@ -121,9 +129,16 @@
             alert("Notes saved for this day: " + notes); // This can be replaced with saving to a database or local storage
             closeDayMenu();
         }
+
+        function changeMonth(direction) {
+            currenMonth += direction;
+            generateCalendar(currentyear, currentmonth)
+        }
         
-        let today = new Date();
-        generateCalendar(today.getFullYear(), today.getMonth() -1);
+        let currentYear = new Date().getFullYear();
+        let currentMonth = new Date().getMonth();  // 0 = January, 11 = December
+        let selectedDay = new Date().getDate();  // Set the current day
+        generateCalendar(currentYear, currentMonth);
     </script>
 
 </body>
