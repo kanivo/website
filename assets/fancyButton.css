@@ -26,18 +26,11 @@
     min-height: 100vh;
   }
   
-.fancy-button-wrapper {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-  
   main {
     display: grid;
     grid-template-columns: repeat(var(--count, 1), 1fr);
-    gap: 0; /* Remove or reduce the gap */
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
+    gap: var(--space);
+    margin: auto;
     inline-size: min(var(--max, 15rem), 100%);
   
     @media (min-width: 25rem) {
