@@ -15,13 +15,12 @@ h1 {
     z-index: 10;
     color: rgb(255, 255, 255);
     text-align: center;
-    /* margin-top: 50px; */
 }
 
 h2 {
     position: absolute;
-    bottom: 60px; /* Adjust the distance from the bottom */
-    left: 20px;   /* Adjust the distance from the left */
+    bottom: 60px; 
+    left: 20px;  
     color: #fff;
     font-size: 18px;
 }
@@ -44,8 +43,8 @@ button {
 
 .submit-button {
     position: absolute;
-    bottom: 20px; /* Adjust the distance from the bottom */
-    left: 230px; /* This will position it to the right of the input box */
+    bottom: 20px; 
+    left: 230px;
     padding: 10px 20px;
     width: 125px;
     height: 50px;
@@ -60,10 +59,10 @@ button {
 .card button {
     background-color: transparent;
     color: inherit;
-    padding: 0; /* or adjust based on your needs */
+    padding: 0; 
     border: none;
     cursor: pointer;
-    font-size: inherit; /* Ensure font size matches the rest of the card */
+    font-size: inherit;
     width: 100%;
     height: 100%;
 }
@@ -87,8 +86,8 @@ button:hover {
 
 #messageInput {
     position: absolute;
-    bottom: 20px; /* Adjust the distance from the bottom */
-    left: 20px;   /* Adjust the distance from the left */
+    bottom: 20px;
+    left: 20px;
     padding: 10px;
     width: 200px;
     height: 35px;
