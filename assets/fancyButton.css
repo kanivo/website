@@ -19,6 +19,7 @@
   }
   
   body {
+    display: block;
     color: var(--fg);
     background: var(--bg);
     padding: var(--space);
@@ -26,7 +27,7 @@
   }
   
   main {
-    display: block;
+    display: grid;
     grid-template-columns: repeat(var(--count, 1), 1fr);
     gap: var(--space);
     margin: auto;
