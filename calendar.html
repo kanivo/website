@@ -66,7 +66,7 @@
                 </tr>
             </thead>
             <tbody id="calendar-body">
-                <!-- Dates will be inserted here by JavaScript -->
+                <!-- inserted by js -->
             </tbody>
         </table>
     </div>
@@ -89,7 +89,6 @@
             let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             monthYear.innerText = monthNames[month] + " " + year;
 
-            // Get first day of the month and total days
             let firstDay = new Date(year, month, 1).getDay();
             let daysInMonth = new Date(year, month + 1, 0).getDate();
 
@@ -125,26 +124,23 @@
                 cell.appendChild(button);
                 row.appendChild(cell);
             }
-
-            // Append last row
             calendarBody.appendChild(row);
         }
         function openDayMenu(day) {
+            let notes = document.getElementById("day-notes").value;
             document.getElementById("calendar-container").style.display = "none";
-            // document.getElementById("day-number").innerText = day;
+            document.getElementById("day-number").innerText = day;
             document.getElementById("day-menu").style.display = "block";
+            notes = localStorage.getItem("savedContent" + day + month + year, notes) || "";
         }
-
-        // Close the day menu (modal)
         function closeDayMenu() {
             document.getElementById("day-menu").style.display = "none";
             document.getElementById("calendar-container").style.display = "block";
         }
 
-        // Save notes (you can add more functionality to save this data)
         function saveNotes() {
             let notes = document.getElementById("day-notes").value;
-            alert("Notes saved for this day: " + notes); // This can be replaced with saving to a database or local storage
+            localStorage.setItem("savedContent" + day + month + year, notes)
             closeDayMenu();
         }
 
