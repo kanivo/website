@@ -93,7 +93,7 @@
             for (let day = 1; day <= daysInMonth; day++) {
                 if ((firstDay + day - 1) % 7 === 0) {
                     calendarBody.appendChild(row);
-                    if (day != 0) {
+                    if (day != 1) {
                         row = document.createElement("tr");
                     }
                 }
