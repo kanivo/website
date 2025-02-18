@@ -83,11 +83,12 @@
             let row = document.createElement("tr");
 
             // Add empty cells for the first row
-            for (let i = 0; i < firstDay; i++) {
-                let cell = document.createElement("td");
-                row.appendChild(cell);
+            if (firstDay != 0) {
+                for (let i = 0; i < firstDay; i++) {
+                    let cell = document.createElement("td");
+                    row.appendChild(cell);
+                }
             }
-
             // Fill in the days of the month
             for (let day = 1; day <= daysInMonth; day++) {
                 if ((firstDay + day - 1) % 7 === 0) {
