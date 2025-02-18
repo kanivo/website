@@ -34,7 +34,7 @@
             width: 100%;
             height: 100%;
         }
-        .calendar-button {
+        .calendar-button-today {
             background-color: yellow;
             border: none;
             width: 100%;
@@ -109,8 +109,7 @@
 
                 let cell = document.createElement("td");
                 let button = document.createElement("button");
-                if (day == new Date().getDate() && month == new Date().getMonth())
-                {
+                if (day == new Date().getDate() && month == new Date().getMonth()) {
                     button.classList.add("calendar-button-today"); //add to special class
                 }
                 else {
