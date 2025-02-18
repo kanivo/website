@@ -112,7 +112,7 @@
 
                 let cell = document.createElement("td");
                 let button = document.createElement("button");
-                if (day == new Date().getDate() && month == new Date().getMonth()) {
+                if (day == new Date().getDate() && month == new Date().getMonth() && year == new Date().getFullYear()) {
                     button.classList.add("calendar-button-today"); //add to special class
                 }
                 else {
