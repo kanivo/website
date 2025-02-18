@@ -28,20 +28,23 @@
         th {
             background-color: lightgray;
         }
-        .calendar-button {
+        .calendar-button, .calendar-button-today {
             background-color: transparent;
             border: none;
             width: 100%;
             height: 100%;
-        }
-        .calendar-button-today {
-            background-color: yellow;
-            border: none;
-            width: 100%;
-            height: 100%;
+            padding: 0; 
+            margin: 0; 
+            display: block;
+            box-sizing: border-box;
+            outline: none;
         }
 
-        .calendar-button:hover {
+        .calendar-button-today {
+            background-color: yellow;
+        }
+
+        .calendar-button:hover, .calendar-button-today:hover {
         background-color: #45a049;
         }
         #month-year {
