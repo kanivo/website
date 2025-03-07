@@ -89,16 +89,16 @@
         let songs = [];
         let currentSongIndex = 0;
         let isShuffle = false;
-
+        let audioPlayer = document.getElementById('audio-player');
+        let audioSource = document.getElementById('audio-source');
+        let shuffleButton = document.getElementById('shuffleButton');
+    
         fetch('assets/data.json')
             .then(response => response.json())
             .then(data => {
                 songs = data;
                 const songListElement = document.getElementById('song-list');
-                const audioPlayer = document.getElementById('audio-player');
-                const audioSource = document.getElementById('audio-source');
-                const shuffleButton = document.getElementById('shuffleButton');
-
+    
                 function playSong(index) {
                     if (index >= songs.length) {
                         index = 0;
@@ -109,39 +109,50 @@
                     audioPlayer.load();
                     audioPlayer.play();
                 }
-
+    
                 function getNextSongIndex() {
                     return isShuffle ? Math.floor(Math.random() * songs.length) : currentSongIndex + 1;
                 }
-
+    
                 songs.forEach((song, index) => {
                     const listItemWrapper = document.createElement('div');
                     listItemWrapper.classList.add('song-item-wrapper');
-
+    
                     const songNumber = document.createElement('span');
                     songNumber.classList.add('song-number');
                     songNumber.textContent = `${index + 1}.`;
-
+    
                     const listItem = document.createElement('li');
                     listItem.classList.add('song-item');
                     listItem.textContent = `${song.title} (${song.artist})`;
-
+    
                     listItem.addEventListener('click', () => {
                         playSong(index);
                     });
-
+    
                     listItemWrapper.appendChild(songNumber);
                     listItemWrapper.appendChild(listItem);
                     songListElement.appendChild(listItemWrapper);
                 });
-
+    
                 audioPlayer.addEventListener('ended', () => {
                     playSong(getNextSongIndex());
                 });
-
+                
                 shuffleButton.addEventListener('click', () => {
                     isShuffle = !isShuffle;
                     shuffleButton.textContent = `Shuffle: ${isShuffle ? "ON" : "OFF"}`;
+                });
+    
+                document.addEventListener('keydown', (event) => {
+                    if (event.code === 'Space') {
+                        event.preventDefault(); 
+                        if (audioPlayer.paused) {
+                            audioPlayer.play();
+                        } else {
+                            audioPlayer.pause();
+                        }
+                    }
                 });
             })
             .catch(error => {
