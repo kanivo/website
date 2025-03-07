@@ -15,6 +15,11 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/Beno.mp3",
+        "title": "Beno!",
+        "artist": "Playboi Carti"
+    },
+    {
         "file": "assets/data/Blueberry Faygo.mp3",
         "title": "Blueberry Faygo",
         "artist": "Lil Mosey"
@@ -22,6 +27,11 @@
     {
         "file": "assets/data/Cult Classic.mp3",
         "title": "Cult Classic",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Die4Guy.mp3",
+        "title": "Die4Guy",
         "artist": "Playboi Carti"
     },
     {
@@ -38,6 +48,11 @@
         "file": "assets/data/Floor 555.mp3",
         "title": "Floor 555",
         "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/Freestyle 2.mp3",
+        "title": "Freestyle 2",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Going Schitz.mp3",
@@ -150,6 +165,11 @@
         "artist": "Baby Keem"
     },
     {
+        "file": "assets/data/Over.mp3",
+        "title": "Over",
+        "artist": "Playboi Carti"
+    },
+    {
         "file": "assets/data/overseas.mp3",
         "title": "overseas",
         "artist": "Ken Carson"
@@ -160,7 +180,7 @@
         "artist": "Playboi Carti"
     },
     {
-        "file": "assets/data/R.I.P..mp3",
+        "file": "assets/data/R.I.P.mp3",
         "title": "R.I.P.",
         "artist": "Playboi Carti"
     },
