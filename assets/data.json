@@ -1,8 +1,43 @@
 [
     {
+        "file": "assets/data/#ImSippinTeaInYoHood2.mp3",
+        "title": "#ImSippinTeaInYoHood",
+        "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/$$$ - with Matt Ox.mp3",
+        "title": "$$$ - with Matt Ox",
+        "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/20 Min.mp3",
+        "title": "20 Min",
+        "artist": "Lil Uzi Vert"
+    },
+    {
+        "file": "assets/data/223's (feat. 9lokknine)2.mp3",
+        "title": "223's",
+        "artist": "YNW Melly"
+    },
+    {
         "file": "assets/data/3MYGNG.mp3",
         "title": "<3MYGNG",
         "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/A GHETTO CHRISTMAS CAROL2.mp3",
+        "title": "A GHETTO CHRISTMAS CAROL",
+        "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/Ain't No Mountain High Enough2.mp3",
+        "title": "Ain't No Mountain High Enough",
+        "artist": "Marvin Gaye"
+    },
+    {
+        "file": "assets/data/BabyWipe.mp3",
+        "title": "BabyWipe",
+        "artist": "Ski Mask The Slump God"
     },
     {
         "file": "assets/data/BANDIT.mp3",
@@ -25,9 +60,44 @@
         "artist": "Lil Mosey"
     },
     {
+        "file": "assets/data/Breathe.mp3",
+        "title": "Breathe",
+        "artist": "Yeat"
+    },
+    {
+        "file": "assets/data/Catch Me Outside.mp3",
+        "title": "Catch Me Outside",
+        "artist": "Ski Mask The Slump God"
+    },
+    {
+        "file": "assets/data/Coffin.mp3",
+        "title": "Coffin",
+        "artist": "Lil Yachty"
+    },
+    {
+        "file": "assets/data/Crazy.mp3",
+        "title": "Crazy",
+        "artist": "Gnarls Barkley"
+    },
+    {
         "file": "assets/data/Cult Classic.mp3",
         "title": "Cult Classic",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Dark Knight Dummo (feat. Travis Scott).mp3",
+        "title": "Dark Knight Dummo",
+        "artist": "Trippie Redd"
+    },
+    {
+        "file": "assets/data/Did It Again.mp3",
+        "title": "Did It Again",
+        "artist": "Lil Tecca"
+    },
+    {
+        "file": "assets/data/Die For You.mp3",
+        "title": "Die For You",
+        "artist": "The Weeknd"
     },
     {
         "file": "assets/data/Die4Guy.mp3",
@@ -35,9 +105,29 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/EARFQUAKE.mp3",
+        "title": "EARFQUAKE",
+        "artist": "Tyler"
+    },
+    {
+        "file": "assets/data/Easy On Me.mp3",
+        "title": "Easy On Me",
+        "artist": "Adele"
+    },
+    {
+        "file": "assets/data/Everybody Dies In Their Nightmares.mp3",
+        "title": "Everybody Dies In Their Nightmares",
+        "artist": "XXXTENTACION"
+    },
+    {
         "file": "assets/data/family ties .mp3",
         "title": "family ties",
         "artist": "Baby Keem"
+    },
+    {
+        "file": "assets/data/Faucet Failure.mp3",
+        "title": "Faucet Failure",
+        "artist": "Ski Mask The Slump God"
     },
     {
         "file": "assets/data/Fighting My Demons.mp3",
@@ -55,14 +145,49 @@
         "artist": "Ken Carson"
     },
     {
+        "file": "assets/data/Fuck Love.mp3",
+        "title": "Fuck Love",
+        "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/going down!.mp3",
+        "title": "going down!",
+        "artist": "XXXTENTACION"
+    },
+    {
         "file": "assets/data/Going Schitz.mp3",
         "title": "Going Schitz",
         "artist": "Ken Carson"
     },
     {
+        "file": "assets/data/GOODMORNINGTOKYO!.mp3",
+        "title": "GOODMORNINGTOKYO!",
+        "artist": "TOKYO\u2019S REVENGE"
+    },
+    {
+        "file": "assets/data/G\u00ebt Busy.mp3",
+        "title": "G\u00ebt Busy",
+        "artist": "Yeat"
+    },
+    {
+        "file": "assets/data/Hope.mp3",
+        "title": "Hope",
+        "artist": "XXXTENTACION"
+    },
+    {
         "file": "assets/data/how u feel_.mp3",
         "title": "how u feel?",
         "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/I Don't Wanna Do This Anymore.mp3",
+        "title": "I Don't Wanna Do This Anymore",
+        "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/I spoke to the devil in miami, he said everything would be fine2.mp3",
+        "title": "I spoke to the devil in miami, he said everything would be fine",
+        "artist": "XXXTENTACION"
     },
     {
         "file": "assets/data/if looks could kill.mp3",
@@ -83,6 +208,16 @@
         "file": "assets/data/Jennifer\u2019s Body.mp3",
         "title": "Jennifer\u2019s Body",
         "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Jocelyn Flores2.mp3",
+        "title": "Jocelyn Flores",
+        "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/Kiss Me.mp3",
+        "title": "Kiss Me",
+        "artist": "Sixpence None The Richer"
     },
     {
         "file": "assets/data/Lights.mp3",
@@ -125,6 +260,16 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/Mon\u00eby so big.mp3",
+        "title": "Mon\u00eby so big",
+        "artist": "Yeat"
+    },
+    {
+        "file": "assets/data/Murder on My Mind2.mp3",
+        "title": "Murder on My Mind",
+        "artist": "YNW Melly"
+    },
+    {
         "file": "assets/data/NEVEREVER.mp3",
         "title": "NEVEREVER",
         "artist": "Destroy Lonely"
@@ -133,6 +278,11 @@
         "file": "assets/data/New Tank.mp3",
         "title": "New Tank",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Nightcrawler (feat. Swae Lee & Chief Keef).mp3",
+        "title": "Nightcrawler",
+        "artist": "Travis Scott"
     },
     {
         "file": "assets/data/Nightcrawler .mp3",
@@ -150,6 +300,21 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/Not Like Us.mp3",
+        "title": "Not Like Us",
+        "artist": "Kendrick Lamar"
+    },
+    {
+        "file": "assets/data/Nuketown (feat. Juice WRLD).mp3",
+        "title": "Nuketown",
+        "artist": "Ski Mask The Slump God"
+    },
+    {
+        "file": "assets/data/NUMB.mp3",
+        "title": "NUMB",
+        "artist": "XXXTENTACION"
+    },
+    {
         "file": "assets/data/On That Time.mp3",
         "title": "On That Time",
         "artist": "Playboi Carti"
@@ -165,6 +330,11 @@
         "artist": "Baby Keem"
     },
     {
+        "file": "assets/data/Out th\u00eb way.mp3",
+        "title": "Out th\u00eb way",
+        "artist": "Yeat"
+    },
+    {
         "file": "assets/data/Over.mp3",
         "title": "Over",
         "artist": "Playboi Carti"
@@ -173,6 +343,21 @@
         "file": "assets/data/overseas.mp3",
         "title": "overseas",
         "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Passionfruit.mp3",
+        "title": "Passionfruit",
+        "artist": "Drake"
+    },
+    {
+        "file": "assets/data/Poland2.mp3",
+        "title": "Poland",
+        "artist": "Lil Yachty"
+    },
+    {
+        "file": "assets/data/Pop Out (feat. Lil Tjay).mp3",
+        "title": "Pop Out",
+        "artist": "Polo G"
     },
     {
         "file": "assets/data/Punk Monk.mp3",
@@ -185,6 +370,21 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/Revenge.mp3",
+        "title": "Revenge",
+        "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/Riot2.mp3",
+        "title": "Riot",
+        "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/RIP Roach2.mp3",
+        "title": "RIP Roach",
+        "artist": "XXXTENTACION"
+    },
+    {
         "file": "assets/data/Rockstar Made.mp3",
         "title": "Rockstar Made",
         "artist": "Playboi Carti"
@@ -195,9 +395,39 @@
         "artist": "Adele"
     },
     {
+        "file": "assets/data/Sauce!.mp3",
+        "title": "Sauce!",
+        "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/See You Again (feat. Kali Uchis).mp3",
+        "title": "See You Again",
+        "artist": "Tyler"
+    },
+    {
         "file": "assets/data/See You Again .mp3",
         "title": "See You Again",
         "artist": "Tyler, The Creator"
+    },
+    {
+        "file": "assets/data/Set Fire to the Rain.mp3",
+        "title": "Set Fire to the Rain",
+        "artist": "Adele"
+    },
+    {
+        "file": "assets/data/She Knows (feat. Amber Coffman & Cults).mp3",
+        "title": "She Knows",
+        "artist": "J. Cole"
+    },
+    {
+        "file": "assets/data/Shibuya.mp3",
+        "title": "Shibuya",
+        "artist": "Ski Mask The Slump God"
+    },
+    {
+        "file": "assets/data/Shoota (feat. Lil Uzi Vert).mp3",
+        "title": "Shoota",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/Shoota .mp3",
@@ -205,9 +435,44 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/Sky.mp3",
+        "title": "Sky",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/SLUT ME OUT.mp3",
+        "title": "SLUT ME OUT",
+        "artist": "NLE Choppa"
+    },
+    {
+        "file": "assets/data/Starboy.mp3",
+        "title": "Starboy",
+        "artist": "The Weeknd"
+    },
+    {
+        "file": "assets/data/Stir Fry.mp3",
+        "title": "Stir Fry",
+        "artist": "Migos"
+    },
+    {
+        "file": "assets/data/Stop Breathing.mp3",
+        "title": "Stop Breathing",
+        "artist": "Playboi Carti"
+    },
+    {
         "file": "assets/data/Succubus.mp3",
         "title": "Succubus",
         "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Super Gremlin.mp3",
+        "title": "Super Gremlin",
+        "artist": "Kodak Black"
+    },
+    {
+        "file": "assets/data/Take A Step Back.mp3",
+        "title": "Take A Step Back",
+        "artist": "Ski Mask The Slump God"
     },
     {
         "file": "assets/data/Talk talk.mp3",
@@ -220,9 +485,49 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/Thank You.mp3",
+        "title": "Thank You",
+        "artist": "Dido"
+    },
+    {
+        "file": "assets/data/The Grinch.mp3",
+        "title": "The Grinch",
+        "artist": "Trippie Redd"
+    },
+    {
+        "file": "assets/data/The Race.mp3",
+        "title": "The Race",
+        "artist": "Tay-K"
+    },
+    {
+        "file": "assets/data/THRILL (with Ken Carson).mp3",
+        "title": "THRILL",
+        "artist": "Destroy Lonely"
+    },
+    {
         "file": "assets/data/Timeless .mp3",
         "title": "Timeless",
         "artist": "The Weeknd"
+    },
+    {
+        "file": "assets/data/Umbrella.mp3",
+        "title": "Umbrella",
+        "artist": "Rihanna"
+    },
+    {
+        "file": "assets/data/Unbothered.mp3",
+        "title": "Unbothered",
+        "artist": "Ski Mask The Slump God"
+    },
+    {
+        "file": "assets/data/Under Enemy Arms.mp3",
+        "title": "Under Enemy Arms",
+        "artist": "Trippie Redd"
+    },
+    {
+        "file": "assets/data/UP LIKE AN INSOMNIAC2.mp3",
+        "title": "UP LIKE AN INSOMNIAC - Freestyle",
+        "artist": "XXXTENTACION"
     },
     {
         "file": "assets/data/Vamp Anthem.mp3",
@@ -233,6 +538,11 @@
         "file": "assets/data/VETERAN .mp3",
         "title": "VETERAN",
         "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Wildest Dreams.mp3",
+        "title": "Wildest Dreams",
+        "artist": "Taylor Swift"
     },
     {
         "file": "assets/data/wokeuplikethis.mp3",
@@ -248,6 +558,11 @@
         "file": "assets/data/Yale.mp3",
         "title": "Yale",
         "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/YuNg BrAtZ2.mp3",
+        "title": "YuNg BrAtZ",
+        "artist": "XXXTENTACION"
     },
     {
         "file": "assets/data/ZEZE.mp3",
