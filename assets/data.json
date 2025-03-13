@@ -1,10 +1,5 @@
 [
     {
-        "file": "assets/data/#ImSippinTeaInYoHood2.mp3",
-        "title": "#ImSippinTeaInYoHood",
-        "artist": "XXXTENTACION"
-    },
-    {
         "file": "assets/data/$$$ - with Matt Ox.mp3",
         "title": "$$$ - with Matt Ox",
         "artist": "XXXTENTACION"
@@ -73,11 +68,6 @@
         "file": "assets/data/Coffin.mp3",
         "title": "Coffin",
         "artist": "Lil Yachty"
-    },
-    {
-        "file": "assets/data/Crazy.mp3",
-        "title": "Crazy",
-        "artist": "Gnarls Barkley"
     },
     {
         "file": "assets/data/Cult Classic.mp3",
@@ -213,11 +203,6 @@
         "file": "assets/data/Jocelyn Flores2.mp3",
         "title": "Jocelyn Flores",
         "artist": "XXXTENTACION"
-    },
-    {
-        "file": "assets/data/Kiss Me.mp3",
-        "title": "Kiss Me",
-        "artist": "Sixpence None The Richer"
     },
     {
         "file": "assets/data/Lights.mp3",
@@ -410,11 +395,6 @@
         "artist": "Tyler, The Creator"
     },
     {
-        "file": "assets/data/Set Fire to the Rain.mp3",
-        "title": "Set Fire to the Rain",
-        "artist": "Adele"
-    },
-    {
         "file": "assets/data/She Knows (feat. Amber Coffman & Cults).mp3",
         "title": "She Knows",
         "artist": "J. Cole"
@@ -538,11 +518,6 @@
         "file": "assets/data/VETERAN .mp3",
         "title": "VETERAN",
         "artist": "Destroy Lonely"
-    },
-    {
-        "file": "assets/data/Wildest Dreams.mp3",
-        "title": "Wildest Dreams",
-        "artist": "Taylor Swift"
     },
     {
         "file": "assets/data/wokeuplikethis.mp3",
