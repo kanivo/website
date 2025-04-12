@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Music Player</title>
     <style>
         body {
@@ -53,7 +53,7 @@
             margin: 0 auto;
             width: 320px;
             flex: 1;
-            margin-bottom: 120px; /* Make space for sticky controls */
+            margin-bottom: 120px;
         }
 
         .song-item-wrapper {
@@ -83,6 +83,12 @@
             background-color: #eaeaea;
         }
 
+        .song-item.active {
+            background-color: #6b00b3;
+            color: white;
+            font-weight: bold;
+        }
+
         .controls {
             position: fixed;
             bottom: 0;
@@ -94,11 +100,26 @@
             align-items: center;
             padding: 10px;
             z-index: 10;
+            gap: 10px;
+        }
+
+        .controls button {
+            padding: 10px;
+            font-size: 18px;
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        .controls button:hover {
+            background-color: #6b00b3;
+            color: white;
         }
 
         .controls audio {
             width: 100%;
-            max-width: 600px;
+            max-width: 400px;
         }
     </style>
 </head>
@@ -114,10 +135,12 @@
     <ul class="song-list" id="song-list"></ul>
 
     <div class="controls">
+        <button id="prevButton">⏮</button>
         <audio id="audio-player" controls>
             <source id="audio-source" src="" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
+        <button id="nextButton">⏭</button>
     </div>
 
     <script>
@@ -127,26 +150,37 @@
         const audioPlayer = document.getElementById('audio-player');
         const audioSource = document.getElementById('audio-source');
         const shuffleButton = document.getElementById('shuffleButton');
+        const songListElement = document.getElementById('song-list');
+
+        function updateActiveSong() {
+            document.querySelectorAll('.song-item').forEach((el, idx) => {
+                if (idx === currentSongIndex) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+        }
+
+        function playSong(index) {
+            if (index >= songs.length) index = 0;
+            if (index < 0) index = songs.length - 1;
+            currentSongIndex = index;
+            const song = songs[currentSongIndex];
+            audioSource.src = song.file;
+            audioPlayer.load();
+            audioPlayer.play();
+            updateActiveSong();
+        }
+
+        function getNextSongIndex() {
+            return isShuffle ? Math.floor(Math.random() * songs.length) : currentSongIndex + 1;
+        }
 
         fetch('assets/data.json')
             .then(response => response.json())
             .then(data => {
                 songs = data;
-                const songListElement = document.getElementById('song-list');
-
-                function playSong(index) {
-                    if (index >= songs.length) index = 0;
-                    if (index < 0) index = songs.length - 1;
-                    currentSongIndex = index;
-                    const song = songs[currentSongIndex];
-                    audioSource.src = song.file;
-                    audioPlayer.load();
-                    audioPlayer.play();
-                }
-
-                function getNextSongIndex() {
-                    return isShuffle ? Math.floor(Math.random() * songs.length) : currentSongIndex + 1;
-                }
 
                 songs.forEach((song, index) => {
                     const wrapper = document.createElement('div');
@@ -167,13 +201,21 @@
                     songListElement.appendChild(wrapper);
                 });
 
-                audioPlayer.addEventListener('ended', () => {
+                document.getElementById('prevButton').addEventListener('click', () => {
+                    playSong(currentSongIndex - 1);
+                });
+
+                document.getElementById('nextButton').addEventListener('click', () => {
                     playSong(getNextSongIndex());
                 });
 
                 shuffleButton.addEventListener('click', () => {
                     isShuffle = !isShuffle;
                     shuffleButton.textContent = `Shuffle: ${isShuffle ? 'ON' : 'OFF'}`;
+                });
+
+                audioPlayer.addEventListener('ended', () => {
+                    playSong(getNextSongIndex());
                 });
 
                 document.addEventListener('keydown', (event) => {
