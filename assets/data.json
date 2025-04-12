@@ -55,11 +55,6 @@
         "artist": "Playboi Carti"
     },
     {
-        "file": "assets/data/Blueberry Faygo.mp3",
-        "title": "Blueberry Faygo",
-        "artist": "Lil Mosey"
-    },
-    {
         "file": "assets/data/Breathe.mp3",
         "title": "Breathe",
         "artist": "Yeat"
@@ -75,24 +70,109 @@
         "artist": "Lil Yachty"
     },
     {
-        "file": "assets/data/Crazy.mp3",
-        "title": "Crazy",
-        "artist": "Gnarls Barkley"
-    },
-    {
         "file": "assets/data/Cult Classic.mp3",
         "title": "Cult Classic",
         "artist": "Playboi Carti"
     },
     {
-        "file": "assets/data/Dark Knight Dummo (feat. Travis Scott).mp3",
-        "title": "Dark Knight Dummo",
-        "artist": "Trippie Redd"
+        "file": "assets/data/Destroy Lonely - biggest problem.flac",
+        "title": "biggest problem",
+        "artist": "Destroy Lonely"
     },
     {
-        "file": "assets/data/Did It Again.mp3",
-        "title": "Did It Again",
-        "artist": "Lil Tecca"
+        "file": "assets/data/Destroy Lonely - came in wit.flac",
+        "title": "came in wit",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - CDG.flac",
+        "title": "CDG",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - CRYSTLCSTLES.flac",
+        "title": "CRYSTLCSTLES",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - cutie.flac",
+        "title": "cutie",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - Diamonds   Foreigns.flac",
+        "title": "Diamonds & Foreigns",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - FAKENGGAS.flac",
+        "title": "FAKENGGAS",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - Groupie Btch.flac",
+        "title": "Groupie Btch",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - JETLGGD.flac",
+        "title": "JETLGGD",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - LNLY.flac",
+        "title": "LNLY",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - LOUVRE.flac",
+        "title": "LOUVRE",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - n(n).flac",
+        "title": "n",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - ONTHETABLE.flac",
+        "title": "ONTHETABLE",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - please dnt touch dis sh t.flac",
+        "title": "please dnt touch dis sh*t",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - PRSSURE.flac",
+        "title": "PRSSURE",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - redlight.flac",
+        "title": "redlight",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - superstar.flac",
+        "title": "superstar",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - TURNINUP.flac",
+        "title": "TURNINUP",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - Which 1 _ Klueless.flac",
+        "title": "Which 1 / Klueless",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - which one.flac",
+        "title": "which one",
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/Die For You.mp3",
@@ -118,11 +198,6 @@
         "file": "assets/data/Everybody Dies In Their Nightmares.mp3",
         "title": "Everybody Dies In Their Nightmares",
         "artist": "XXXTENTACION"
-    },
-    {
-        "file": "assets/data/family ties .mp3",
-        "title": "family ties",
-        "artist": "Baby Keem"
     },
     {
         "file": "assets/data/Faucet Failure.mp3",
@@ -160,13 +235,8 @@
         "artist": "Ken Carson"
     },
     {
-        "file": "assets/data/GOODMORNINGTOKYO!.mp3",
-        "title": "GOODMORNINGTOKYO!",
-        "artist": "TOKYO\u2019S REVENGE"
-    },
-    {
-        "file": "assets/data/G\u00ebt Busy.mp3",
-        "title": "G\u00ebt Busy",
+        "file": "assets/data/Gët Busy.mp3",
+        "title": "Gët Busy",
         "artist": "Yeat"
     },
     {
@@ -205,8 +275,8 @@
         "artist": "Destroy Lonely"
     },
     {
-        "file": "assets/data/Jennifer\u2019s Body.mp3",
-        "title": "Jennifer\u2019s Body",
+        "file": "assets/data/Jennifer’s Body.mp3",
+        "title": "Jennifer’s Body",
         "artist": "Ken Carson"
     },
     {
@@ -215,9 +285,29 @@
         "artist": "XXXTENTACION"
     },
     {
-        "file": "assets/data/Kiss Me.mp3",
-        "title": "Kiss Me",
-        "artist": "Sixpence None The Richer"
+        "file": "assets/data/Ken Carson - Go.flac",
+        "title": "Go",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - Hardcore.flac",
+        "title": "Hardcore",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - Lose It.flac",
+        "title": "Lose It",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - Pots.flac",
+        "title": "Pots",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - Turn Up.flac",
+        "title": "Turn Up",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Lights.mp3",
@@ -260,8 +350,8 @@
         "artist": "Destroy Lonely"
     },
     {
-        "file": "assets/data/Mon\u00eby so big.mp3",
-        "title": "Mon\u00eby so big",
+        "file": "assets/data/Monëy so big.mp3",
+        "title": "Monëy so big",
         "artist": "Yeat"
     },
     {
@@ -278,11 +368,6 @@
         "file": "assets/data/New Tank.mp3",
         "title": "New Tank",
         "artist": "Playboi Carti"
-    },
-    {
-        "file": "assets/data/Nightcrawler (feat. Swae Lee & Chief Keef).mp3",
-        "title": "Nightcrawler",
-        "artist": "Travis Scott"
     },
     {
         "file": "assets/data/Nightcrawler .mp3",
@@ -310,19 +395,9 @@
         "artist": "Ski Mask The Slump God"
     },
     {
-        "file": "assets/data/NUMB.mp3",
-        "title": "NUMB",
-        "artist": "XXXTENTACION"
-    },
-    {
         "file": "assets/data/On That Time.mp3",
         "title": "On That Time",
         "artist": "Playboi Carti"
-    },
-    {
-        "file": "assets/data/ONE CALL.mp3",
-        "title": "ONE CALL",
-        "artist": "Rich Amiri"
     },
     {
         "file": "assets/data/ORANGE SODA.mp3",
@@ -330,8 +405,8 @@
         "artist": "Baby Keem"
     },
     {
-        "file": "assets/data/Out th\u00eb way.mp3",
-        "title": "Out th\u00eb way",
+        "file": "assets/data/Out thë way.mp3",
+        "title": "Out thë way",
         "artist": "Yeat"
     },
     {
@@ -350,9 +425,129 @@
         "artist": "Drake"
     },
     {
-        "file": "assets/data/Poland2.mp3",
-        "title": "Poland",
-        "artist": "Lil Yachty"
+        "file": "assets/data/Playboi Carti - BACKD00R.flac",
+        "title": "BACKD00R",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - CHARGE DEM HOES A FEE.flac",
+        "title": "CHARGE DEM HOES A FEE",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - COCAINE NOSE.flac",
+        "title": "COCAINE NOSE",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - CRANK.flac",
+        "title": "CRANK",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - CRUSH.flac",
+        "title": "CRUSH",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - EVIL J0RDAN.flac",
+        "title": "EVIL J0RDAN",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - FINE SHIT.flac",
+        "title": "FINE SHIT",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - GOOD CREDIT.flac",
+        "title": "GOOD CREDIT",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - HBA.flac",
+        "title": "HBA",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - I SEEEEEE YOU BABY BOI.flac",
+        "title": "I SEEEEEE YOU BABY BOI",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - JUMPIN.flac",
+        "title": "JUMPIN",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - K POP.flac",
+        "title": "K POP",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - LIKE WEEZY.flac",
+        "title": "LIKE WEEZY",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - MOJO JOJO.flac",
+        "title": "MOJO JOJO",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - MUNYUN.flac",
+        "title": "MUNYUN",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - OPM BABI.flac",
+        "title": "OPM BABI",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - OVERLY.flac",
+        "title": "OVERLY",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - PHILLY.flac",
+        "title": "PHILLY",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - POP OUT.flac",
+        "title": "POP OUT",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - RATHER LIE.flac",
+        "title": "RATHER LIE",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - SOUTH ATLANTA BABY.flac",
+        "title": "SOUTH ATLANTA BABY",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - TOXIC.flac",
+        "title": "TOXIC",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - WAKE UP F1LTHY.flac",
+        "title": "WAKE UP F1LTHY",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - WALK.flac",
+        "title": "WALK",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - WE NEED ALL DA VIBES.flac",
+        "title": "WE NEED ALL DA VIBES",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/Pop Out (feat. Lil Tjay).mp3",
@@ -410,11 +605,6 @@
         "artist": "Tyler, The Creator"
     },
     {
-        "file": "assets/data/Set Fire to the Rain.mp3",
-        "title": "Set Fire to the Rain",
-        "artist": "Adele"
-    },
-    {
         "file": "assets/data/She Knows (feat. Amber Coffman & Cults).mp3",
         "title": "She Knows",
         "artist": "J. Cole"
@@ -438,11 +628,6 @@
         "file": "assets/data/Sky.mp3",
         "title": "Sky",
         "artist": "Playboi Carti"
-    },
-    {
-        "file": "assets/data/SLUT ME OUT.mp3",
-        "title": "SLUT ME OUT",
-        "artist": "NLE Choppa"
     },
     {
         "file": "assets/data/Starboy.mp3",
@@ -483,11 +668,6 @@
         "file": "assets/data/Teen X .mp3",
         "title": "Teen X",
         "artist": "Playboi Carti"
-    },
-    {
-        "file": "assets/data/Thank You.mp3",
-        "title": "Thank You",
-        "artist": "Dido"
     },
     {
         "file": "assets/data/The Grinch.mp3",
@@ -538,11 +718,6 @@
         "file": "assets/data/VETERAN .mp3",
         "title": "VETERAN",
         "artist": "Destroy Lonely"
-    },
-    {
-        "file": "assets/data/Wildest Dreams.mp3",
-        "title": "Wildest Dreams",
-        "artist": "Taylor Swift"
     },
     {
         "file": "assets/data/wokeuplikethis.mp3",
