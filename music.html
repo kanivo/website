@@ -120,7 +120,37 @@
             width: 100%;
             max-width: 400px;
             background-color: #333;
+            color: white;
         }
+
+        /* Styling for native audio player (play/pause, volume, etc.) */
+        .controls audio::-webkit-media-controls-panel {
+            background-color: #333 !important;
+            color: white !important;
+        }
+
+        .controls audio::-webkit-media-controls-play-button {
+            background-color: #6b00b3 !important;
+        }
+
+        .controls audio::-webkit-media-controls-volume-slider {
+            background-color: #444 !important;
+        }
+
+        .controls audio::-webkit-media-controls-mute-button {
+            background-color: #444 !important;
+        }
+
+        .controls audio::-webkit-media-controls-current-time-display,
+        .controls audio::-webkit-media-controls-time-remaining-display {
+            color: white !important;
+        }
+
+        .controls audio::-webkit-media-controls-seek-backward-button,
+        .controls audio::-webkit-media-controls-seek-forward-button {
+            background-color: #6b00b3 !important;
+        }
+
     </style>
 </head>
 <body>
