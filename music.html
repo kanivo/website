@@ -93,25 +93,12 @@
             justify-content: center;
             align-items: center;
             padding: 10px;
-            gap: 15px;
             z-index: 10;
         }
 
-        .controls button {
-            padding: 10px 15px;
-            font-size: 18px;
-            background-color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .controls button:hover {
-            background-color: #6b00b3;
-            color: white;
-        }
-
-        audio {
-            display: none;
+        .controls audio {
+            width: 100%;
+            max-width: 600px;
         }
     </style>
 </head>
@@ -127,14 +114,11 @@
     <ul class="song-list" id="song-list"></ul>
 
     <div class="controls">
-        <button id="prevButton">⏮</button>
-        <button id="playPauseButton">⏯</button>
-        <button id="nextButton">⏭</button>
+        <audio id="audio-player" controls>
+            <source id="audio-source" src="" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
     </div>
-
-    <audio id="audio-player" controls>
-        <source id="audio-source" src="" type="audio/mp3">
-    </audio>
 
     <script>
         let songs = [];
@@ -143,9 +127,6 @@
         const audioPlayer = document.getElementById('audio-player');
         const audioSource = document.getElementById('audio-source');
         const shuffleButton = document.getElementById('shuffleButton');
-        const playPauseButton = document.getElementById('playPauseButton');
-        const prevButton = document.getElementById('prevButton');
-        const nextButton = document.getElementById('nextButton');
 
         fetch('assets/data.json')
             .then(response => response.json())
@@ -165,10 +146,6 @@
 
                 function getNextSongIndex() {
                     return isShuffle ? Math.floor(Math.random() * songs.length) : currentSongIndex + 1;
-                }
-
-                function getPreviousSongIndex() {
-                    return currentSongIndex - 1;
                 }
 
                 songs.forEach((song, index) => {
@@ -199,26 +176,14 @@
                     shuffleButton.textContent = `Shuffle: ${isShuffle ? 'ON' : 'OFF'}`;
                 });
 
-                playPauseButton.addEventListener('click', () => {
-                    if (audioPlayer.paused) {
-                        audioPlayer.play();
-                    } else {
-                        audioPlayer.pause();
-                    }
-                });
-
-                nextButton.addEventListener('click', () => {
-                    playSong(getNextSongIndex());
-                });
-
-                prevButton.addEventListener('click', () => {
-                    playSong(getPreviousSongIndex());
-                });
-
                 document.addEventListener('keydown', (event) => {
                     if (event.code === 'Space') {
                         event.preventDefault();
-                        playPauseButton.click();
+                        if (audioPlayer.paused) {
+                            audioPlayer.play();
+                        } else {
+                            audioPlayer.pause();
+                        }
                     }
                 });
             })
