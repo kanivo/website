@@ -168,26 +168,28 @@
     let currentSongIndex = 0;
     let isShuffle = false;
     let playHistory = [];
-
+    let forwardHistory = [];
+  
     const audioPlayer = document.getElementById('audio-player');
     const audioSource = document.getElementById('audio-source');
     const shuffleButton = document.getElementById('shuffleButton');
     const songListElement = document.getElementById('song-list');
-
+  
     function updateActiveSong() {
       document.querySelectorAll('.song-item').forEach((el, idx) => {
         el.classList.toggle('active', idx === currentSongIndex);
       });
     }
-
-    function playSong(index) {
+  
+    function playSong(index, { fromHistory = false } = {}) {
       if (index >= songs.length) index = 0;
       if (index < 0) index = songs.length - 1;
-
-      if (isShuffle && index !== currentSongIndex) {
+  
+      if (!fromHistory) {
         playHistory.push(currentSongIndex);
+        forwardHistory = []; // Clear forward stack when playing a new song
       }
-
+  
       currentSongIndex = index;
       const song = songs[currentSongIndex];
       audioSource.src = song.file;
@@ -195,57 +197,64 @@
       audioPlayer.play();
       updateActiveSong();
     }
-
+  
     function getNextSongIndex() {
       return isShuffle ? Math.floor(Math.random() * songs.length) : currentSongIndex + 1;
     }
-
+  
     fetch('assets/data.json')
       .then(response => response.json())
       .then(data => {
         songs = data;
-
+  
         songs.forEach((song, index) => {
           const wrapper = document.createElement('div');
           wrapper.classList.add('song-item-wrapper');
-
+  
           const number = document.createElement('span');
           number.classList.add('song-number');
           number.textContent = `${index + 1}.`;
-
+  
           const item = document.createElement('li');
           item.classList.add('song-item');
           item.textContent = `${song.title} (${song.artist})`;
-
+  
           item.addEventListener('click', () => playSong(index));
-
+  
           wrapper.appendChild(number);
           wrapper.appendChild(item);
           songListElement.appendChild(wrapper);
         });
-
+  
         document.getElementById('prevButton').addEventListener('click', () => {
           if (isShuffle && playHistory.length > 0) {
+            forwardHistory.push(currentSongIndex);
             const previousIndex = playHistory.pop();
-            playSong(previousIndex);
+            playSong(previousIndex, { fromHistory: true });
           } else {
             playSong(currentSongIndex - 1);
           }
         });
-
+  
         document.getElementById('nextButton').addEventListener('click', () => {
-          playSong(getNextSongIndex());
+          if (isShuffle && forwardHistory.length > 0) {
+            const nextIndex = forwardHistory.pop();
+            playHistory.push(currentSongIndex);
+            playSong(nextIndex, { fromHistory: true });
+          } else {
+            playSong(getNextSongIndex());
+          }
         });
-
+  
         shuffleButton.addEventListener('click', () => {
           isShuffle = !isShuffle;
           shuffleButton.textContent = `Shuffle: ${isShuffle ? 'ON' : 'OFF'}`;
         });
-
+  
         audioPlayer.addEventListener('ended', () => {
           playSong(getNextSongIndex());
         });
-
+  
         document.addEventListener('keydown', (event) => {
           if (event.code === 'Space') {
             event.preventDefault();
@@ -259,5 +268,6 @@
       })
       .catch(error => console.error('Error loading songs.json:', error));
   </script>
+  
 </body>
 </html>
