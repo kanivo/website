@@ -15,6 +15,11 @@
         "artist": "Lil Uzi Vert"
     },
     {
+        "file": "assets/data/SpotiDownloader.com - 2000 - Ken Carson.mp3",
+        "title": "2000",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/223's (feat. 9lokknine)2.mp3",
         "title": "223's",
         "artist": "YNW Melly"
@@ -300,6 +305,11 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/SpotiDownloader.com - K-Hole - Ken Carson.mp3",
+        "title": "K-Hole",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Lights.mp3",
         "title": "Lights",
         "artist": "Ellie Goulding"
@@ -310,9 +320,19 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/SpotiDownloader.com - LiveLeak - Ken Carson.mp3",
+        "title": "LiveLeak",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Destroy Lonely - LNLY.flac",
         "title": "LNLY",
         "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/SpotiDownloader.com - Lord Of Chaos - Ken Carson.mp3",
+        "title": "Lord Of Chaos",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Ken Carson - Lose It.flac",
@@ -418,6 +438,11 @@
         "file": "assets/data/Nuketown (feat. Juice WRLD).mp3",
         "title": "Nuketown",
         "artist": "Ski Mask The Slump God"
+    },
+    {
+        "file": "assets/data/SpotiDownloader.com - Off The Meter (with Playboi Carti & Destroy Lonely) - Ken Carson.mp3",
+        "title": "Off The Meter",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/On That Time.mp3",
@@ -723,6 +748,11 @@
         "file": "assets/data/wokeuplikethis.mp3",
         "title": "wokeuplikethis*",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/SpotiDownloader.com - Xposed - Ken Carson.mp3",
+        "title": "Xposed",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Ya Ight.mp3",
