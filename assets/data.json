@@ -10,11 +10,6 @@
         "artist": "XXXTENTACION"
     },
     {
-        "file": "assets/data/20 Min.mp3",
-        "title": "20 Min",
-        "artist": "Lil Uzi Vert"
-    },
-    {
         "file": "assets/data/Ken Carson - 200 Kash.flac",
         "title": "200 Kash",
         "artist": "Ken Carson"
@@ -80,19 +75,9 @@
         "artist": "Ken Carson"
     },
     {
-        "file": "assets/data/Breathe.mp3",
-        "title": "Breathe",
-        "artist": "Yeat"
-    },
-    {
         "file": "assets/data/Destroy Lonely - came in wit.flac",
         "title": "came in wit",
         "artist": "Destroy Lonely"
-    },
-    {
-        "file": "assets/data/Catch Me Outside.mp3",
-        "title": "Catch Me Outside",
-        "artist": "Ski Mask The Slump God"
     },
     {
         "file": "assets/data/Destroy Lonely - CDG.flac",
@@ -160,6 +145,11 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/SpotiDown.App - DIS 1 GOT IT - Playboi Carti.mp3",
+        "title": "DIS 1 GOT IT",
+        "artist": "Playboi Carti"
+    },
+    {
         "file": "assets/data/Ken Carson - Dismantled.flac",
         "title": "Dismantled",
         "artist": "Ken Carson"
@@ -195,11 +185,6 @@
         "artist": "Destroy Lonely"
     },
     {
-        "file": "assets/data/Faucet Failure.mp3",
-        "title": "Faucet Failure",
-        "artist": "Ski Mask The Slump God"
-    },
-    {
         "file": "assets/data/Fighting My Demons.mp3",
         "title": "Fighting My Demons",
         "artist": "Ken Carson"
@@ -213,6 +198,11 @@
         "file": "assets/data/Floor 555.mp3",
         "title": "Floor 555",
         "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/SpotiDown.App - FOMDJ - Playboi Carti.mp3",
+        "title": "FOMDJ",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/Freestyle 2.mp3",
@@ -255,11 +245,6 @@
         "artist": "Destroy Lonely"
     },
     {
-        "file": "assets/data/Gët Busy.mp3",
-        "title": "Gët Busy",
-        "artist": "Yeat"
-    },
-    {
         "file": "assets/data/Ken Carson - Hardcore.flac",
         "title": "Hardcore",
         "artist": "Ken Carson"
@@ -288,6 +273,11 @@
         "file": "assets/data/I Don't Wanna Do This Anymore.mp3",
         "title": "I Don't Wanna Do This Anymore",
         "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/SpotiDown.App - i need u - Ken Carson.mp3",
+        "title": "i need u",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Playboi Carti - I SEEEEEE YOU BABY BOI.flac",
@@ -440,6 +430,11 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/SpotiDown.App - Murda Musik _feat. Destroy Lonely_ - Ken Carson.mp3",
+        "title": "Murda Musik",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Murder on My Mind2.mp3",
         "title": "Murder on My Mind",
         "artist": "YNW Melly"
@@ -490,6 +485,11 @@
         "artist": "Ken Carson"
     },
     {
+        "file": "assets/data/SpotiDown.App - OLYMPIAN - Playboi Carti.mp3",
+        "title": "OLYMPIAN",
+        "artist": "Playboi Carti"
+    },
+    {
         "file": "assets/data/On That Time.mp3",
         "title": "On That Time",
         "artist": "Playboi Carti"
@@ -510,11 +510,6 @@
         "artist": "Baby Keem"
     },
     {
-        "file": "assets/data/Out thë way.mp3",
-        "title": "Out thë way",
-        "artist": "Yeat"
-    },
-    {
         "file": "assets/data/Over.mp3",
         "title": "Over",
         "artist": "Playboi Carti"
@@ -527,6 +522,11 @@
     {
         "file": "assets/data/overseas.mp3",
         "title": "overseas",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/SpotiDown.App - Overtime - Ken Carson.mp3",
+        "title": "Overtime",
         "artist": "Ken Carson"
     },
     {
@@ -580,6 +580,11 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/SpotiDown.App - RADAR - Playboi Carti.mp3",
+        "title": "RADAR",
+        "artist": "Playboi Carti"
+    },
+    {
         "file": "assets/data/Playboi Carti - RATHER LIE.flac",
         "title": "RATHER LIE",
         "artist": "Playboi Carti"
@@ -605,6 +610,11 @@
         "artist": "XXXTENTACION"
     },
     {
+        "file": "assets/data/SpotiDown.App - Rockstar Lifestyle - Ken Carson.mp3",
+        "title": "Rockstar Lifestyle",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Rockstar Made.mp3",
         "title": "Rockstar Made",
         "artist": "Playboi Carti"
@@ -615,19 +625,14 @@
         "artist": "Adele"
     },
     {
+        "file": "assets/data/SpotiDown.App - Root Of All Evil - Ken Carson.mp3",
+        "title": "Root Of All Evil",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Sauce!.mp3",
         "title": "Sauce!",
         "artist": "XXXTENTACION"
-    },
-    {
-        "file": "assets/data/See You Again (feat. Kali Uchis).mp3",
-        "title": "See You Again",
-        "artist": "Tyler"
-    },
-    {
-        "file": "assets/data/See You Again .mp3",
-        "title": "See You Again",
-        "artist": "Tyler, The Creator"
     },
     {
         "file": "assets/data/Adele - Send My Love (To Your New Lover).flac",
@@ -640,19 +645,14 @@
         "artist": "J. Cole"
     },
     {
-        "file": "assets/data/Shibuya.mp3",
-        "title": "Shibuya",
-        "artist": "Ski Mask The Slump God"
-    },
-    {
-        "file": "assets/data/Shoota (feat. Lil Uzi Vert).mp3",
-        "title": "Shoota",
-        "artist": "Playboi Carti"
-    },
-    {
         "file": "assets/data/Shoota .mp3",
         "title": "Shoota",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/SpotiDown.App - Singapore _feat. Destroy Lonely_ - Ken Carson.mp3",
+        "title": "Singapore",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Sky.mp3",
@@ -730,6 +730,11 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/SpotiDown.App - Thx - Ken Carson.mp3",
+        "title": "Thx",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Timeless .mp3",
         "title": "Timeless",
         "artist": "The Weeknd"
@@ -760,11 +765,6 @@
         "artist": "Rihanna"
     },
     {
-        "file": "assets/data/Unbothered.mp3",
-        "title": "Unbothered",
-        "artist": "Ski Mask The Slump God"
-    },
-    {
         "file": "assets/data/Under Enemy Arms.mp3",
         "title": "Under Enemy Arms",
         "artist": "Trippie Redd"
@@ -780,9 +780,9 @@
         "artist": "Homixide Gang"
     },
     {
-        "file": "assets/data/Vamp Anthem.mp3",
-        "title": "Vamp Anthem",
-        "artist": "Playboi Carti"
+        "file": "assets/data/SpotiDown.App - Vampire Hour - Ken Carson.mp3",
+        "title": "Vampire Hour",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/VETERAN .mp3",
@@ -835,13 +835,13 @@
         "artist": "Ken Carson"
     },
     {
+        "file": "assets/data/SpotiDown.App - Yummy Yummy Yummy _I Got Love In My Tummy_ - The Mr. Pickwick Singers.mp3",
+        "title": "Yummy Yummy Yummy",
+        "artist": "The Mr. Pickwick Singers"
+    },
+    {
         "file": "assets/data/YuNg BrAtZ2.mp3",
         "title": "YuNg BrAtZ",
         "artist": "XXXTENTACION"
-    },
-    {
-        "file": "assets/data/ZEZE.mp3",
-        "title": "ZEZE",
-        "artist": "Kodak Black"
     }
 ]
