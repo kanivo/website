@@ -97,10 +97,18 @@
       background-color: #111;
       display: flex;
       justify-content: center;
-      align-items: center;
       padding: 10px;
       z-index: 10;
+    }
+
+    /* ✅ Wrap buttons + audio in a flexbox row */
+    .player-controls {
+      display: flex;
+      align-items: center;
       gap: 10px;
+      max-width: 600px;
+      width: 100%;
+      justify-content: center;
     }
 
     .controls button {
@@ -121,7 +129,7 @@
     }
 
     .controls audio {
-      width: 100%;
+      flex: 1;
       max-width: 400px;
       background-color: transparent;
       border: none;
@@ -140,7 +148,7 @@
     .controls audio::-webkit-media-controls-volume-slider,
     .controls audio::-webkit-media-controls-mute-button {
       color: white !important;
-      filter: none !important; /* remove inversion */
+      filter: none !important;
     }
 
     .controls audio::-webkit-media-controls-timeline {
@@ -164,13 +172,15 @@
   <ul class="song-list" id="song-list"></ul>
 
   <div class="controls">
-    <button id="prevButton">⏮</button>
-    <audio id="audio-player" controls>
-      <source id="audio-source" src="" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-    <button id="nextButton">⏭</button>
-    <button id="repeatButton">🔁 Repeat: OFF</button>
+    <div class="player-controls">
+      <button id="prevButton">⏮</button>
+      <audio id="audio-player" controls>
+        <source id="audio-source" src="" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <button id="nextButton">⏭</button>
+      <button id="repeatButton">🔁 Repeat: OFF</button>
+    </div>
   </div>
 
   <script>
@@ -228,7 +238,7 @@
           currentSongIndex = 0;
           playHistory = [];
           forwardHistory = [];
-          songListElement.innerHTML = ''; // Clear existing songs
+          songListElement.innerHTML = '';
 
           songs.forEach((song, index) => {
             const wrapper = document.createElement('div');
@@ -254,7 +264,6 @@
         .catch(error => console.error('Error loading song data:', error));
     }
 
-    // Load default song list initially
     loadSongs('assets/data.json');
 
     document.getElementById('prevButton').addEventListener('click', () => {
