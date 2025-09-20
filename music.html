@@ -39,6 +39,7 @@
 
     #shuffleButton:hover, #backButton:hover, #repeatButton:hover {
       background-color: #6b00b3;
+      color: white;
     }
 
     h1, p {
@@ -127,14 +128,10 @@
       outline: none;
     }
 
+    /* ✅ Visible player bar fix */
     .controls audio::-webkit-media-controls-panel {
       background-color: #111 !important;
       border: none !important;
-    }
-
-    .controls audio::-webkit-media-controls-play-button,
-    .controls audio::-webkit-media-controls-enclosure {
-      background-color: transparent !important;
     }
 
     .controls audio::-webkit-media-controls-timeline,
@@ -142,7 +139,12 @@
     .controls audio::-webkit-media-controls-time-remaining-display,
     .controls audio::-webkit-media-controls-volume-slider,
     .controls audio::-webkit-media-controls-mute-button {
-      filter: invert(100%);
+      color: white !important;
+      filter: none !important; /* remove inversion */
+    }
+
+    .controls audio::-webkit-media-controls-timeline {
+      accent-color: #6b00b3; /* purple progress bar */
     }
   </style>
 </head>
@@ -157,7 +159,7 @@
   <h1>sqworm</h1>
   <p>boo spotify premium</p>
 
-  <button id="shuffleButton">Shuffle: OFF</button>
+  <button id="shuffleButton">Shuffle: ON</button> <!-- ✅ Default ON -->
 
   <ul class="song-list" id="song-list"></ul>
 
@@ -174,7 +176,7 @@
   <script>
     let songs = [];
     let currentSongIndex = 0;
-    let isShuffle = false;
+    let isShuffle = true; // ✅ Default shuffle ON
     let isRepeat = false;
     let playHistory = [];
     let forwardHistory = [];
@@ -186,6 +188,10 @@
     const repeatButton = document.getElementById('repeatButton');
     const songListElement = document.getElementById('song-list');
     const refToggleButton = document.getElementById('refToggleButton');
+
+    // ✅ Initialize shuffle button ON
+    shuffleButton.textContent = "Shuffle: ON";
+    shuffleButton.classList.add("active");
 
     function updateActiveSong() {
       document.querySelectorAll('.song-item').forEach((el, idx) => {
