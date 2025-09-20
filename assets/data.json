@@ -20,11 +20,6 @@
         "artist": "Ken Carson"
     },
     {
-        "file": "assets/data/223's (feat. 9lokknine)2.mp3",
-        "title": "223's",
-        "artist": "YNW Melly"
-    },
-    {
         "file": "assets/data/3MYGNG.mp3",
         "title": "<3MYGNG",
         "artist": "Destroy Lonely"
@@ -40,19 +35,9 @@
         "artist": "Marvin Gaye"
     },
     {
-        "file": "assets/data/BabyWipe.mp3",
-        "title": "BabyWipe",
-        "artist": "Ski Mask The Slump God"
-    },
-    {
         "file": "assets/data/Playboi Carti - BACKD00R.flac",
         "title": "BACKD00R",
         "artist": "Playboi Carti"
-    },
-    {
-        "file": "assets/data/BANDIT.mp3",
-        "title": "BANDIT",
-        "artist": "Don Toliver"
     },
     {
         "file": "assets/data/Bane.mp3",
@@ -93,11 +78,6 @@
         "file": "assets/data/Playboi Carti - COCAINE NOSE.flac",
         "title": "COCAINE NOSE",
         "artist": "Playboi Carti"
-    },
-    {
-        "file": "assets/data/Coffin.mp3",
-        "title": "Coffin",
-        "artist": "Lil Yachty"
     },
     {
         "file": "assets/data/Playboi Carti - CRANK.flac",
@@ -145,6 +125,11 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/SpotiDownloader.com - DIFFERENT DAY - Playboi Carti.mp3",
+        "title": "DIFFERENT DAY",
+        "artist": "Playboi Carti"
+    },
+    {
         "file": "assets/data/SpotiDown.App - DIS 1 GOT IT - Playboi Carti.mp3",
         "title": "DIS 1 GOT IT",
         "artist": "Playboi Carti"
@@ -153,11 +138,6 @@
         "file": "assets/data/Ken Carson - Dismantled.flac",
         "title": "Dismantled",
         "artist": "Ken Carson"
-    },
-    {
-        "file": "assets/data/EARFQUAKE.mp3",
-        "title": "EARFQUAKE",
-        "artist": "Tyler"
     },
     {
         "file": "assets/data/Easy On Me.mp3",
@@ -213,6 +193,11 @@
         "file": "assets/data/Fuck Love.mp3",
         "title": "Fuck Love",
         "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/SpotiDownloader.com - Fuk 12 - Ken Carson.mp3",
+        "title": "Fuk 12",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Ken Carson - Ghoul.flac",
@@ -305,6 +290,11 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/SpotiDownloader.com - It’s Over - Ken Carson.mp3",
+        "title": "It’s Over",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Jennifer’s Body.mp3",
         "title": "Jennifer’s Body",
         "artist": "Ken Carson"
@@ -318,6 +308,11 @@
         "file": "assets/data/Jocelyn Flores2.mp3",
         "title": "Jocelyn Flores",
         "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/SpotiDownloader.com - jumanji - Destroy Lonely.mp3",
+        "title": "jumanji",
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/Playboi Carti - JUMPIN.flac",
@@ -335,9 +330,24 @@
         "artist": "Ken Carson"
     },
     {
+        "file": "assets/data/SpotiDownloader.com - kansas - Destroy Lonely.mp3",
+        "title": "kansas",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/SpotiDownloader.com - kool on ya - Destroy Lonely.mp3",
+        "title": "kool on ya",
+        "artist": "Destroy Lonely"
+    },
+    {
         "file": "assets/data/Ken Carson - Kryptonite.flac",
         "title": "Kryptonite",
         "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/SpotiDownloader.com - leash - Destroy Lonely.mp3",
+        "title": "leash",
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/Lights.mp3",
@@ -420,24 +430,14 @@
         "artist": "Ken Carson"
     },
     {
-        "file": "assets/data/Monëy so big.mp3",
-        "title": "Monëy so big",
-        "artist": "Yeat"
-    },
-    {
         "file": "assets/data/Playboi Carti - MUNYUN.flac",
         "title": "MUNYUN",
         "artist": "Playboi Carti"
     },
     {
-        "file": "assets/data/SpotiDown.App - Murda Musik _feat. Destroy Lonely_ - Ken Carson.mp3",
+        "file": "assets/data/SpotiDownloader.com - Murda Musik (feat. Destroy Lonely) - Ken Carson.mp3",
         "title": "Murda Musik",
         "artist": "Ken Carson"
-    },
-    {
-        "file": "assets/data/Murder on My Mind2.mp3",
-        "title": "Murder on My Mind",
-        "artist": "YNW Melly"
     },
     {
         "file": "assets/data/Destroy Lonely - n(n).flac",
@@ -470,16 +470,6 @@
         "artist": "Destroy Lonely"
     },
     {
-        "file": "assets/data/Not Like Us.mp3",
-        "title": "Not Like Us",
-        "artist": "Kendrick Lamar"
-    },
-    {
-        "file": "assets/data/Nuketown (feat. Juice WRLD).mp3",
-        "title": "Nuketown",
-        "artist": "Ski Mask The Slump God"
-    },
-    {
         "file": "assets/data/SpotiDownloader.com - Off The Meter (with Playboi Carti & Destroy Lonely) - Ken Carson.mp3",
         "title": "Off The Meter",
         "artist": "Ken Carson"
@@ -505,11 +495,6 @@
         "artist": "Playboi Carti"
     },
     {
-        "file": "assets/data/ORANGE SODA.mp3",
-        "title": "ORANGE SODA",
-        "artist": "Baby Keem"
-    },
-    {
         "file": "assets/data/Over.mp3",
         "title": "Over",
         "artist": "Playboi Carti"
@@ -530,6 +515,16 @@
         "artist": "Ken Carson"
     },
     {
+        "file": "assets/data/SpotiDownloader.com - Paranoid (feat. Destroy Lonely) - Ken Carson.mp3",
+        "title": "Paranoid",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/SpotiDownloader.com - party n get high (interlude) - Destroy Lonely.mp3",
+        "title": "party n get high",
+        "artist": "Destroy Lonely"
+    },
+    {
         "file": "assets/data/Passionfruit.mp3",
         "title": "Passionfruit",
         "artist": "Drake"
@@ -548,11 +543,6 @@
         "file": "assets/data/Playboi Carti - POP OUT.flac",
         "title": "POP OUT",
         "artist": "Playboi Carti"
-    },
-    {
-        "file": "assets/data/Pop Out (feat. Lil Tjay).mp3",
-        "title": "Pop Out",
-        "artist": "Polo G"
     },
     {
         "file": "assets/data/Ken Carson - Pots.flac",
@@ -605,11 +595,6 @@
         "artist": "XXXTENTACION"
     },
     {
-        "file": "assets/data/RIP Roach2.mp3",
-        "title": "RIP Roach",
-        "artist": "XXXTENTACION"
-    },
-    {
         "file": "assets/data/SpotiDown.App - Rockstar Lifestyle - Ken Carson.mp3",
         "title": "Rockstar Lifestyle",
         "artist": "Ken Carson"
@@ -635,6 +620,11 @@
         "artist": "XXXTENTACION"
     },
     {
+        "file": "assets/data/SpotiDownloader.com - screwed up - Destroy Lonely.mp3",
+        "title": "screwed up",
+        "artist": "Destroy Lonely"
+    },
+    {
         "file": "assets/data/Adele - Send My Love (To Your New Lover).flac",
         "title": "Send My Love",
         "artist": "Adele"
@@ -645,9 +635,14 @@
         "artist": "J. Cole"
     },
     {
-        "file": "assets/data/Shoota .mp3",
+        "file": "assets/data/Shoota (feat. Lil Uzi Vert).mp3",
         "title": "Shoota",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/SpotiDownloader.com - show u how - Destroy Lonely.mp3",
+        "title": "show u how",
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/SpotiDown.App - Singapore _feat. Destroy Lonely_ - Ken Carson.mp3",
@@ -670,9 +665,19 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/SpotiDownloader.com - ss - Ken Carson.mp3",
+        "title": "ss",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Starboy.mp3",
         "title": "Starboy",
         "artist": "The Weeknd"
+    },
+    {
+        "file": "assets/data/SpotiDownloader.com - stfu - Destroy Lonely.mp3",
+        "title": "stfu",
+        "artist": "Destroy Lonely"
     },
     {
         "file": "assets/data/Stir Fry.mp3",
@@ -765,11 +770,6 @@
         "artist": "Rihanna"
     },
     {
-        "file": "assets/data/Under Enemy Arms.mp3",
-        "title": "Under Enemy Arms",
-        "artist": "Trippie Redd"
-    },
-    {
         "file": "assets/data/UP LIKE AN INSOMNIAC2.mp3",
         "title": "UP LIKE AN INSOMNIAC - Freestyle",
         "artist": "XXXTENTACION"
@@ -778,6 +778,11 @@
         "file": "assets/data/Homixide Gang - Uzi Work.flac",
         "title": "Uzi Work",
         "artist": "Homixide Gang"
+    },
+    {
+        "file": "assets/data/Vamp Anthem.mp3",
+        "title": "Vamp Anthem",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/SpotiDown.App - Vampire Hour - Ken Carson.mp3",

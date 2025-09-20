@@ -383,5 +383,20 @@
         "file": "assets/data/YuNg BrAtZ2.mp3",
         "title": "YuNg BrAtZ",
         "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/SpotiDownloader.com - Fuk 12 - Ken Carson.mp3",
+        "title": "Fuk 12",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/SpotiDownloader.com - jumanji - Destroy Lonely.mp3",
+        "title": "jumanji",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/SpotiDownloader.com - ss - Ken Carson.mp3",
+        "title": "ss",
+        "artist": "Ken Carson"
     }
 ]
