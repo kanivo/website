@@ -32,11 +32,10 @@
     #refToggleButton { right: 20px; }
 
     #shuffleButton, #repeatButton {
-      margin: 10px auto 20px auto;
-      display: block;
+      display: none; /* hidden in main view, we’ll keep them in bottom controls */
     }
 
-    #backButton:hover, #refToggleButton:hover, #shuffleButton:hover, #repeatButton:hover {
+    #backButton:hover, #refToggleButton:hover {
       background-color: #6b00b3;
       color: white;
     }
@@ -49,7 +48,7 @@
     .song-list {
       list-style-type: none;
       padding: 0;
-      margin: 0 auto 120px auto;
+      margin: 0 auto 100px auto;
       width: 320px;
       flex: 1;
     }
@@ -94,21 +93,24 @@
       left: 0;
       right: 0;
       background-color: #111;
-      padding: 10px;
+      padding: 5px;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       gap: 5px;
+      flex-wrap: nowrap;
       z-index: 10;
+      overflow-x: auto; /* horizontal scroll if needed on tiny screens */
     }
 
     .controls button {
-      padding: 10px;
+      padding: 8px;
       font-size: 18px;
+      min-width: 36px;
       background-color: #333;
       color: white;
       border: none;
       cursor: pointer;
+      flex-shrink: 0;
     }
 
     .controls button.active {
@@ -117,12 +119,12 @@
 
     #progressBar {
       flex: 1;
-      height: 8px;
+      height: 6px;
       background: #333;
       accent-color: #6b00b3;
       cursor: pointer;
-      border-radius: 4px;
-      min-width: 150px;
+      border-radius: 3px;
+      min-width: 50px;
     }
   </style>
 </head>
@@ -134,9 +136,6 @@
   <h1>sqworm</h1>
   <p>boo spotify premium</p>
 
-  <button id="shuffleButton">Shuffle: ON</button>
-  <button id="repeatButton">Repeat: OFF</button>
-
   <ul class="song-list" id="song-list"></ul>
 
   <div class="controls">
@@ -144,6 +143,8 @@
     <button id="playPauseButton">▶️</button>
     <button id="nextButton">⏭</button>
     <input type="range" id="progressBar" value="0" min="0" max="100" step="0.1">
+    <button id="repeatButton">🔁</button>
+    <button id="shuffleButton">🔀</button>
   </div>
 
   <audio id="audio-player" preload="metadata"></audio>
@@ -281,13 +282,11 @@
     // Shuffle/Repeat
     shuffleButton.addEventListener('click', () => {
       isShuffle = !isShuffle;
-      shuffleButton.textContent = `Shuffle: ${isShuffle ? 'ON' : 'OFF'}`;
       shuffleButton.classList.toggle('active', isShuffle);
     });
 
     repeatButton.addEventListener('click', () => {
       isRepeat = !isRepeat;
-      repeatButton.textContent = `Repeat: ${isRepeat ? 'ON' : 'OFF'}`;
       repeatButton.classList.toggle('active', isRepeat);
     });
 
