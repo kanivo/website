@@ -1,328 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Music Player</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+    :root {
+      --bg: #000;
+      --panel: #111;
+      --card: #222;
+      --muted: #333;
+      --accent: #6b00b3;
+      --text: #fff;
     }
 
+    html,body { height:100%; margin:0; padding:0; background:var(--bg); color:var(--text); font-family: Inter, Arial, sans-serif; }
+
+    /* Top buttons */
     #backButton {
       position: absolute;
-      top: 20px;
-      left: 20px;
-      padding: 10px;
-      background-color: white;
-      color: black;
+      top: 16px;
+      left: 16px;
+      padding: 8px 10px;
+      background: #fff;
+      color: #000;
       border: none;
+      border-radius: 6px;
       cursor: pointer;
-      font-size: 16px;
+      z-index: 50;
     }
 
-    #shuffleButton, #repeatButton {
-      margin: 10px auto 20px;
-      padding: 10px;
-      background-color: white;
-      color: black;
+    #refToggleButton {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 8px 10px;
+      background: #fff;
+      color: #000;
       border: none;
+      border-radius: 6px;
       cursor: pointer;
-      font-size: 16px;
+      z-index: 50;
     }
 
-    #shuffleButton:hover, #backButton:hover, #repeatButton:hover {
-      background-color: #6b00b3;
-      color: white;
-    }
-
-    h1, p {
-      color: white;
+    header {
+      padding-top: 56px;
       text-align: center;
     }
 
+    h1 { margin: 6px 0; font-size: 20px; letter-spacing: 0.6px; }
+    p { margin: 0 0 10px 0; color: #ddd; font-size: 13px; }
+
+    /* Song list */
     .song-list {
-      list-style-type: none;
+      max-width: 420px;
+      width: calc(100% - 40px);
+      margin: 12px auto 140px;
       padding: 0;
-      margin: 0 auto;
-      width: 320px;
-      flex: 1;
-      margin-bottom: 120px;
+      list-style: none;
     }
 
     .song-item-wrapper {
-      display: flex;
-      align-items: center;
-      margin: 5px 0;
+      display:flex;
+      gap:8px;
+      align-items:center;
+      padding:6px;
     }
 
     .song-number {
-      color: white;
-      margin-right: 10px;
-      width: 20px;
-      text-align: right;
+      width:28px;
+      text-align:right;
+      color:#bbb;
+      font-size:13px;
+      margin-right:6px;
     }
 
     .song-item {
-      background-color: #333;
-      border: 1px solid #444;
-      padding: 10px;
-      cursor: pointer;
-      width: 100%;
-      text-align: center;
-      flex-grow: 1;
-      color: white;
+      flex:1;
+      background:var(--card);
+      border:1px solid #444;
+      padding:8px 10px;
+      border-radius:6px;
+      cursor:pointer;
+      color:var(--text);
+      font-size:14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
 
-    .song-item:hover {
-      background-color: #555;
+    .song-item .meta {
+      opacity:0.9;
     }
 
-    .song-item.active {
-      background-color: #6b00b3;
-      font-weight: bold;
-    }
+    .song-item:hover { background:#2b2b2b; }
+    .song-item.active { background: var(--accent); font-weight:600; color: #fff; }
 
+    /* Controls bar (fixed) */
     .controls {
       position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: #111;
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-      z-index: 10;
+      left:0;
+      right:0;
+      bottom:0;
+      background:var(--panel);
+      padding:12px 10px;
+      display:flex;
+      justify-content:center;
+      z-index:40;
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.6);
     }
 
-    /* ✅ Wrap buttons + audio in a flexbox row */
+    /* center wrapper for the row of controls */
     .player-controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      max-width: 600px;
-      width: 100%;
-      justify-content: center;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      width:100%;
+      max-width:880px;
+      justify-content:center;
+      padding:0 10px;
     }
 
-    .controls button {
-      padding: 10px;
-      font-size: 18px;
-      background-color: #333;
-      color: white;
+    .btn {
+      background:var(--muted);
+      color:var(--text);
       border: none;
+      padding:8px 10px;
+      border-radius:8px;
+      font-size:16px;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:44px;
+    }
+
+    .btn.large { padding:10px 14px; font-size:18px; min-width:48px; }
+    .btn.active { background: var(--accent); color: #fff; }
+
+    /* custom progress bar */
+    .progress-wrap {
+      width: 70%;
+      max-width: 600px;
+      min-width: 220px;
+      margin: 6px auto 0;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      pointer-events: auto;
+    }
+
+    .progress-container {
+      height: 8px;
+      background: #2a2a2a;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
       cursor: pointer;
     }
 
-    .controls button.active {
-      background-color: #6b00b3;
+    .progress {
+      height:100%;
+      width:0%;
+      background: var(--accent);
+      transition: width 0.08s linear;
     }
 
-    .controls button:hover {
-      background-color: #6b00b3;
+    .times {
+      display:flex;
+      justify-content:space-between;
+      font-size:12px;
+      color:#bfbfbf;
+      user-select:none;
     }
 
-    .controls audio {
-      flex: 1;
-      max-width: 400px;
-      background-color: transparent;
-      border: none;
-      outline: none;
-    }
-
-    /* ✅ Visible player bar fix */
-    .controls audio::-webkit-media-controls-panel {
-      background-color: #111 !important;
-      border: none !important;
-    }
-
-    .controls audio::-webkit-media-controls-timeline,
-    .controls audio::-webkit-media-controls-current-time-display,
-    .controls audio::-webkit-media-controls-time-remaining-display,
-    .controls audio::-webkit-media-controls-volume-slider,
-    .controls audio::-webkit-media-controls-mute-button {
-      color: white !important;
-      filter: none !important;
-    }
-
-    .controls audio::-webkit-media-controls-timeline {
-      accent-color: #6b00b3; /* purple progress bar */
+    /* Responsive tweaks */
+    @media (max-width:560px) {
+      .progress-wrap { width: 88%; }
+      .player-controls { gap:8px; }
+      .song-list { width: calc(100% - 24px); margin-bottom: 160px; }
     }
   </style>
 </head>
 <body>
 
   <button id="backButton" onclick="window.location.href='./'">Back</button>
+  <button id="refToggleButton">swap</button>
 
-  <button id="refToggleButton" style="position: absolute; top: 20px; right: 20px; padding: 10px; background-color: white; color: black; border: none; cursor: pointer; font-size: 16px;">
-    swap
-  </button>
-
-  <h1>sqworm</h1>
-  <p>boo spotify premium</p>
-
-  <button id="shuffleButton">Shuffle: ON</button> <!-- ✅ Default ON -->
+  <header>
+    <h1>sqworm</h1>
+    <p>boo spotify premium</p>
+  </header>
 
   <ul class="song-list" id="song-list"></ul>
 
-  <div class="controls">
+  <div class="controls" aria-hidden="false">
     <div class="player-controls">
-      <button id="prevButton">⏮</button>
-      <audio id="audio-player" controls>
-        <source id="audio-source" src="" type="audio/mp3">
-        Your browser does not support the audio element.
-      </audio>
-      <button id="nextButton">⏭</button>
-      <button id="repeatButton">🔁 Repeat: OFF</button>
+      <button id="prevButton" class="btn large" title="Previous">⏮</button>
+      <button id="playPauseButton" class="btn large" title="Play/Pause">▶️</button>
+      <button id="nextButton" class="btn large" title="Next">⏭</button>
+
+      <!-- small gap, then mode buttons -->
+      <div style="width:10px;"></div>
+
+      <button id="shuffleButton" class="btn" title="Shuffle">Shuffle: ON</button>
+      <button id="repeatButton" class="btn" title="Repeat">🔁 Repeat: OFF</button>
+    </div>
+
+    <!-- progress & times below centered -->
+    <div style="position:absolute; left:50%; transform:translateX(-50%); bottom:58px; width:100%; max-width:880px; pointer-events:none;">
+      <div class="progress-wrap" style="pointer-events:auto;">
+        <div id="progressContainer" class="progress-container" aria-label="Seek bar">
+          <div id="progress" class="progress"></div>
+        </div>
+        <div class="times">
+          <div id="currentTime">0:00</div>
+          <div id="durationTime">0:00</div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Hidden native audio (no controls) -->
+  <audio id="audio-player" preload="metadata" crossorigin>
+    <source id="audio-source" src="" type="audio/mpeg" />
+  </audio>
+
   <script>
+    // ---- data + state ----
     let songs = [];
     let currentSongIndex = 0;
-    let isShuffle = true; // ✅ Default shuffle ON
+    let isShuffle = true;   // shuffle ON by default
     let isRepeat = false;
     let playHistory = [];
     let forwardHistory = [];
-    let isRefMode = false; // Track which list is active
+    let isRefMode = false;
 
-    const audioPlayer = document.getElementById('audio-player');
+    const audio = document.getElementById('audio-player');
     const audioSource = document.getElementById('audio-source');
-    const shuffleButton = document.getElementById('shuffleButton');
-    const repeatButton = document.getElementById('repeatButton');
-    const songListElement = document.getElementById('song-list');
-    const refToggleButton = document.getElementById('refToggleButton');
 
-    // ✅ Initialize shuffle button ON
-    shuffleButton.textContent = "Shuffle: ON";
-    shuffleButton.classList.add("active");
+    const songListEl = document.getElementById('song-list');
+    const playPauseBtn = document.getElementById('playPauseButton');
+    const prevBtn = document.getElementById('prevButton');
+    const nextBtn = document.getElementById('nextButton');
+    const shuffleBtn = document.getElementById('shuffleButton');
+    const repeatBtn = document.getElementById('repeatButton');
+    const refToggleBtn = document.getElementById('refToggleButton');
 
+    const progressContainer = document.getElementById('progressContainer');
+    const progressBar = document.getElementById('progress');
+    const currentTimeLabel = document.getElementById('currentTime');
+    const durationLabel = document.getElementById('durationTime');
+
+    // Initialize UI for shuffle default ON
+    shuffleBtn.textContent = "Shuffle: ON";
+    shuffleBtn.classList.add('active');
+
+    // Utility - format seconds as M:SS
+    function formatTime(s) {
+      if (!s || isNaN(s)) return "0:00";
+      const m = Math.floor(s/60);
+      const sec = Math.floor(s % 60);
+      return m + ":" + (sec < 10 ? "0" + sec : sec);
+    }
+
+    // ---- load songs ----
+    async function loadSongs(filePath = 'assets/data.json') {
+      try {
+        const res = await fetch(filePath);
+        const data = await res.json();
+        songs = Array.isArray(data) ? data : [];
+      } catch (err) {
+        console.error('Failed loading songs:', err);
+        songs = [];
+      }
+
+      // reset indices/history
+      currentSongIndex = 0;
+      playHistory = [];
+      forwardHistory = [];
+
+      renderSongList();
+      // set first file so metadata is available (doesn't autoplay)
+      if (songs[0] && songs[0].file) {
+        audioSource.src = songs[0].file;
+        audio.load();
+      } else {
+        audioSource.src = "";
+      }
+
+      updateActiveSong();
+      updateTimeLabels();
+    }
+
+    function renderSongList() {
+      songListEl.innerHTML = '';
+      songs.forEach((song, i) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'song-item-wrapper';
+
+        const num = document.createElement('div');
+        num.className = 'song-number';
+        num.textContent = (i + 1) + '.';
+
+        const item = document.createElement('div');
+        item.className = 'song-item';
+        item.dataset.index = i;
+        item.innerHTML = `<div class="meta">${song.title || 'untitled'}</div><div style="opacity:0.7;font-size:12px">${song.artist || ''}</div>`;
+
+        item.addEventListener('click', () => {
+          // play selected song (not from history)
+          playSong(i, { fromHistory: false });
+        });
+
+        wrapper.appendChild(num);
+        wrapper.appendChild(item);
+        songListEl.appendChild(wrapper);
+      });
+    }
+
+    // ---- playback functions ----
     function updateActiveSong() {
       document.querySelectorAll('.song-item').forEach((el, idx) => {
         el.classList.toggle('active', idx === currentSongIndex);
       });
     }
 
+    function updatePlayPauseUI() {
+      if (audio.paused) {
+        playPauseBtn.textContent = "▶️";
+      } else {
+        playPauseBtn.textContent = "⏸";
+      }
+    }
+
     function playSong(index, { fromHistory = false } = {}) {
+      if (!songs.length) return;
       if (index >= songs.length) index = 0;
       if (index < 0) index = songs.length - 1;
 
-      if (!fromHistory) {
+      // record history only when it's a normal navigation
+      if (!fromHistory && Number.isInteger(currentSongIndex) && songs[currentSongIndex]) {
+        // avoid pushing initial 0 when nothing played yet
         playHistory.push(currentSongIndex);
         forwardHistory = [];
       }
 
       currentSongIndex = index;
       const song = songs[currentSongIndex];
+      if (!song || !song.file) return;
+
       audioSource.src = song.file;
-      audioPlayer.load();
-      audioPlayer.play();
+      audio.load();
+      // try to play, catch to avoid autoplay errors on some browsers
+      audio.play().catch(()=>{});
       updateActiveSong();
+      updatePlayPauseUI();
     }
 
-    function getNextSongIndex() {
-      return isShuffle ? Math.floor(Math.random() * songs.length) : currentSongIndex + 1;
-    }
-
-    function loadSongs(file) {
-      fetch(file)
-        .then(response => response.json())
-        .then(data => {
-          songs = data;
-          currentSongIndex = 0;
-          playHistory = [];
-          forwardHistory = [];
-          songListElement.innerHTML = '';
-
-          songs.forEach((song, index) => {
-            const wrapper = document.createElement('div');
-            wrapper.classList.add('song-item-wrapper');
-
-            const number = document.createElement('span');
-            number.classList.add('song-number');
-            number.textContent = `${index + 1}.`;
-
-            const item = document.createElement('li');
-            item.classList.add('song-item');
-            item.textContent = `${song.title} (${song.artist})`;
-
-            item.addEventListener('click', () => playSong(index));
-
-            wrapper.appendChild(number);
-            wrapper.appendChild(item);
-            songListElement.appendChild(wrapper);
-          });
-
-          updateActiveSong();
-        })
-        .catch(error => console.error('Error loading song data:', error));
-    }
-
-    loadSongs('assets/data.json');
-
-    document.getElementById('prevButton').addEventListener('click', () => {
-      if (isShuffle && playHistory.length > 0) {
-        forwardHistory.push(currentSongIndex);
-        const previousIndex = playHistory.pop();
-        playSong(previousIndex, { fromHistory: true });
-      } else {
-        playSong(currentSongIndex - 1);
+    function getNextSongIndexRandom() {
+      if (!songs.length) return 0;
+      if (songs.length === 1) return 0;
+      // try to pick a different index than current
+      let idx = Math.floor(Math.random() * songs.length);
+      if (idx === currentSongIndex) {
+        // try again up to a few times
+        for (let i=0;i<6 && idx===currentSongIndex;i++) {
+          idx = Math.floor(Math.random() * songs.length);
+        }
       }
-    });
+      return idx;
+    }
 
-    document.getElementById('nextButton').addEventListener('click', () => {
+    // Next button logic (handles forwardHistory when navigating back)
+    function handleNextManual() {
       if (isShuffle && forwardHistory.length > 0) {
         const nextIndex = forwardHistory.pop();
         playHistory.push(currentSongIndex);
         playSong(nextIndex, { fromHistory: true });
-      } else {
-        playSong(getNextSongIndex());
+        return;
       }
+      // Normal next
+      playHistory.push(currentSongIndex);
+      if (isShuffle) {
+        playSong(getNextSongIndexRandom());
+      } else {
+        playSong((currentSongIndex + 1) % songs.length);
+      }
+    }
+
+    // Prev button logic
+    function handlePrevManual() {
+      if (isShuffle && playHistory.length > 0) {
+        forwardHistory.push(currentSongIndex);
+        const previousIndex = playHistory.pop();
+        playSong(previousIndex, { fromHistory: true });
+        return;
+      }
+      // Normal previous
+      const prev = (currentSongIndex - 1 + songs.length) % songs.length;
+      playSong(prev);
+    }
+
+    // ---- progress + seek ----
+    function updateTimeLabels() {
+      currentTimeLabel.textContent = formatTime(audio.currentTime);
+      durationLabel.textContent = formatTime(audio.duration);
+    }
+
+    audio.addEventListener('timeupdate', () => {
+      if (!audio.duration || isNaN(audio.duration)) return;
+      const pct = (audio.currentTime / audio.duration) * 100;
+      progressBar.style.width = pct + '%';
+      updateTimeLabels();
     });
 
-    shuffleButton.addEventListener('click', () => {
-      isShuffle = !isShuffle;
-      shuffleButton.textContent = `Shuffle: ${isShuffle ? 'ON' : 'OFF'}`;
-      shuffleButton.classList.toggle('active', isShuffle);
+    audio.addEventListener('loadedmetadata', () => {
+      updateTimeLabels();
     });
 
-    repeatButton.addEventListener('click', () => {
-      isRepeat = !isRepeat;
-      repeatButton.textContent = `🔁 Repeat: ${isRepeat ? 'ON' : 'OFF'}`;
-      repeatButton.classList.toggle('active', isRepeat);
-    });
-
-    refToggleButton.addEventListener('click', () => {
-      isRefMode = !isRefMode;
-      refToggleButton.textContent = isRefMode ? 'swap' : 'swap';
-      const newFile = isRefMode ? 'assets/refdata.json' : 'assets/data.json';
-      loadSongs(newFile);
-    });
-
-    audioPlayer.addEventListener('ended', () => {
+    audio.addEventListener('ended', () => {
       if (isRepeat) {
+        // replay same
         playSong(currentSongIndex, { fromHistory: true });
       } else {
-        playSong(getNextSongIndex());
+        handleNextManual();
       }
     });
 
-    document.addEventListener('keydown', (event) => {
-      if (event.code === 'Space') {
-        event.preventDefault();
-        if (audioPlayer.paused) {
-          audioPlayer.play();
-        } else {
-          audioPlayer.pause();
-        }
+    // Pointer-based seeking (works for touch + mouse)
+    let isSeeking = false;
+    function seekFromEvent(e) {
+      const rect = progressContainer.getBoundingClientRect();
+      const clientX = (e.clientX !== undefined) ? e.clientX : (e.touches && e.touches[0] && e.touches[0].clientX) || 0;
+      let x = clientX - rect.left;
+      x = Math.max(0, Math.min(rect.width, x));
+      const pct = rect.width ? (x / rect.width) : 0;
+      if (audio.duration && !isNaN(audio.duration)) {
+        audio.currentTime = pct * audio.duration;
+      }
+      // immediate UI feedback
+      progressBar.style.width = (pct*100) + '%';
+      updateTimeLabels();
+    }
+
+    progressContainer.addEventListener('pointerdown', (e) => {
+      isSeeking = true;
+      progressContainer.setPointerCapture(e.pointerId);
+      seekFromEvent(e);
+    });
+
+    progressContainer.addEventListener('pointermove', (e) => {
+      if (!isSeeking) return;
+      seekFromEvent(e);
+    });
+
+    progressContainer.addEventListener('pointerup', (e) => {
+      if (!isSeeking) return;
+      seekFromEvent(e);
+      try { progressContainer.releasePointerCapture(e.pointerId); } catch {}
+      isSeeking = false;
+    });
+
+    // also handle touchend/cancel fallback (some browsers)
+    progressContainer.addEventListener('pointercancel', () => { isSeeking = false; });
+
+    // ---- UI event bindings ----
+    playPauseBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play().catch(()=>{});
+      } else {
+        audio.pause();
+      }
+      updatePlayPauseUI();
+    });
+
+    nextBtn.addEventListener('click', handleNextManual);
+    prevBtn.addEventListener('click', handlePrevManual);
+
+    shuffleBtn.addEventListener('click', () => {
+      isShuffle = !isShuffle;
+      shuffleBtn.textContent = isShuffle ? "Shuffle: ON" : "Shuffle: OFF";
+      shuffleBtn.classList.toggle('active', isShuffle);
+    });
+
+    repeatBtn.addEventListener('click', () => {
+      isRepeat = !isRepeat;
+      repeatBtn.textContent = isRepeat ? "🔁 Repeat: ON" : "🔁 Repeat: OFF";
+      repeatBtn.classList.toggle('active', isRepeat);
+    });
+
+    refToggleBtn.addEventListener('click', () => {
+      isRefMode = !isRefMode;
+      // keep the same label you had ("swap")
+      refToggleBtn.textContent = 'swap';
+      const file = isRefMode ? 'assets/refdata.json' : 'assets/data.json';
+      loadSongs(file);
+    });
+
+    // space toggles play/pause (don't interfere with inputs)
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) {
+        e.preventDefault();
+        if (audio.paused) audio.play().catch(()=>{});
+        else audio.pause();
+        updatePlayPauseUI();
       }
     });
+
+    // initial load
+    loadSongs('assets/data.json');
+
+    // expose a helper in case you want to programmatically play first song:
+    window.playFirstSong = () => { if (songs[0]) playSong(0); };
   </script>
 </body>
 </html>
