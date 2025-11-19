@@ -1,10 +1,5 @@
 [
     {
-        "file": "assets/data/ImSippinTeaInYoHood.mp3",
-        "title": "#ImSippinTeaInYoHood",
-        "artist": "XXXTENTACION"
-    },
-    {
         "file": "assets/data/$$$ - with Matt Ox.mp3",
         "title": "$$$ - with Matt Ox",
         "artist": "XXXTENTACION"
@@ -23,11 +18,6 @@
         "file": "assets/data/3MYGNG.mp3",
         "title": "<3MYGNG",
         "artist": "Destroy Lonely"
-    },
-    {
-        "file": "assets/data/A GHETTO CHRISTMAS CAROL2.mp3",
-        "title": "A GHETTO CHRISTMAS CAROL",
-        "artist": "XXXTENTACION"
     },
     {
         "file": "assets/data/Ain't No Mountain High Enough2.mp3",
@@ -65,6 +55,11 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/Ken Carson - catastrophe.mp3",
+        "title": "catastrophe",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Destroy Lonely - CDG.flac",
         "title": "CDG",
         "artist": "Destroy Lonely"
@@ -78,6 +73,11 @@
         "file": "assets/data/Playboi Carti - COCAINE NOSE.flac",
         "title": "COCAINE NOSE",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Ken Carson - Confetti.mp3",
+        "title": "Confetti",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Playboi Carti - CRANK.flac",
@@ -95,14 +95,14 @@
         "artist": "Destroy Lonely"
     },
     {
-        "file": "assets/data/Cult Classic.mp3",
-        "title": "Cult Classic",
-        "artist": "Playboi Carti"
-    },
-    {
         "file": "assets/data/Destroy Lonely - cutie.flac",
         "title": "cutie",
         "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Ken Carson - delusional.mp3",
+        "title": "delusional",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Ken Carson - Diamonds.flac",
@@ -137,6 +137,11 @@
     {
         "file": "assets/data/Ken Carson - Dismantled.flac",
         "title": "Dismantled",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - Down2Earth.mp3",
+        "title": "Down2Earth",
         "artist": "Ken Carson"
     },
     {
@@ -188,11 +193,6 @@
         "file": "assets/data/Freestyle 2.mp3",
         "title": "Freestyle 2",
         "artist": "Ken Carson"
-    },
-    {
-        "file": "assets/data/Fuck Love.mp3",
-        "title": "Fuck Love",
-        "artist": "XXXTENTACION"
     },
     {
         "file": "assets/data/SpotiDownloader.com - Fuk 12 - Ken Carson.mp3",
@@ -270,11 +270,6 @@
         "artist": "Playboi Carti"
     },
     {
-        "file": "assets/data/I spoke to the devil in miami, he said everything would be fine2.mp3",
-        "title": "I spoke to the devil in miami, he said everything would be fine",
-        "artist": "XXXTENTACION"
-    },
-    {
         "file": "assets/data/if looks could kill.mp3",
         "title": "if looks could kill",
         "artist": "Destroy Lonely"
@@ -288,6 +283,11 @@
         "file": "assets/data/In The Air.mp3",
         "title": "In The Air",
         "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Ken Carson - Inferno.mp3",
+        "title": "Inferno",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/SpotiDownloader.com - It’s Over - Ken Carson.mp3",
@@ -350,6 +350,11 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/Ken Carson - leather jacket.mp3",
+        "title": "leather jacket",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Lights.mp3",
         "title": "Lights",
         "artist": "Ellie Goulding"
@@ -400,6 +405,11 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/Ken Carson - margiela.mp3",
+        "title": "margiela",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/MDMA .mp3",
         "title": "MDMA",
         "artist": "Ken Carson"
@@ -413,6 +423,11 @@
         "file": "assets/data/Meh.mp3",
         "title": "Meh",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Ken Carson - mewtwo.mp3",
+        "title": "mewtwo",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Playboi Carti - MOJO JOJO.flac",
@@ -430,6 +445,16 @@
         "artist": "Ken Carson"
     },
     {
+        "file": "assets/data/Ken Carson - more chaos.mp3",
+        "title": "more chaos",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - mud.mp3",
+        "title": "mud",
+        "artist": "Destroy Lonely"
+    },
+    {
         "file": "assets/data/Playboi Carti - MUNYUN.flac",
         "title": "MUNYUN",
         "artist": "Playboi Carti"
@@ -445,6 +470,11 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/Ken Carson - Naked.mp3",
+        "title": "Naked",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/NEVEREVER.mp3",
         "title": "NEVEREVER",
         "artist": "Destroy Lonely"
@@ -455,6 +485,16 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/Ken Carson - Nightcore.mp3",
+        "title": "Nightcore",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - Nightcore 2.mp3",
+        "title": "Nightcore 2",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Nightcrawler .mp3",
         "title": "Nightcrawler",
         "artist": "Travis Scott"
@@ -463,6 +503,11 @@
         "file": "assets/data/No Idea.mp3",
         "title": "No Idea",
         "artist": "Don Toliver"
+    },
+    {
+        "file": "assets/data/Ken Carson - Nobody.mp3",
+        "title": "Nobody",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/NOSTYLIST.mp3",
@@ -595,6 +640,16 @@
         "artist": "XXXTENTACION"
     },
     {
+        "file": "assets/data/Destroy Lonely - risk.mp3",
+        "title": "risk",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Ken Carson - Rock N Roll.mp3",
+        "title": "Rock N Roll",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/SpotiDown.App - Rockstar Lifestyle - Ken Carson.mp3",
         "title": "Rockstar Lifestyle",
         "artist": "Ken Carson"
@@ -680,11 +735,6 @@
         "artist": "Destroy Lonely"
     },
     {
-        "file": "assets/data/Stir Fry.mp3",
-        "title": "Stir Fry",
-        "artist": "Migos"
-    },
-    {
         "file": "assets/data/Stop Breathing.mp3",
         "title": "Stop Breathing",
         "artist": "Playboi Carti"
@@ -693,11 +743,6 @@
         "file": "assets/data/Succubus.mp3",
         "title": "Succubus",
         "artist": "Ken Carson"
-    },
-    {
-        "file": "assets/data/Super Gremlin.mp3",
-        "title": "Super Gremlin",
-        "artist": "Kodak Black"
     },
     {
         "file": "assets/data/Destroy Lonely - superstar.flac",
@@ -718,6 +763,11 @@
         "file": "assets/data/Teen X .mp3",
         "title": "Teen X",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Taylor Swift - The Fate of Ophelia.mp3",
+        "title": "The Fate of Ophelia",
+        "artist": "Taylor Swift"
     },
     {
         "file": "assets/data/The Grinch.mp3",
@@ -743,6 +793,11 @@
         "file": "assets/data/Timeless .mp3",
         "title": "Timeless",
         "artist": "The Weeknd"
+    },
+    {
+        "file": "assets/data/Ken Carson - toxic.mp3",
+        "title": "toxic",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Playboi Carti - TOXIC.flac",
@@ -785,11 +840,6 @@
         "artist": "Homixide Gang"
     },
     {
-        "file": "assets/data/Vamp Anthem.mp3",
-        "title": "Vamp Anthem",
-        "artist": "Playboi Carti"
-    },
-    {
         "file": "assets/data/SpotiDown.App - Vampire Hour - Ken Carson.mp3",
         "title": "Vampire Hour",
         "artist": "Ken Carson"
@@ -797,6 +847,11 @@
     {
         "file": "assets/data/VETERAN .mp3",
         "title": "VETERAN",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - vvs valentine.mp3",
+        "title": "vvs valentine",
         "artist": "Destroy Lonely"
     },
     {
@@ -842,6 +897,11 @@
     {
         "file": "assets/data/Yale.mp3",
         "title": "Yale",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - yes.mp3",
+        "title": "yes",
         "artist": "Ken Carson"
     },
     {

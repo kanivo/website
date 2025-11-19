@@ -15,16 +15,6 @@
         "artist": "Destroy Lonely"
     },
     {
-        "file": "assets/data/Bane.mp3",
-        "title": "Bane",
-        "artist": "Destroy Lonely"
-    },
-    {
-        "file": "assets/data/Beno.mp3",
-        "title": "Beno!",
-        "artist": "Playboi Carti"
-    },
-    {
         "file": "assets/data/Ken Carson - Blakk Rokkstar.flac",
         "title": "Blakk Rokkstar",
         "artist": "Ken Carson"
@@ -100,11 +90,6 @@
         "artist": "Ken Carson"
     },
     {
-        "file": "assets/data/Playboi Carti - GOOD CREDIT.flac",
-        "title": "GOOD CREDIT",
-        "artist": "Playboi Carti"
-    },
-    {
         "file": "assets/data/Destroy Lonely - Groupie Btch.flac",
         "title": "Groupie Btch",
         "artist": "Destroy Lonely"
@@ -143,11 +128,6 @@
         "file": "assets/data/SpotiDownloader.com - K-Hole - Ken Carson.mp3",
         "title": "K-Hole",
         "artist": "Ken Carson"
-    },
-    {
-        "file": "assets/data/Playboi Carti - LIKE WEEZY.flac",
-        "title": "LIKE WEEZY",
-        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/SpotiDownloader.com - LiveLeak - Ken Carson.mp3",
@@ -300,11 +280,6 @@
         "artist": "Ken Carson"
     },
     {
-        "file": "assets/data/Super Gremlin.mp3",
-        "title": "Super Gremlin",
-        "artist": "Kodak Black"
-    },
-    {
         "file": "assets/data/Take A Step Back.mp3",
         "title": "Take A Step Back",
         "artist": "Ski Mask The Slump God"
@@ -313,11 +288,6 @@
         "file": "assets/data/The Race.mp3",
         "title": "The Race",
         "artist": "Tay-K"
-    },
-    {
-        "file": "assets/data/SpotiDown.App - Thx - Ken Carson.mp3",
-        "title": "Thx",
-        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Ken Carson - Trap Jump.flac",
@@ -338,11 +308,6 @@
         "file": "assets/data/Homixide Gang - Uzi Work.flac",
         "title": "Uzi Work",
         "artist": "Homixide Gang"
-    },
-    {
-        "file": "assets/data/Vamp Anthem.mp3",
-        "title": "Vamp Anthem",
-        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/SpotiDown.App - Vampire Hour - Ken Carson.mp3",
@@ -398,5 +363,66 @@
         "file": "assets/data/SpotiDownloader.com - ss - Ken Carson.mp3",
         "title": "ss",
         "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - Confetti.mp3",
+        "title": "Confetti",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - delusional.mp3",
+        "title": "delusional",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - Inferno.mp3",
+        "title": "Inferno",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - leather jacket.mp3",
+        "title": "leather jacket",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - mewtwo.mp3",
+        "title": "mewtwo",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - more chaos.mp3",
+        "title": "more chaos",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - mud.mp3",
+        "title": "mud",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Ken Carson - Nobody.mp3",
+        "title": "Nobody",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - toxic.mp3",
+        "title": "toxic",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Destroy Lonely - vvs valentine.mp3",
+        "title": "vvs valentine",
+        "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Ken Carson - yes.mp3",
+        "title": "yes",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - catastrophe.mp3",
+        "title": "catastrophe",
+        "artist": "Ken Carson"
     }
+
 ]
