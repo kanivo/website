@@ -20,14 +20,29 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/OsamaSon - Addicted.mp3",
+        "title": "Addicted",
+        "artist": "OsamaSon"
+    },
+    {
         "file": "assets/data/Ain't No Mountain High Enough2.mp3",
         "title": "Ain't No Mountain High Enough",
         "artist": "Marvin Gaye"
     },
     {
+        "file": "assets/data/OsamaSon - All Star.mp3",
+        "title": "All Star",
+        "artist": "OsamaSon"
+    },
+    {
         "file": "assets/data/Playboi Carti - BACKD00R.flac",
         "title": "BACKD00R",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/OsamaSon - Baghdad.mp3",
+        "title": "Baghdad",
+        "artist": "OsamaSon"
     },
     {
         "file": "assets/data/Bane.mp3",
@@ -48,6 +63,11 @@
         "file": "assets/data/Ken Carson - Blakk Rokkstar.flac",
         "title": "Blakk Rokkstar",
         "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/OsamaSon - Blonde.mp3",
+        "title": "Blonde",
+        "artist": "OsamaSon"
     },
     {
         "file": "assets/data/Destroy Lonely - came in wit.flac",
@@ -80,6 +100,11 @@
         "artist": "Ken Carson"
     },
     {
+        "file": "assets/data/OsamaSon - Congrats.mp3",
+        "title": "Congrats",
+        "artist": "OsamaSon"
+    },
+    {
         "file": "assets/data/Playboi Carti - CRANK.flac",
         "title": "CRANK",
         "artist": "Playboi Carti"
@@ -98,6 +123,11 @@
         "file": "assets/data/Destroy Lonely - cutie.flac",
         "title": "cutie",
         "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Ken Carson - Delinquent.mp3",
+        "title": "Delinquent",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Ken Carson - delusional.mp3",
@@ -140,6 +170,11 @@
         "artist": "Ken Carson"
     },
     {
+        "file": "assets/data/Ed Sheeran - Don t.mp3",
+        "title": "Don't",
+        "artist": "Ed Sheeran"
+    },
+    {
         "file": "assets/data/Ken Carson - Down2Earth.mp3",
         "title": "Down2Earth",
         "artist": "Ken Carson"
@@ -170,6 +205,11 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/Fiona Apple - Fast As You Can.mp3",
+        "title": "Fast As You Can",
+        "artist": "Fiona Apple"
+    },
+    {
         "file": "assets/data/Fighting My Demons.mp3",
         "title": "Fighting My Demons",
         "artist": "Ken Carson"
@@ -185,8 +225,18 @@
         "artist": "XXXTENTACION"
     },
     {
+        "file": "assets/data/OsamaSon - FMJ.mp3",
+        "title": "FMJ",
+        "artist": "OsamaSon"
+    },
+    {
         "file": "assets/data/SpotiDown.App - FOMDJ - Playboi Carti.mp3",
         "title": "FOMDJ",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Playboi Carti - Foreign.mp3",
+        "title": "Foreign",
         "artist": "Playboi Carti"
     },
     {
@@ -198,6 +248,21 @@
         "file": "assets/data/SpotiDownloader.com - Fuk 12 - Ken Carson.mp3",
         "title": "Fuk 12",
         "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - Geeked Up.mp3",
+        "title": "Geeked Up",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/OsamaSon - Get away.mp3",
+        "title": "Get away",
+        "artist": "OsamaSon"
+    },
+    {
+        "file": "assets/data/Fiona Apple - Get Gone.mp3",
+        "title": "Get Gone",
+        "artist": "Fiona Apple"
     },
     {
         "file": "assets/data/Ken Carson - Ghoul.flac",
@@ -228,6 +293,16 @@
         "file": "assets/data/Destroy Lonely - Groupie Btch.flac",
         "title": "Groupie Btch",
         "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/OsamaSon - Guap Man.mp3",
+        "title": "Guap Man",
+        "artist": "OsamaSon"
+    },
+    {
+        "file": "assets/data/OsamaSon - Habits.mp3",
+        "title": "Habits",
+        "artist": "OsamaSon"
     },
     {
         "file": "assets/data/Ken Carson - Hardcore.flac",
@@ -290,6 +365,11 @@
         "artist": "Ken Carson"
     },
     {
+        "file": "assets/data/OsamaSon - Its A Party.mp3",
+        "title": "Its A Party",
+        "artist": "OsamaSon"
+    },
+    {
         "file": "assets/data/SpotiDownloader.com - It’s Over - Ken Carson.mp3",
         "title": "It’s Over",
         "artist": "Ken Carson"
@@ -335,6 +415,11 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/OsamaSon - Kills.mp3",
+        "title": "Kills",
+        "artist": "OsamaSon"
+    },
+    {
         "file": "assets/data/SpotiDownloader.com - kool on ya - Destroy Lonely.mp3",
         "title": "kool on ya",
         "artist": "Destroy Lonely"
@@ -373,6 +458,16 @@
         "file": "assets/data/Destroy Lonely - LNLY.flac",
         "title": "LNLY",
         "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Playboi Carti - Long Time (Intro).mp3",
+        "title": "Long Time",
+        "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Ken Carson - Lookbook.mp3",
+        "title": "Lookbook",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/SpotiDownloader.com - Lord Of Chaos - Ken Carson.mp3",
@@ -515,9 +610,19 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/OsamaSon - Nothing.mp3",
+        "title": "Nothing",
+        "artist": "OsamaSon"
+    },
+    {
         "file": "assets/data/SpotiDownloader.com - Off The Meter (with Playboi Carti & Destroy Lonely) - Ken Carson.mp3",
         "title": "Off The Meter",
         "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Playboi Carti - Old Money.mp3",
+        "title": "Old Money",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/SpotiDown.App - OLYMPIAN - Playboi Carti.mp3",
@@ -560,6 +665,11 @@
         "artist": "Ken Carson"
     },
     {
+        "file": "assets/data/Fiona Apple - Paper Bag.mp3",
+        "title": "Paper Bag",
+        "artist": "Fiona Apple"
+    },
+    {
         "file": "assets/data/SpotiDownloader.com - Paranoid (feat. Destroy Lonely) - Ken Carson.mp3",
         "title": "Paranoid",
         "artist": "Ken Carson"
@@ -585,6 +695,11 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/OsamaSon - Pop.mp3",
+        "title": "Pop",
+        "artist": "OsamaSon"
+    },
+    {
         "file": "assets/data/Playboi Carti - POP OUT.flac",
         "title": "POP OUT",
         "artist": "Playboi Carti"
@@ -595,6 +710,11 @@
         "artist": "Ken Carson"
     },
     {
+        "file": "assets/data/Southside - President (feat. Ken Carson).mp3",
+        "title": "President",
+        "artist": "Southside"
+    },
+    {
         "file": "assets/data/Destroy Lonely - PRSSURE.flac",
         "title": "PRSSURE",
         "artist": "Destroy Lonely"
@@ -603,6 +723,11 @@
         "file": "assets/data/Ken Carson - Psycho.flac",
         "title": "Psycho",
         "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Playboi Carti - Pull Up.mp3",
+        "title": "Pull Up",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/Punk Monk.mp3",
@@ -633,6 +758,16 @@
         "file": "assets/data/Revenge.mp3",
         "title": "Revenge",
         "artist": "XXXTENTACION"
+    },
+    {
+        "file": "assets/data/UFO361 - RICK OWENS (feat. Ken Carson).mp3",
+        "title": "RICK OWENS",
+        "artist": "Ufo361"
+    },
+    {
+        "file": "assets/data/Playboi Carti - Right Now.mp3",
+        "title": "Right Now",
+        "artist": "Playboi Carti"
     },
     {
         "file": "assets/data/Riot2.mp3",
@@ -685,6 +820,11 @@
         "artist": "Adele"
     },
     {
+        "file": "assets/data/Fiona Apple - Shadowboxer.mp3",
+        "title": "Shadowboxer",
+        "artist": "Fiona Apple"
+    },
+    {
         "file": "assets/data/She Knows (feat. Amber Coffman & Cults).mp3",
         "title": "She Knows",
         "artist": "J. Cole"
@@ -708,6 +848,11 @@
         "file": "assets/data/Sky.mp3",
         "title": "Sky",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Fiona Apple - Sleep to Dream.mp3",
+        "title": "Sleep to Dream",
+        "artist": "Fiona Apple"
     },
     {
         "file": "assets/data/Adele - Someone Like You.flac",
@@ -760,9 +905,19 @@
         "artist": "Charli xcx"
     },
     {
+        "file": "assets/data/Ken Car$on - Teen Bean.mp3",
+        "title": "Teen Bean",
+        "artist": "Ken Car$on"
+    },
+    {
         "file": "assets/data/Teen X .mp3",
         "title": "Teen X",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Ken Carson - the acronym.mp3",
+        "title": "the acronym",
+        "artist": "Ken Carson, Destroy Lonely"
     },
     {
         "file": "assets/data/Taylor Swift - The Fate of Ophelia.mp3",
@@ -795,6 +950,11 @@
         "artist": "The Weeknd"
     },
     {
+        "file": "assets/data/Quvenzhané Wallis - Tomorrow.mp3",
+        "title": "Tomorrow",
+        "artist": "Quvenzhané Wallis"
+    },
+    {
         "file": "assets/data/Ken Carson - toxic.mp3",
         "title": "toxic",
         "artist": "Ken Carson"
@@ -808,6 +968,11 @@
         "file": "assets/data/Ken Carson - Trap Jump.flac",
         "title": "Trap Jump",
         "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/OsamaSon - Trenches.mp3",
+        "title": "Trenches",
+        "artist": "OsamaSon"
     },
     {
         "file": "assets/data/SpotiDownloader.com - TRIM (with Future) - Playboi Carti.mp3",
@@ -850,6 +1015,11 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/OsamaSon - Victory Lap.mp3",
+        "title": "Victory Lap",
+        "artist": "OsamaSon"
+    },
+    {
         "file": "assets/data/Destroy Lonely - vvs valentine.mp3",
         "title": "vvs valentine",
         "artist": "Destroy Lonely"
@@ -870,6 +1040,11 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/OsamaSon - Whats Happening.mp3",
+        "title": "Whats Happening",
+        "artist": "OsamaSon"
+    },
+    {
         "file": "assets/data/Destroy Lonely - Which 1 _ Klueless.flac",
         "title": "Which 1 / Klueless",
         "artist": "Destroy Lonely"
@@ -883,6 +1058,11 @@
         "file": "assets/data/wokeuplikethis.mp3",
         "title": "wokeuplikethis*",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/OsamaSon - Worldwide.mp3",
+        "title": "Worldwide",
+        "artist": "OsamaSon"
     },
     {
         "file": "assets/data/SpotiDownloader.com - X - Ken Carson.mp3",
