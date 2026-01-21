@@ -35,6 +35,11 @@
         "artist": "OsamaSon"
     },
     {
+        "file": "assets/data/Che - BA$$.mp3",
+        "title": "BA$$",
+        "artist": "che"
+    },
+    {
         "file": "assets/data/Playboi Carti - BACKD00R.flac",
         "title": "BACKD00R",
         "artist": "Playboi Carti"
@@ -85,9 +90,19 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/Ken Carson - Change.mp3",
+        "title": "Change",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Playboi Carti - CHARGE DEM HOES A FEE.flac",
         "title": "CHARGE DEM HOES A FEE",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Ken Carson - Clutch.mp3",
+        "title": "Clutch",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Playboi Carti - COCAINE NOSE.flac",
@@ -225,6 +240,11 @@
         "artist": "XXXTENTACION"
     },
     {
+        "file": "assets/data/Destroy Lonely - fly sht.mp3",
+        "title": "fly sht",
+        "artist": "Destroy Lonely"
+    },
+    {
         "file": "assets/data/OsamaSon - FMJ.mp3",
         "title": "FMJ",
         "artist": "OsamaSon"
@@ -240,8 +260,18 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/Ken Carson - Freestyle 1.mp3",
+        "title": "Freestyle 1",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Freestyle 2.mp3",
         "title": "Freestyle 2",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - Freestyle 3.mp3",
+        "title": "Freestyle 3",
         "artist": "Ken Carson"
     },
     {
@@ -290,6 +320,11 @@
         "artist": "Playboi Carti"
     },
     {
+        "file": "assets/data/Ken Carson - Green Room.mp3",
+        "title": "Green Room",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Destroy Lonely - Groupie Btch.flac",
         "title": "Groupie Btch",
         "artist": "Destroy Lonely"
@@ -313,6 +348,11 @@
         "file": "assets/data/Playboi Carti - HBA.flac",
         "title": "HBA",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Ken Carson - Hella.mp3",
+        "title": "Hella",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Adele - Hello.flac",
@@ -353,6 +393,11 @@
         "file": "assets/data/ILoveUIHateU.mp3",
         "title": "ILoveUIHateU",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/OsamaSon - In It.mp3",
+        "title": "In It",
+        "artist": "OsamaSon"
     },
     {
         "file": "assets/data/In The Air.mp3",
@@ -398,6 +443,11 @@
         "file": "assets/data/Playboi Carti - JUMPIN.flac",
         "title": "JUMPIN",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/OsamaSon - just score it.mp3",
+        "title": "just score it",
+        "artist": "OsamaSon"
     },
     {
         "file": "assets/data/Playboi Carti - K POP.flac",
@@ -460,6 +510,11 @@
         "artist": "Destroy Lonely"
     },
     {
+        "file": "assets/data/Ken Carson - loading.mp3",
+        "title": "loading",
+        "artist": "Ken Carson"
+    },
+    {
         "file": "assets/data/Playboi Carti - Long Time (Intro).mp3",
         "title": "Long Time",
         "artist": "Playboi Carti"
@@ -498,6 +553,16 @@
         "file": "assets/data/M3tamorphosis .mp3",
         "title": "M3tamorphosis",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/OsamaSon - Made Sum Plans.mp3",
+        "title": "Made Sum Plans",
+        "artist": "OsamaSon"
+    },
+    {
+        "file": "assets/data/Che - MANNEQUIN.mp3",
+        "title": "MANNEQUIN",
+        "artist": "che"
     },
     {
         "file": "assets/data/Ken Carson - margiela.mp3",
@@ -568,6 +633,11 @@
         "file": "assets/data/Ken Carson - Naked.mp3",
         "title": "Naked",
         "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/OsamaSon - Need It.mp3",
+        "title": "Need It",
+        "artist": "OsamaSon"
     },
     {
         "file": "assets/data/NEVEREVER.mp3",
@@ -685,6 +755,11 @@
         "artist": "Drake"
     },
     {
+        "file": "assets/data/jahhde - Peppermint.mp3",
+        "title": "Peppermint",
+        "artist": "jahhde"
+    },
+    {
         "file": "assets/data/Playboi Carti - PHILLY.flac",
         "title": "PHILLY",
         "artist": "Playboi Carti"
@@ -753,6 +828,11 @@
         "file": "assets/data/Destroy Lonely - redlight.flac",
         "title": "redlight",
         "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/OsamaSon - Rehhab.mp3",
+        "title": "Rehhab",
+        "artist": "OsamaSon"
     },
     {
         "file": "assets/data/Revenge.mp3",
@@ -828,6 +908,11 @@
         "file": "assets/data/She Knows (feat. Amber Coffman & Cults).mp3",
         "title": "She Knows",
         "artist": "J. Cole"
+    },
+    {
+        "file": "assets/data/Ken Carson - Shoot.mp3",
+        "title": "Shoot",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Shoota (feat. Lil Uzi Vert).mp3",
@@ -913,6 +998,16 @@
         "file": "assets/data/Teen X .mp3",
         "title": "Teen X",
         "artist": "Playboi Carti"
+    },
+    {
+        "file": "assets/data/Ken Carson - Teen X Babe.mp3",
+        "title": "Teen X Babe",
+        "artist": "Ken Carson"
+    },
+    {
+        "file": "assets/data/Ken Carson - Teenager Rager.mp3",
+        "title": "Teenager Rager",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Ken Carson - the acronym.mp3",
@@ -1078,6 +1173,11 @@
         "file": "assets/data/Ya Ight.mp3",
         "title": "Ya Ight",
         "artist": "Destroy Lonely"
+    },
+    {
+        "file": "assets/data/Ken Carson - Yale.mp3",
+        "title": "Yale",
+        "artist": "Ken Carson"
     },
     {
         "file": "assets/data/Yale.mp3",
